@@ -38,12 +38,15 @@ Open `fii_dii_india_flows_dashboard.html` in any browser. No server needed.
 
 ### Hero Dashboard — OLED Dark Mode
 Shows the latest session data, FII streak widget, Flow Strength Meter, and market context cards.
+![Hero Dashboard OLED](docs/dashboard_hero.png)
 
 ### Visual Flow Heatmaps
 GitHub-style 45-day FII & DII concentration matrices. Each cell = one trading day. Hover to magnify.
+![Visual Matrices](docs/heatmaps.png)
 
 ### Data Matrix with Smart Filters
 Daily, Weekly, Monthly, and Annual data tables. Filter by FII Bloodbath (>₹5k Cr sell), DII Absorption, or Extreme Divergence.
+![Data Hub Filters](docs/matrix.png)
 
 ---
 
