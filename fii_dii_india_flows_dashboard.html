@@ -309,17 +309,17 @@ tr:last-child td { border-bottom: none; }
         <button class="cam-btn" onclick="exportDOM(this.parentNode, 'Ticker')">📷</button>
         <div style="display:flex; justify-content:space-between;">
           <div>
-            <div class="c-sub">NIFTY 50 (Est)</div>
-            <div class="num-m">23,151.10</div>
-            <div class="t-red" style="font-size:13px; font-weight:600;">-488.05 (-2.06%)</div>
+            <div class="c-sub">NIFTY 50</div>
+            <div class="num-m" id="niftyPrice">—</div>
+            <div id="niftyChange" style="font-size:13px; font-weight:600;">Loading...</div>
           </div>
           <div style="text-align:right;">
             <div class="c-sub">INDIA VIX</div>
-            <div class="num-m" style="color:var(--t1)">22.65</div>
-            <div class="t-red" style="font-size:13px; font-weight:600;">+5.23%</div>
+            <div class="num-m" id="vixPrice" style="color:var(--t1)">—</div>
+            <div id="vixChange" style="font-size:13px; font-weight:600;">Loading...</div>
           </div>
         </div>
-        <div style="font-size:10px; color:var(--t4); margin-top:10px; text-align:center;" id="tkDate">As of Mar 13 close · Updates with live sync</div>
+        <div style="font-size:10px; color:var(--t4); margin-top:10px; text-align:center;" id="tkDate">Fetching live data...</div>
       </div>
     </div>
   </div>
@@ -349,6 +349,76 @@ tr:last-child td { border-bottom: none; }
       <div class="c-sub" style="margin-top:0;">FII NSE500 Ownership</div>
       <div class="num-m t-teal" style="margin:8px 0;">16.1%</div>
       <div style="font-size:11px; color:var(--t4);">Down from 28% peak</div>
+    </div>
+  </div>
+
+  <!-- F&O DERIVATIVES SECTION (Inspired by Sensibull) -->
+  <div style="margin-bottom:32px; background:var(--l1); border:1px solid var(--sep2); border-radius:16px; padding:24px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--sep2); padding-bottom:16px; margin-bottom:24px;">
+      <div>
+        <h2 style="font-size:18px; color:var(--t1); letter-spacing:-0.5px;">Derivatives Positioning (F&O)</h2>
+        <div style="font-size:12px; color:var(--t4); margin-top:4px;">Participant-wise Open Interest (Index Futures & Options)</div>
+      </div>
+      <div class="mom-badge" id="faoSentiment">—</div>
+    </div>
+
+    <!-- FII F&O Grid -->
+    <div class="c-sub" style="margin-bottom:12px; color:var(--blue);">FOREIGN INSTITUTIONAL INVESTORS (FII)</div>
+    <div class="grid-3">
+      <!-- FII Futures -->
+      <div class="card" style="padding:16px;">
+        <div class="c-sub" style="margin-top:0;">Index Futures</div>
+        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:12px; font-weight:700;">
+          <span class="t-green">Long: <span id="fiiFutL">—</span></span>
+          <span class="t-red">Short: <span id="fiiFutS">—</span></span>
+        </div>
+        <div style="height:6px; background:var(--l4); border-radius:3px; margin-top:8px; display:flex; overflow:hidden;">
+          <div id="barFiiFut" style="background:var(--green); width:50%; transition:width 1s;"></div>
+        </div>
+      </div>
+      <!-- FII Calls -->
+      <div class="card" style="padding:16px;">
+        <div class="c-sub" style="margin-top:0;">Index Calls (Bullish vs Bearish)</div>
+        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:12px; font-weight:700;">
+          <span class="t-green">Long: <span id="fiiCallL">—</span></span>
+          <span class="t-red">Short: <span id="fiiCallS">—</span></span>
+        </div>
+        <div style="height:6px; background:var(--l4); border-radius:3px; margin-top:8px; display:flex; overflow:hidden;">
+          <div id="barFiiCall" style="background:var(--green); width:50%; transition:width 1s;"></div>
+        </div>
+      </div>
+      <!-- FII Puts -->
+      <div class="card" style="padding:16px;">
+        <div class="c-sub" style="margin-top:0;">Index Puts (Bearish vs Bullish)</div>
+        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:12px; font-weight:700;">
+          <!-- Puts Long = Bearish (Red), Puts Short = Bullish (Green) -->
+          <span class="t-red">Long: <span id="fiiPutL">—</span></span>
+          <span class="t-green">Short: <span id="fiiPutS">—</span></span>
+        </div>
+        <div style="height:6px; background:var(--l4); border-radius:3px; margin-top:8px; display:flex; overflow:hidden;">
+          <!-- Warning: Long puts means Bearish! So width drives the red bar -->
+          <div id="barFiiPut" style="background:var(--red); width:50%; transition:width 1s;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DII F&O Grid -->
+    <div class="c-sub" style="margin-bottom:12px; margin-top:16px; color:var(--purple);">DOMESTIC INSTITUTIONAL INVESTORS (DII)</div>
+    <div class="grid-3" style="margin-bottom:0;">
+      <!-- DII Futures -->
+      <div class="card" style="padding:16px;">
+        <div class="c-sub" style="margin-top:0;">Index Futures</div>
+        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:12px; font-weight:700;">
+          <span class="t-green">Long: <span id="diiFutL">—</span></span>
+          <span class="t-red">Short: <span id="diiFutS">—</span></span>
+        </div>
+        <div style="height:6px; background:var(--l4); border-radius:3px; margin-top:8px; display:flex; overflow:hidden;">
+          <div id="barDiiFut" style="background:var(--green); width:50%; transition:width 1s;"></div>
+        </div>
+      </div>
+      <div style="grid-column: span 2; display:flex; align-items:center; padding-left:16px;">
+        <div style="font-size:12px; color:var(--t4); font-style:italic;">Note: DIIs generally do not write options heavily; their primary derivatives exposure is via Index Futures hedging.</div>
+      </div>
     </div>
   </div>
 
@@ -881,8 +951,51 @@ function renderDashboard() {
   }
 
   // Render Flow Strength Meter
-  const fNetAbs = Math.abs(dailyData[0].fn);
-  const dNetAbs = Math.abs(dailyData[0].dn);
+// Wait 2 seconds for JS execution before doing the rest
+  // ── Render F&O Data (if available in latest) ───────────────────────────────
+  if (latest.fii_idx_fut_long !== undefined) {
+    const fnl = n => n ? n.toLocaleString('en-IN') : '0';
+    const fillRatio = (l, s, bar, reverseColor = false) => {
+      document.getElementById(bar).style.width = (l+s > 0) ? `${(l/(l+s))*100}%` : '50%';
+    };
+    
+    // FII
+    document.getElementById('fiiFutL').innerText = fnl(latest.fii_idx_fut_long);
+    document.getElementById('fiiFutS').innerText = fnl(latest.fii_idx_fut_short);
+    fillRatio(latest.fii_idx_fut_long, latest.fii_idx_fut_short, 'barFiiFut');
+
+    document.getElementById('fiiCallL').innerText = fnl(latest.fii_idx_call_long);
+    document.getElementById('fiiCallS').innerText = fnl(latest.fii_idx_call_short);
+    fillRatio(latest.fii_idx_call_long, latest.fii_idx_call_short, 'barFiiCall');
+
+    document.getElementById('fiiPutL').innerText = fnl(latest.fii_idx_put_long);
+    document.getElementById('fiiPutS').innerText = fnl(latest.fii_idx_put_short);
+    fillRatio(latest.fii_idx_put_long, latest.fii_idx_put_short, 'barFiiPut', true); // Put long = Bearish
+
+    // DII
+    document.getElementById('diiFutL').innerText = fnl(latest.dii_idx_fut_long);
+    document.getElementById('diiFutS').innerText = fnl(latest.dii_idx_fut_short);
+    fillRatio(latest.dii_idx_fut_long, latest.dii_idx_fut_short, 'barDiiFut');
+
+    // Sentiment heuristic
+    const futNet = latest.fii_idx_fut_long - latest.fii_idx_fut_short;
+    const callNet = latest.fii_idx_call_long - latest.fii_idx_call_short;
+    const putNet = latest.fii_idx_put_long - latest.fii_idx_put_short;
+    let score = 0;
+    if (futNet > 10000) score++; if (futNet < -10000) score--;
+    if (callNet > 50000) score++; if (callNet < -50000) score--;
+    if (putNet > 50000) score--; if (putNet < -50000) score++; // Long Puts = Bearish
+    
+    const sBadge = document.getElementById('faoSentiment');
+    if (score >= 2) { sBadge.innerText = 'Highly Bullish'; sBadge.className = 'mom-badge mb-bull'; }
+    else if (score == 1) { sBadge.innerText = 'Mildly Bullish'; sBadge.className = 'mom-badge mb-bull'; }
+    else if (score == 0) { sBadge.innerText = 'Neutral Sentiment'; sBadge.className = 'mom-badge mb-neut'; }
+    else if (score == -1) { sBadge.innerText = 'Mildly Bearish'; sBadge.className = 'mom-badge mb-bear'; }
+    else { sBadge.innerText = 'Highly Bearish'; sBadge.className = 'mom-badge mb-bear'; }
+  }
+
+  const fNetAbs = Math.abs(latest.fn);
+  const dNetAbs = Math.abs(latest.dn);
   const totalFlow = fNetAbs + dNetAbs;
   if(totalFlow > 0) {
     const pF = Math.round((fNetAbs / totalFlow) * 100);
@@ -975,7 +1088,7 @@ async function injectLiveRow(d) {
   if (dailyData[0].d !== d.date) {
     dailyData.unshift({ d: d.date, fb: d.fii_buy, fs: d.fii_sell, fn: d.fii_net, db: d.dii_buy, ds: d.dii_sell, dn: d.dii_net });
   } else {
-    dailyData[0] = { d: d.date, fb: d.fii_buy, fs: d.fii_sell, fn: d.fii_net, db: d.dii_buy, ds: d.dii_sell, dn: d.dii_net };
+    dailyData[0] = { ...dailyData[0], ...d, d: d.date, fb: d.fii_buy, fs: d.fii_sell, fn: d.fii_net, db: d.dii_buy, ds: d.dii_sell, dn: d.dii_net };
   }
   if (sPill) sPill.className = 'status-pill live';
   if (sTxt)  sTxt.innerHTML  = `LIVE &bull; ${new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'})}`;
@@ -1132,6 +1245,46 @@ function toggleTheme() {
   
   initCharts();
 }
+
+/* ── LIVE NIFTY & VIX (Yahoo Finance — CORS-safe) ── */
+async function fetchNiftyVIX() {
+  const YF = 'https://query1.finance.yahoo.com/v8/finance/chart/';
+  const fmt2 = n => n.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  async function getQuote(ticker) {
+    const r = await fetch(`${YF}${encodeURIComponent(ticker)}?interval=1d&range=1d&includePrePost=false`, { signal: AbortSignal.timeout(8000) });
+    const j = await r.json();
+    const m = j.chart.result[0].meta;
+    const price = m.regularMarketPrice;
+    const prev  = m.previousClose || m.chartPreviousClose;
+    return { price, change: price - prev, pct: (price - prev) / prev * 100, state: m.marketState };
+  }
+  try {
+    const [nifty, vix] = await Promise.all([getQuote('^NSEI'), getQuote('^INDIAVIX')]);
+    const el = id => document.getElementById(id);
+    const sign = v => v >= 0 ? '+' : '';
+    if (el('niftyPrice')) el('niftyPrice').innerText = fmt2(nifty.price);
+    if (el('niftyChange')) {
+      el('niftyChange').innerText = `${sign(nifty.change)}${fmt2(nifty.change)} (${sign(nifty.pct)}${nifty.pct.toFixed(2)}%)`;
+      el('niftyChange').style.cssText = `color:${nifty.change >= 0 ? 'var(--green)' : 'var(--red)'};font-weight:600;font-size:13px`;
+    }
+    if (el('vixPrice')) {
+      el('vixPrice').innerText = fmt2(vix.price);
+      el('vixPrice').style.color = vix.price > 20 ? 'var(--red)' : vix.price > 14 ? 'var(--orange)' : 'var(--green)';
+    }
+    if (el('vixChange')) {
+      el('vixChange').innerText = `${sign(vix.change)}${vix.pct.toFixed(2)}%`;
+      el('vixChange').style.cssText = `color:${vix.change >= 0 ? 'var(--red)' : 'var(--green)'};font-weight:600;font-size:13px`;
+    }
+    if (el('tkDate')) el('tkDate').innerText = `${nifty.state === 'REGULAR' ? '🟢 Market Open' : '🔴 After Close'} · Live via Yahoo Finance`;
+    console.log('[NIFTY] ✅ Live:', nifty.price, '| VIX:', vix.price);
+  } catch(e) {
+    console.warn('[NIFTY] ⚠️ Fetch failed:', e.message);
+    const tk = document.getElementById('tkDate');
+    if (tk) tk.innerText = 'Yahoo Finance temporarily unavailable';
+  }
+  setTimeout(fetchNiftyVIX, 5 * 60 * 1000);
+}
+
 </script>
 </body>
 </html>
