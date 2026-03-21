@@ -3,804 +3,550 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Indian Market Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<title>Market Studies · Indian Market Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg: #090c10;
-    --bg2: #0d1117;
-    --card: #111720;
-    --card2: #161e2a;
-    --border: #1e2d3d;
-    --accent: #f0b429;
-    --accent2: #00d4aa;
-    --red: #ff4d6d;
-    --green: #00d4aa;
-    --blue: #3b82f6;
-    --text: #e2e8f0;
-    --muted: #64748b;
-    --mono: 'Space Mono', monospace;
-    --sans: 'Syne', sans-serif;
+    --bg:        #070b0f;
+    --sidebar:   #090e14;
+    --card:      #0f1923;
+    --card2:     #141f2b;
+    --border:    #1a2d3f;
+    --border2:   #243a50;
+    --accent:    #f0b429;
+    --accent2:   #00d4aa;
+    --red:       #ff4d6d;
+    --green:     #00d4aa;
+    --blue:      #38bdf8;
+    --purple:    #a78bfa;
+    --text:      #dde4ed;
+    --muted:     #4a6278;
+    --muted2:    #637a8f;
+    --mono:      'IBM Plex Mono', monospace;
+    --display:   'Bebas Neue', sans-serif;
+    --body:      'DM Sans', sans-serif;
+    --sidebar-w: 240px;
+    --header-h:  56px;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; overflow:hidden; }
 
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: var(--sans);
-    min-height: 100vh;
-    overflow-x: hidden;
+    font-family: var(--body);
+    display: flex; flex-direction: column;
   }
 
-  /* ── Background grid ── */
   body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
+    content:''; position:fixed; inset:0;
     background-image:
-      linear-gradient(rgba(240,180,41,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(240,180,41,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
+      linear-gradient(rgba(240,180,41,0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(240,180,41,0.018) 1px, transparent 1px);
+    background-size:48px 48px; pointer-events:none; z-index:0;
   }
 
-  /* ── Glow blobs ── */
-  .blob {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.07;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .blob1 { width: 600px; height: 600px; background: var(--accent); top: -200px; right: -200px; }
-  .blob2 { width: 400px; height: 400px; background: var(--accent2); bottom: -100px; left: -100px; }
-
-  /* ── Header ── */
-  header {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(9,12,16,0.85);
-    backdrop-filter: blur(12px);
-    position: sticky;
-    top: 0;
+  /* ═══ TOPBAR ═══ */
+  .topbar {
+    height:var(--header-h); flex-shrink:0;
+    background:rgba(7,11,15,0.97); backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border);
+    display:flex; align-items:center; padding:0 24px; z-index:100; position:relative;
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  .topbar-logo {
+    width:var(--sidebar-w); flex-shrink:0;
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none; padding-right:16px; cursor:pointer;
+    background:none; border:none;
   }
-
-  .logo-icon {
-    width: 40px; height: 40px;
-    background: var(--accent);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
+  .logo-mark {
+    width:32px; height:32px; background:var(--accent); border-radius:7px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-size:18px; color:#000; flex-shrink:0;
   }
+  .logo-text { font-family:var(--mono); font-size:11px; font-weight:600; color:var(--text); line-height:1.3; }
+  .logo-text span { color:var(--accent); }
+  .logo-sub { font-family:var(--mono); font-size:8px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; }
 
-  .logo-text h1 {
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: var(--text);
+  .topbar-nav { flex:1; display:flex; align-items:center; gap:4px; padding-left:24px; border-left:1px solid var(--border); }
+  .nav-link {
+    font-family:var(--mono); font-size:11px; color:var(--muted2);
+    text-decoration:none; letter-spacing:0.5px;
+    padding:6px 14px; border-radius:6px;
+    transition:color 0.15s, background 0.15s;
+    cursor:pointer; border:none; background:none;
   }
+  .nav-link:hover { color:var(--text); background:rgba(255,255,255,0.04); }
+  .nav-link.active { color:var(--accent); }
 
-  .logo-text p {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: var(--mono);
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  .topbar-right { display:flex; align-items:center; gap:16px; margin-left:auto; }
+  .live-pill {
+    display:flex; align-items:center; gap:6px; padding:4px 10px;
+    background:rgba(0,212,170,0.08); border:1px solid rgba(0,212,170,0.2);
+    border-radius:100px; font-family:var(--mono); font-size:9px;
+    color:var(--accent2); letter-spacing:1px; text-transform:uppercase;
   }
+  .live-dot { width:5px; height:5px; background:var(--accent2); border-radius:50%; animation:blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.2} }
+  .topbar-updated { font-family:var(--mono); font-size:9px; color:var(--muted); }
 
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  /* ═══ SHELL ═══ */
+  .shell { flex:1; display:flex; overflow:hidden; position:relative; z-index:1; }
+
+  /* ═══ SIDEBAR ═══ */
+  .sidebar {
+    width:var(--sidebar-w); flex-shrink:0;
+    background:var(--sidebar); border-right:1px solid var(--border);
+    overflow-y:auto; padding:20px 0 40px;
+    scrollbar-width:thin; scrollbar-color:var(--border) transparent;
   }
-
-  .live-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0,212,170,0.1);
-    border: 1px solid rgba(0,212,170,0.3);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-family: var(--mono);
-    color: var(--accent2);
+  .sidebar-section { margin-bottom:24px; }
+  .sidebar-section-label {
+    font-family:var(--mono); font-size:8px; color:var(--muted);
+    letter-spacing:2.5px; text-transform:uppercase;
+    padding:0 20px 8px; display:block;
   }
-
-  .live-dot {
-    width: 7px; height: 7px;
-    background: var(--accent2);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
+  .sidebar-item {
+    display:flex; align-items:center; gap:10px;
+    padding:9px 20px; font-family:var(--body); font-size:13px; font-weight:400;
+    color:var(--muted2); cursor:pointer;
+    transition:color 0.15s, background 0.15s;
+    border-left:2px solid transparent;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    border:none; border-left:2px solid transparent; background:none; width:100%; text-align:left;
   }
+  .sidebar-item:hover { color:var(--text); background:rgba(255,255,255,0.03); border-left-color:var(--border2); }
+  .sidebar-item.active { color:var(--accent); background:rgba(240,180,41,0.06); border-left-color:var(--accent); font-weight:500; }
+  .sidebar-icon { font-size:14px; flex-shrink:0; }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
+  .sidebar-sub {
+    display:flex; align-items:center; gap:6px;
+    padding:7px 20px 7px 44px; font-size:12px; color:var(--muted);
+    cursor:pointer; transition:color 0.15s, background 0.15s;
+    border:none; border-left:2px solid transparent; background:none; width:100%; text-align:left;
   }
+  .sidebar-sub:hover { color:var(--text); background:rgba(255,255,255,0.02); }
+  .sidebar-sub.active { color:var(--accent2); }
 
-  .last-updated {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: var(--mono);
+  /* ═══ CONTENT AREA ═══ */
+  .content-area { flex:1; overflow:hidden; position:relative; }
+
+  /* HOME VIEW */
+  #homeView { height:100%; overflow-y:auto; padding:28px 40px 80px; animation:fadeUp 0.4s ease both; }
+
+  /* DASH VIEW */
+  #dashView { height:100%; display:none; flex-direction:column; }
+  #dashView.visible { display:flex; }
+
+  .dash-breadcrumb {
+    height:40px; flex-shrink:0;
+    background:var(--card); border-bottom:1px solid var(--border);
+    display:flex; align-items:center; gap:12px; padding:0 20px;
   }
-
-  /* ── Main layout ── */
-  main {
-    position: relative;
-    z-index: 1;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px 40px 80px;
+  .bc-back {
+    display:flex; align-items:center; gap:6px;
+    font-family:var(--mono); font-size:10px; color:var(--muted2);
+    cursor:pointer; padding:4px 10px; border-radius:5px;
+    transition:color 0.15s, background 0.15s; border:none; background:none;
   }
-
-  /* ── Section label ── */
-  .section-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
+  .bc-back:hover { color:var(--text); background:rgba(255,255,255,0.05); }
+  .bc-sep { color:var(--muted); font-size:10px; }
+  .bc-current { font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:0.5px; }
+  .bc-open-new {
+    margin-left:auto; display:flex; align-items:center; gap:6px;
+    font-family:var(--mono); font-size:10px; color:var(--muted2);
+    cursor:pointer; padding:4px 10px; border-radius:5px;
+    transition:color 0.15s, background 0.15s; text-decoration:none;
   }
+  .bc-open-new:hover { color:var(--accent2); background:rgba(0,212,170,0.06); }
 
-  .section-label span {
-    font-size: 11px;
-    font-family: var(--mono);
-    color: var(--accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  #dashFrame { flex:1; width:100%; border:none; background:var(--bg); }
+
+  .iframe-loader {
+    position:absolute; inset:40px 0 0 0; background:var(--bg);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:16px; transition:opacity 0.3s;
   }
+  .iframe-loader.hidden { opacity:0; pointer-events:none; }
+  .loader-spinner { width:32px; height:32px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 0.8s linear infinite; }
+  @keyframes spin { to{transform:rotate(360deg)} }
+  .loader-text { font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:1px; }
 
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
+  /* ═══ HOME CONTENT STYLES ═══ */
+  .market-strip { display:flex; gap:12px; margin-bottom:28px; flex-wrap:wrap; }
+  .mstrip-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 18px; min-width:160px; }
+  .mstrip-name { font-family:var(--mono); font-size:8px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-bottom:3px; }
+  .mstrip-val { font-family:var(--mono); font-size:17px; font-weight:600; color:var(--text); }
+  .mstrip-chg { font-family:var(--mono); font-size:10px; margin-top:2px; }
+  .mstrip-chg.up { color:var(--green); }
+  .mstrip-chg.down { color:var(--red); }
+
+  .filter-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; align-items:center; }
+  .filter-pill {
+    padding:6px 14px; background:var(--card); border:1px solid var(--border);
+    border-radius:100px; cursor:pointer; font-family:var(--mono); font-size:10px;
+    color:var(--muted2); letter-spacing:0.5px; transition:all 0.15s; white-space:nowrap; user-select:none;
   }
+  .filter-pill:hover { border-color:var(--border2); color:var(--text); }
+  .filter-pill.active { background:var(--accent); border-color:var(--accent); color:#000; font-weight:600; }
 
-  /* ── Nifty ticker bar ── */
-  .ticker-bar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 40px;
-    animation: fadeUp 0.6s ease both;
+  .section-head { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+  .section-tag { font-family:var(--mono); font-size:9px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; }
+  .section-line { flex:1; height:1px; background:var(--border); }
+
+  .cards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:48px; }
+
+  .dash-card {
+    background:var(--card); border:1px solid var(--border);
+    border-radius:14px; padding:22px; cursor:pointer;
+    display:block; transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    position:relative; overflow:hidden;
+    width:100%; text-align:left; border:1px solid var(--border);
   }
+  .dash-card:hover { border-color:var(--border2); transform:translateY(-2px); box-shadow:0 8px 32px rgba(0,0,0,0.3); }
+  .dash-card.featured { border-color:rgba(240,180,41,0.3)!important; background:linear-gradient(135deg,var(--card),rgba(240,180,41,0.04))!important; }
+  .dash-card.featured::before { content:''; position:absolute; top:0;left:0;right:0;height:2px; background:linear-gradient(90deg,var(--accent),transparent); }
 
-  .ticker-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: border-color 0.2s, transform 0.2s;
-  }
+  .card-top { display:flex; align-items:flex-start; gap:14px; margin-bottom:14px; }
+  .card-icon { width:40px; height:40px; flex-shrink:0; background:var(--card2); border:1px solid var(--border); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .card-title { font-size:14px; font-weight:600; color:var(--text); margin-bottom:4px; line-height:1.3; }
+  .card-sub { font-family:var(--mono); font-size:8px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; }
+  .card-desc { font-size:12px; color:var(--muted2); line-height:1.6; font-weight:300; margin-bottom:16px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .card-footer { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 
-  .ticker-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
+  .tag { padding:3px 9px; border-radius:4px; font-family:var(--mono); font-size:9px; letter-spacing:0.5px; font-weight:500; border:1px solid; }
+  .tag-source { color:var(--muted2); border-color:var(--border); background:var(--card2); }
+  .tag-freq   { color:var(--muted);  border-color:var(--border); background:transparent; }
+  .tag-live   { color:var(--green);  border-color:rgba(0,212,170,0.3); background:rgba(0,212,170,0.08); }
+  .tag-cached { color:var(--blue);   border-color:rgba(56,189,248,0.3); background:rgba(56,189,248,0.08); }
+  .tag-fno    { color:var(--purple); border-color:rgba(167,139,250,0.3); background:rgba(167,139,250,0.08); }
 
-  .ticker-left .ticker-name {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: var(--mono);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
+  .card-live-val { font-family:var(--mono); font-size:13px; font-weight:600; margin-top:10px; padding:8px 12px; background:var(--card2); border:1px solid var(--border); border-radius:8px; display:flex; align-items:center; justify-content:space-between; }
+  .lv-label { font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:2px; }
+  .lv-num.pos { color:var(--green); }
+  .lv-num.neg { color:var(--red); }
 
-  .ticker-left .ticker-price {
-    font-size: 26px;
-    font-weight: 800;
-    font-family: var(--mono);
-    color: var(--text);
-    letter-spacing: -1px;
-  }
+  .stats-mini { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:12px; }
+  .smc { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; position:relative; overflow:hidden; }
+  .smc::after { content:''; position:absolute; bottom:0;left:0;right:0;height:2px; }
+  .smc.g::after { background:linear-gradient(90deg,var(--green),transparent); }
+  .smc.r::after { background:linear-gradient(90deg,var(--red),transparent); }
+  .smc.b::after { background:linear-gradient(90deg,var(--blue),transparent); }
+  .smc.p::after { background:linear-gradient(90deg,var(--purple),transparent); }
+  .smc-label { font-family:var(--mono); font-size:8px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+  .smc-val   { font-family:var(--mono); font-size:20px; font-weight:600; color:var(--text); }
+  .smc-sub   { font-family:var(--mono); font-size:8px; color:var(--muted); margin-top:3px; }
 
-  .ticker-right {
-    text-align: right;
-  }
+  .skel { display:inline-block; background:linear-gradient(90deg,var(--card2) 25%,var(--border) 50%,var(--card2) 75%); background-size:200% 100%; animation:shimmer 1.5s infinite; border-radius:4px; }
+  @keyframes shimmer { from{background-position:200% 0}to{background-position:-200% 0} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)} }
 
-  .ticker-change {
-    font-size: 14px;
-    font-family: var(--mono);
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 8px;
-  }
-
-  .ticker-change.up { color: var(--green); background: rgba(0,212,170,0.1); }
-  .ticker-change.down { color: var(--red); background: rgba(255,77,109,0.1); }
-
-  .ticker-pct {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: var(--mono);
-    margin-top: 4px;
-  }
-
-  /* ── Market Stats Grid ── */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-    animation: fadeUp 0.7s ease both;
-  }
-
-  .stats-grid-row2 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-    animation: fadeUp 0.75s ease both;
-  }
-
-  .stats-grid-row3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 40px;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .stat-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 22px 24px;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-
-  .stat-card:hover {
-    border-color: rgba(240,180,41,0.3);
-    transform: translateY(-2px);
-  }
-
-  .stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-  }
-
-  .stat-card.purple::before { background: #8b5cf6; }
-  .stat-card.green::before  { background: var(--green); }
-  .stat-card.red::before    { background: var(--red); }
-  .stat-card.orange::before { background: #f97316; }
-  .stat-card.blue::before   { background: var(--blue); }
-  .stat-card.yellow::before { background: var(--accent); }
-
-  .stat-label {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: var(--mono);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .stat-value {
-    font-size: 28px;
-    font-weight: 800;
-    font-family: var(--mono);
-    letter-spacing: -1px;
-  }
-
-  .stat-card.purple .stat-value { color: #a78bfa; }
-  .stat-card.green .stat-value  { color: var(--green); }
-  .stat-card.red .stat-value    { color: var(--red); }
-  .stat-card.orange .stat-value { color: #fb923c; }
-  .stat-card.blue .stat-value   { color: #60a5fa; }
-  .stat-card.yellow .stat-value { color: var(--accent); }
-
-  .stat-sub {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: var(--mono);
-    margin-top: 6px;
-  }
-
-  .stat-arrow {
-    font-size: 14px;
-    margin-right: 4px;
-  }
-
-  /* ── FII DII Section ── */
-  .fiidii-section {
-    animation: fadeUp 0.9s ease both;
-    margin-bottom: 40px;
-  }
-
-  .fiidii-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 32px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .fiidii-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(240,180,41,0.05), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .fiidii-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 20px 60px rgba(240,180,41,0.1);
-  }
-
-  .fiidii-card:hover::before { opacity: 1; }
-
-  .fiidii-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 28px;
-  }
-
-  .fiidii-title {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .fiidii-icon {
-    width: 48px; height: 48px;
-    background: rgba(240,180,41,0.15);
-    border: 1px solid rgba(240,180,41,0.3);
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-  }
-
-  .fiidii-title h2 {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--text);
-  }
-
-  .fiidii-title p {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: var(--mono);
-    margin-top: 2px;
-  }
-
-  .fiidii-cta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent);
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 700;
-    font-family: var(--mono);
-    transition: background 0.2s, transform 0.2s;
-  }
-
-  .fiidii-card:hover .fiidii-cta {
-    background: #fbbf24;
-    transform: translateX(4px);
-  }
-
-  .fiidii-metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .fiidii-metric {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
-  }
-
-  .fiidii-metric-label {
-    font-size: 10px;
-    color: var(--muted);
-    font-family: var(--mono);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .fiidii-metric-value {
-    font-size: 22px;
-    font-weight: 800;
-    font-family: var(--mono);
-    letter-spacing: -0.5px;
-  }
-
-  .fiidii-metric-value.pos { color: var(--green); }
-  .fiidii-metric-value.neg { color: var(--red); }
-
-  .fiidii-metric-sub {
-    font-size: 10px;
-    color: var(--muted);
-    font-family: var(--mono);
-    margin-top: 4px;
-  }
-
-  .fiidii-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    font-size: 12px;
-    color: var(--muted);
-    font-family: var(--mono);
-  }
-
-  /* ── Loading skeleton ── */
-  .skeleton {
-    background: linear-gradient(90deg, var(--card) 25%, var(--card2) 50%, var(--card) 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 8px;
-    display: inline-block;
-  }
-
-  @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-
-  /* ── Animations ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── Error state ── */
-  .error-text {
-    color: var(--red);
-    font-family: var(--mono);
-    font-size: 12px;
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 768px) {
-    header { padding: 16px 20px; }
-    main { padding: 24px 16px; }
-    .ticker-bar { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .stats-grid-row2 { grid-template-columns: repeat(2, 1fr); }
-    .stats-grid-row3 { grid-template-columns: 1fr; }
-    .fiidii-metrics { grid-template-columns: 1fr; }
-    .fiidii-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-    .last-updated { display: none; }
-  }
+  @media(max-width:1100px){ .cards-grid{grid-template-columns:repeat(2,1fr)} .stats-mini{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:768px){ :root{--sidebar-w:0px} .sidebar{display:none} .topbar-updated{display:none} }
 </style>
 </head>
 <body>
 
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-
-<!-- ── Header ── -->
-<header>
-  <div class="logo">
-    <div class="logo-icon">📊</div>
-    <div class="logo-text">
-      <h1>Indian Market Dashboard</h1>
-      <p>Institutional Flow &amp; Market Intelligence</p>
+<!-- ═══ TOPBAR ═══ -->
+<header class="topbar">
+  <button class="topbar-logo" onclick="showHome()">
+    <div class="logo-mark">M</div>
+    <div>
+      <div class="logo-text"><span>IN</span> &nbsp;Market Studies</div>
+      <div class="logo-sub">Market Intelligence</div>
     </div>
-  </div>
-  <div class="header-right">
-    <div class="live-badge">
-      <div class="live-dot"></div>
-      LIVE
-    </div>
-    <div class="last-updated" id="lastUpdated">Fetching data…</div>
+  </button>
+  <nav class="topbar-nav">
+    <button class="nav-link active" id="navHome"   onclick="showHome()">Home</button>
+    <button class="nav-link"        id="navDash"   onclick="openDash('/fii_dii_india_flows_dashboard.html','FII &amp; DII Flows')">Dashboards</button>
+    <button class="nav-link"        id="navMarket" onclick="showHome();setTimeout(()=>document.getElementById('market-stats').scrollIntoView({behavior:'smooth'}),100)">Market Stats</button>
+    <button class="nav-link"        id="navAbout"  onclick="showHome();setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}),100)">About</button>
+  </nav>
+  <div class="topbar-right">
+    <div class="live-pill"><div class="live-dot"></div>NSE Live</div>
+    <div class="topbar-updated" id="lastUpdated">—</div>
   </div>
 </header>
 
-<!-- ── Main ── -->
-<main>
+<!-- ═══ SHELL ═══ -->
+<div class="shell">
 
-  <!-- Nifty / BankNifty / VIX -->
-  <div class="section-label">
-    <span>// Market Pulse</span>
-  </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <span class="sidebar-section-label">Dashboards</span>
+      <button class="sidebar-item" id="sb-fiidii" onclick="openDash('/fii_dii_india_flows_dashboard.html','FII &amp; DII Flows')">
+        <span class="sidebar-icon">🏦</span> FII &amp; DII Flows
+      </button>
+      <button class="sidebar-sub" onclick="openDash('/fii_dii_india_flows_dashboard.html','Cash Market Flows')">↳ Cash Market Flows</button>
+      <button class="sidebar-sub" onclick="openDash('/fii_dii_india_flows_dashboard.html','F&amp;O Derivatives')">↳ F&amp;O Derivatives</button>
+      <button class="sidebar-sub" onclick="openDash('/fii_dii_india_flows_dashboard.html','Flow History')">↳ Flow History</button>
+      <button class="sidebar-sub" onclick="openDash('/fii_dii_india_flows_dashboard.html','Sector Allocation')">↳ Sector Allocation</button>
+      <button class="sidebar-sub" onclick="openDash('/fii_dii_india_flows_dashboard.html','Docs')">↳ Docs</button>
+    </div>
 
-  <div class="ticker-bar">
-    <div class="ticker-card">
-      <div class="ticker-left">
-        <div class="ticker-name">NIFTY 50</div>
-        <div class="ticker-price" id="niftyPrice"><span class="skeleton" style="width:120px;height:28px">&nbsp;</span></div>
+    <div class="sidebar-section">
+      <span class="sidebar-section-label">Market Data</span>
+      <button class="sidebar-item" onclick="showHome();setTimeout(()=>document.getElementById('market-stats').scrollIntoView({behavior:'smooth'}),100)">
+        <span class="sidebar-icon">📊</span> Market Statistics
+      </button>
+      <button class="sidebar-item" onclick="showHome();setTimeout(()=>document.getElementById('market-stats').scrollIntoView({behavior:'smooth'}),100)">
+        <span class="sidebar-icon">📈</span> Nifty &amp; VIX
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-section-label">Coming Soon</span>
+      <button class="sidebar-item" style="opacity:0.35;pointer-events:none"><span class="sidebar-icon">🏭</span> Sector Indices</button>
+      <button class="sidebar-item" style="opacity:0.35;pointer-events:none"><span class="sidebar-icon">💰</span> Options Chain</button>
+      <button class="sidebar-item" style="opacity:0.35;pointer-events:none"><span class="sidebar-icon">🌐</span> Global Flows</button>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-section-label" id="about">About</span>
+      <a class="sidebar-item" href="https://github.com/akshaysudevan141-sketch/fii-dii-data" target="_blank">
+        <span class="sidebar-icon">⚙️</span> GitHub Repo
+      </a>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="content-area">
+
+    <!-- ── HOME VIEW ── -->
+    <div id="homeView">
+
+      <!-- Market strip -->
+      <div class="market-strip">
+        <div class="mstrip-card">
+          <div class="mstrip-name">Nifty 50</div>
+          <div class="mstrip-val" id="niftyPrice"><span class="skel" style="width:80px;height:17px;display:inline-block">&nbsp;</span></div>
+          <div class="mstrip-chg" id="niftyChange">—</div>
+        </div>
+        <div class="mstrip-card">
+          <div class="mstrip-name">India VIX</div>
+          <div class="mstrip-val" id="vixPrice"><span class="skel" style="width:55px;height:17px;display:inline-block">&nbsp;</span></div>
+          <div class="mstrip-chg" id="vixChange">—</div>
+        </div>
+        <div class="mstrip-card">
+          <div class="mstrip-name">FII Net (latest)</div>
+          <div class="mstrip-val" id="fiiNetStrip"><span class="skel" style="width:100px;height:17px;display:inline-block">&nbsp;</span></div>
+          <div class="mstrip-chg" style="color:var(--muted);font-family:var(--mono);font-size:9px" id="sessionDateStrip">—</div>
+        </div>
+        <div class="mstrip-card">
+          <div class="mstrip-name">DII Net (latest)</div>
+          <div class="mstrip-val" id="diiNetStrip"><span class="skel" style="width:100px;height:17px;display:inline-block">&nbsp;</span></div>
+          <div class="mstrip-chg" style="color:var(--muted);font-family:var(--mono);font-size:9px">Cash market</div>
+        </div>
       </div>
-      <div class="ticker-right">
-        <div class="ticker-change" id="niftyChange">—</div>
-        <div class="ticker-pct" id="niftyPct">—</div>
+
+      <!-- Filter pills -->
+      <div class="filter-row">
+        <div class="filter-pill active" data-filter="all"         onclick="filterCards('all')">All (5)</div>
+        <div class="filter-pill"        data-filter="flows"       onclick="filterCards('flows')">FII &amp; DII Flows (2)</div>
+        <div class="filter-pill"        data-filter="derivatives" onclick="filterCards('derivatives')">F&amp;O &amp; Derivatives (1)</div>
+        <div class="filter-pill"        data-filter="market"      onclick="filterCards('market')">Market Data (1)</div>
+        <div class="filter-pill"        data-filter="sectors"     onclick="filterCards('sectors')">Sectors (1)</div>
       </div>
-    </div>
-    <div class="ticker-card">
-      <div class="ticker-left">
-        <div class="ticker-name">INDIA VIX</div>
-        <div class="ticker-price" id="vixPrice"><span class="skeleton" style="width:100px;height:28px">&nbsp;</span></div>
+
+      <!-- Section label -->
+      <div class="section-head">
+        <div class="section-tag">// institutional intelligence</div>
+        <div class="section-line"></div>
       </div>
-      <div class="ticker-right">
-        <div class="ticker-change" id="vixChange">—</div>
-        <div class="ticker-pct" id="vixPct">—</div>
-      </div>
-    </div>
-    <div class="ticker-card">
-      <div class="ticker-left">
-        <div class="ticker-name">As of</div>
-        <div class="ticker-price" id="marketDate" style="font-size:16px"><span class="skeleton" style="width:140px;height:28px">&nbsp;</span></div>
-      </div>
-      <div class="ticker-right">
-        <div style="font-size:11px;color:var(--muted);font-family:var(--mono)">Data via<br>NSE India</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Market Statistics -->
-  <div class="section-label">
-    <span>// Market Statistics</span>
-  </div>
+      <!-- Cards -->
+      <div class="cards-grid">
 
-  <div class="stats-grid">
-    <div class="stat-card purple">
-      <div class="stat-label">Stocks Traded</div>
-      <div class="stat-value" id="stocksTraded"><span class="skeleton" style="width:80px;height:32px">&nbsp;</span></div>
-    </div>
-    <div class="stat-card green">
-      <div class="stat-label">Advances</div>
-      <div class="stat-value" id="advances"><span class="skeleton" style="width:80px;height:32px">&nbsp;</span></div>
-    </div>
-    <div class="stat-card red">
-      <div class="stat-label">Declines</div>
-      <div class="stat-value" id="declines"><span class="skeleton" style="width:80px;height:32px">&nbsp;</span></div>
-    </div>
-    <div class="stat-card orange">
-      <div class="stat-label">Unchanged</div>
-      <div class="stat-value" id="unchanged"><span class="skeleton" style="width:80px;height:32px">&nbsp;</span></div>
-    </div>
-  </div>
-
-  <div class="stats-grid-row2">
-    <div class="stat-card green">
-      <div class="stat-label">52 Week High</div>
-      <div class="stat-value" id="high52"><span class="skeleton" style="width:60px;height:32px">&nbsp;</span></div>
-      <div class="stat-sub">↑ stocks</div>
-    </div>
-    <div class="stat-card red">
-      <div class="stat-label">52 Week Low</div>
-      <div class="stat-value" id="low52"><span class="skeleton" style="width:60px;height:32px">&nbsp;</span></div>
-      <div class="stat-sub">↓ stocks</div>
-    </div>
-    <div class="stat-card green">
-      <div class="stat-label">Upper Circuit</div>
-      <div class="stat-value" id="upperCircuit"><span class="skeleton" style="width:60px;height:32px">&nbsp;</span></div>
-      <div class="stat-sub">stocks locked</div>
-    </div>
-    <div class="stat-card red">
-      <div class="stat-label">Lower Circuit</div>
-      <div class="stat-value" id="lowerCircuit"><span class="skeleton" style="width:60px;height:32px">&nbsp;</span></div>
-      <div class="stat-sub">stocks locked</div>
-    </div>
-  </div>
-
-  <div class="stats-grid-row3">
-    <div class="stat-card blue">
-      <div class="stat-label">Registered Investors</div>
-      <div class="stat-value" id="regInvestors" style="font-size:22px"><span class="skeleton" style="width:160px;height:28px">&nbsp;</span></div>
-      <div class="stat-sub">Total demat accounts</div>
-    </div>
-    <div class="stat-card yellow">
-      <div class="stat-label">Market Capitalization</div>
-      <div class="stat-value" id="marketCap" style="font-size:20px"><span class="skeleton" style="width:180px;height:28px">&nbsp;</span></div>
-      <div class="stat-sub" id="marketCapDate">—</div>
-    </div>
-  </div>
-
-  <!-- FII / DII Section -->
-  <div class="section-label">
-    <span>// Institutional Flow</span>
-  </div>
-
-  <div class="fiidii-section">
-    <div class="fiidii-card" onclick="openFiiDii()">
-      <div class="fiidii-header">
-        <div class="fiidii-title">
-          <div class="fiidii-icon">🏦</div>
-          <div>
-            <h2>FII &amp; DII Flow Dashboard</h2>
-            <p>INSTITUTIONAL MONEY MATRIX · CLICK TO EXPLORE FULL DASHBOARD</p>
+        <button class="dash-card featured" data-cat="flows" onclick="openDash('/fii_dii_india_flows_dashboard.html','FII &amp; DII Flows')">
+          <div class="card-top">
+            <div class="card-icon">🏦</div>
+            <div><div class="card-title">FII &amp; DII Flow Dashboard</div><div class="card-sub">Institutional Money Matrix</div></div>
           </div>
+          <div class="card-desc">Latest net buy/sell flows for Foreign &amp; Domestic Institutional Investors. Flow strength meter, 45-day heatmaps and streak trackers.</div>
+          <div class="card-live-val">
+            <div><div class="lv-label">FII Net</div><div class="lv-num neg" id="cardFiiNet">—</div></div>
+            <div style="text-align:right"><div class="lv-label">DII Net</div><div class="lv-num pos" id="cardDiiNet">—</div></div>
+          </div>
+          <div class="card-footer" style="margin-top:12px">
+            <span class="tag tag-source">NSE TRDREQ</span>
+            <span class="tag tag-freq">Daily</span>
+            <span class="tag tag-live">Live API</span>
+          </div>
+        </button>
+
+        <button class="dash-card" data-cat="derivatives" onclick="openDash('/fii_dii_india_flows_dashboard.html','F&amp;O Derivatives')">
+          <div class="card-top">
+            <div class="card-icon">🎲</div>
+            <div><div class="card-title">F&amp;O Derivatives Positioning</div><div class="card-sub">Open Interest Analysis</div></div>
+          </div>
+          <div class="card-desc">Participant-wise OI — FII vs DII across Index Futures, Stock Futures, Index Calls and Index Puts with long/short ratio bars.</div>
+          <div class="card-footer">
+            <span class="tag tag-source">NSE F&amp;O Data</span>
+            <span class="tag tag-freq">Daily</span>
+            <span class="tag tag-fno">Derivatives</span>
+          </div>
+        </button>
+
+        <button class="dash-card" data-cat="flows" onclick="openDash('/fii_dii_india_flows_dashboard.html','Flow History')">
+          <div class="card-top">
+            <div class="card-icon">📈</div>
+            <div><div class="card-title">Flow History &amp; Trends</div><div class="card-sub">Multi-timeframe Archive</div></div>
+          </div>
+          <div class="card-desc">Interactive charts with Daily / Weekly / Monthly / Annual toggles. Full archive with magnitude bars, CSV export and date filtering.</div>
+          <div class="card-footer">
+            <span class="tag tag-source">NSE Historical</span>
+            <span class="tag tag-freq">Daily → Annual</span>
+            <span class="tag tag-cached">Cached Data</span>
+          </div>
+        </button>
+
+        <button class="dash-card" data-cat="market" onclick="showHome();setTimeout(()=>document.getElementById('market-stats').scrollIntoView({behavior:'smooth'}),50)">
+          <div class="card-top">
+            <div class="card-icon">📊</div>
+            <div><div class="card-title">NSE Market Statistics</div><div class="card-sub">Daily Breadth Data</div></div>
+          </div>
+          <div class="card-desc">Advances, declines, stocks traded, 52-week highs/lows, upper/lower circuits, registered investors and total market capitalisation.</div>
+          <div class="card-footer">
+            <span class="tag tag-source">NSE India</span>
+            <span class="tag tag-freq">Daily</span>
+            <span class="tag tag-live">Live + Cached</span>
+          </div>
+        </button>
+
+        <button class="dash-card" data-cat="sectors" onclick="openDash('/fii_dii_india_flows_dashboard.html','Sector Allocation')">
+          <div class="card-top">
+            <div class="card-icon">🌐</div>
+            <div><div class="card-title">FPI Sector Allocation</div><div class="card-sub">NSDL Fortnightly Data</div></div>
+          </div>
+          <div class="card-desc">Sector-wise FPI allocation from NSDL — AUM %, ownership %, sparklines, momentum alpha and 1-year structural flows across 25+ sectors.</div>
+          <div class="card-footer">
+            <span class="tag tag-source">NSDL Reports</span>
+            <span class="tag tag-freq">Fortnightly</span>
+            <span class="tag tag-cached">Cached</span>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- Market Stats -->
+      <div id="market-stats">
+        <div class="section-head">
+          <div class="section-tag">// market breadth · nse india</div>
+          <div class="section-line"></div>
         </div>
-        <div class="fiidii-cta">
-          View Full Dashboard →
+        <div class="stats-mini">
+          <div class="smc g"><div class="smc-label">Advances</div><div class="smc-val" id="advances"><span class="skel" style="width:60px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">↑ stocks</div></div>
+          <div class="smc r"><div class="smc-label">Declines</div><div class="smc-val" id="declines"><span class="skel" style="width:60px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">↓ stocks</div></div>
+          <div class="smc p"><div class="smc-label">Stocks Traded</div><div class="smc-val" id="stocksTraded"><span class="skel" style="width:60px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">total</div></div>
+          <div class="smc b"><div class="smc-label">Unchanged</div><div class="smc-val" id="unchanged"><span class="skel" style="width:40px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">stocks</div></div>
+        </div>
+        <div class="stats-mini">
+          <div class="smc g"><div class="smc-label">52 Week High</div><div class="smc-val" id="high52"><span class="skel" style="width:40px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">↑ stocks</div></div>
+          <div class="smc r"><div class="smc-label">52 Week Low</div><div class="smc-val" id="low52"><span class="skel" style="width:40px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">↓ stocks</div></div>
+          <div class="smc g"><div class="smc-label">Upper Circuit</div><div class="smc-val" id="upperCircuit"><span class="skel" style="width:40px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">locked ↑</div></div>
+          <div class="smc r"><div class="smc-label">Lower Circuit</div><div class="smc-val" id="lowerCircuit"><span class="skel" style="width:40px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">locked ↓</div></div>
+        </div>
+        <div class="stats-mini" style="grid-template-columns:1fr 1fr;margin-bottom:0">
+          <div class="smc b"><div class="smc-label">Registered Investors</div><div class="smc-val" id="regInvestors" style="font-size:16px"><span class="skel" style="width:140px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub">Total demat accounts</div></div>
+          <div class="smc p"><div class="smc-label">Market Cap</div><div class="smc-val" id="marketCap" style="font-size:16px"><span class="skel" style="width:160px;height:20px;display:inline-block">&nbsp;</span></div><div class="smc-sub" id="marketCapDate">—</div></div>
         </div>
       </div>
 
-      <div class="fiidii-metrics">
-        <div class="fiidii-metric">
-          <div class="fiidii-metric-label">FII / FPI Net</div>
-          <div class="fiidii-metric-value" id="fiiNet"><span class="skeleton" style="width:120px;height:26px">&nbsp;</span></div>
-          <div class="fiidii-metric-sub">Cash market</div>
-        </div>
-        <div class="fiidii-metric">
-          <div class="fiidii-metric-label">DII Net</div>
-          <div class="fiidii-metric-value" id="diiNet"><span class="skeleton" style="width:120px;height:26px">&nbsp;</span></div>
-          <div class="fiidii-metric-sub">Cash market</div>
-        </div>
-        <div class="fiidii-metric">
-          <div class="fiidii-metric-label">Last Session</div>
-          <div class="fiidii-metric-value" id="fiiDate" style="font-size:16px;color:var(--text)"><span class="skeleton" style="width:100px;height:26px">&nbsp;</span></div>
-          <div class="fiidii-metric-sub">Trading date</div>
-        </div>
-      </div>
+    </div><!-- end homeView -->
 
-      <div class="fiidii-footer">
-        <span>📡</span>
-        <span>Data fetched directly from NSE · Auto-updates daily at 6 PM IST</span>
-        <span>→</span>
+    <!-- ── DASHBOARD IFRAME VIEW ── -->
+    <div id="dashView">
+      <div class="dash-breadcrumb">
+        <button class="bc-back" onclick="showHome()">← Back</button>
+        <span class="bc-sep">/</span>
+        <span class="bc-current" id="bcTitle">FII &amp; DII Flows</span>
+        <a class="bc-open-new" id="bcOpenNew" href="/fii_dii_india_flows_dashboard.html" target="_blank">↗ Open in new tab</a>
+      </div>
+      <div style="position:relative;flex:1;display:flex;flex-direction:column">
+        <div class="iframe-loader" id="iframeLoader">
+          <div class="loader-spinner"></div>
+          <div class="loader-text">Loading dashboard...</div>
+        </div>
+        <iframe id="dashFrame" src="" onload="iframeLoaded()"></iframe>
       </div>
     </div>
-  </div>
 
-</main>
+  </div><!-- end content-area -->
+</div><!-- end shell -->
 
 <script>
-  // ── Open FII DII full dashboard ──
-  function openFiiDii() {
-    window.location.href = '/fii_dii_india_flows_dashboard.html';
+  function showHome(){
+    document.getElementById('homeView').style.display='block';
+    document.getElementById('homeView').style.animation='fadeUp 0.3s ease both';
+    document.getElementById('dashView').classList.remove('visible');
+    document.getElementById('dashFrame').src='';
+    document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active'));
+    document.getElementById('navHome').classList.add('active');
+    document.querySelectorAll('.sidebar-item').forEach(s=>s.classList.remove('active'));
   }
 
-  // ── Format numbers ──
-  function fmt(n, decimals = 2) {
-    if (n === null || n === undefined || isNaN(n)) return '—';
-    return Number(n).toLocaleString('en-IN', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  function openDash(url,title){
+    document.getElementById('homeView').style.display='none';
+    document.getElementById('dashView').classList.add('visible');
+    document.getElementById('iframeLoader').classList.remove('hidden');
+    document.getElementById('dashFrame').src=url;
+    document.getElementById('bcTitle').innerHTML=title;
+    document.getElementById('bcOpenNew').href=url;
+    document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active'));
+    document.getElementById('navDash').classList.add('active');
+    document.querySelectorAll('.sidebar-item').forEach(s=>s.classList.remove('active'));
+    document.getElementById('sb-fiidii').classList.add('active');
   }
 
-  function fmtCr(n) {
-    if (n === null || n === undefined || isNaN(n)) return '—';
-    const abs = Math.abs(n);
-    const sign = n < 0 ? '-' : '+';
-    if (abs >= 100000) return sign + '₹' + fmt(abs / 100000, 2) + 'L Cr';
-    return sign + '₹' + fmt(abs, 2) + ' Cr';
+  function iframeLoaded(){
+    document.getElementById('iframeLoader').classList.add('hidden');
   }
 
-  // ── Fetch Nifty & VIX from your server ──
-  async function fetchMarket() {
-    try {
-      const res = await fetch('/api/market');
-      const d = await res.json();
-
-      if (d.nifty) {
-        document.getElementById('niftyPrice').textContent = '₹' + fmt(d.nifty.price, 2);
-        const nc = document.getElementById('niftyChange');
-        const isUp = d.nifty.change >= 0;
-        nc.textContent = (isUp ? '+' : '') + fmt(d.nifty.change, 2);
-        nc.className = 'ticker-change ' + (isUp ? 'up' : 'down');
-        document.getElementById('niftyPct').textContent = (isUp ? '▲' : '▼') + ' ' + Math.abs(d.nifty.pct).toFixed(2) + '%';
-      }
-
-      if (d.vix) {
-        document.getElementById('vixPrice').textContent = fmt(d.vix.price, 2);
-        const vc = document.getElementById('vixChange');
-        const isUp = d.vix.change >= 0;
-        vc.textContent = (isUp ? '+' : '') + fmt(d.vix.change, 2);
-        vc.className = 'ticker-change ' + (isUp ? 'up' : 'down');
-        document.getElementById('vixPct').textContent = (isUp ? '▲' : '▼') + ' ' + Math.abs(d.vix.pct).toFixed(2) + '%';
-      }
-    } catch (e) {
-      document.getElementById('niftyPrice').textContent = 'Unavailable';
-      document.getElementById('vixPrice').textContent = 'Unavailable';
-    }
+  function filterCards(cat){
+    document.querySelectorAll('.filter-pill').forEach(p=>p.classList.toggle('active',p.dataset.filter===cat));
+    document.querySelectorAll('.dash-card').forEach(c=>{ c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none'; });
   }
 
-  // ── Fetch FII/DII data from your server ──
-  async function fetchFiiDii() {
-    try {
-      const res = await fetch('/api/data');
-      const d = await res.json();
+  function fmt(n,d=2){ if(n===null||n===undefined||isNaN(n))return'—'; return Number(n).toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+  function fmtCr(n){ if(n===null||n===undefined||isNaN(n))return'—'; const abs=Math.abs(n),sign=n<0?'-':'+'; if(abs>=100000)return sign+'₹'+fmt(abs/100000,2)+'L Cr'; return sign+'₹'+fmt(abs,2)+' Cr'; }
+  function setText(id,val){ const el=document.getElementById(id); if(el)el.textContent=val; }
 
-      const fiiNet = parseFloat(d.fii_net);
-      const diiNet = parseFloat(d.dii_net);
-
-      const fiiEl = document.getElementById('fiiNet');
-      fiiEl.textContent = fmtCr(fiiNet);
-      fiiEl.className = 'fiidii-metric-value ' + (fiiNet >= 0 ? 'pos' : 'neg');
-
-      const diiEl = document.getElementById('diiNet');
-      diiEl.textContent = fmtCr(diiNet);
-      diiEl.className = 'fiidii-metric-value ' + (diiNet >= 0 ? 'pos' : 'neg');
-
-      document.getElementById('fiiDate').textContent = d.date || '—';
-      document.getElementById('marketDate').textContent = d.date || '—';
-
-      // Update last updated
-      const updated = d._updated_at || new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-      document.getElementById('lastUpdated').textContent = 'Updated: ' + updated;
-
-    } catch (e) {
-      document.getElementById('fiiNet').textContent = 'Error';
-      document.getElementById('diiNet').textContent = 'Error';
-    }
+  async function fetchMarket(){
+    try{
+      const d=await fetch('/api/market').then(r=>r.json());
+      if(d.nifty){ const up=d.nifty.change>=0; setText('niftyPrice','₹'+fmt(d.nifty.price,2)); const nc=document.getElementById('niftyChange'); if(nc){nc.textContent=(up?'+':'')+fmt(d.nifty.change,2)+' ('+(up?'+':'')+d.nifty.pct.toFixed(2)+'%)';nc.className='mstrip-chg '+(up?'up':'down');} }
+      if(d.vix){ const up=d.vix.change>=0; setText('vixPrice',fmt(d.vix.price,2)); const vc=document.getElementById('vixChange'); if(vc){vc.textContent=(up?'+':'')+fmt(d.vix.change,2)+' ('+(up?'+':'')+d.vix.pct.toFixed(2)+'%)';vc.className='mstrip-chg '+(up?'up':'down');} }
+    }catch(e){setText('niftyPrice','N/A');setText('vixPrice','N/A');}
   }
 
-  // ── Fetch NSE Market Statistics ──
-  async function fetchNSEStats() {
-    try {
-      const res = await fetch('https://www.nseindia.com/api/market-data-pre-open?key=ALL', {
-        headers: { 'User-Agent': 'Mozilla/5.0' }
-      });
-      // NSE blocks browser direct calls — use your server proxy below
-    } catch(e) {}
-
-    // Use hardcoded latest known stats as fallback (updated via GitHub Actions later)
-    // For now showing realistic sample data — you can add a server route for this
-    const sample = {
-      stocksTraded: '3,325',
-      advances: '1,884',
-      declines: '1,337',
-      unchanged: '104',
-      high52: '26',
-      low52: '232',
-      upperCircuit: '85',
-      lowerCircuit: '73',
-      regInvestors: '25,39,83,170',
-      marketCap: '₹427.51 Lac Cr | $4.58 Tn',
-      marketCapDate: '20-Mar-2026'
-    };
-
-    document.getElementById('stocksTraded').textContent = sample.stocksTraded;
-    document.getElementById('advances').textContent = sample.advances;
-    document.getElementById('declines').textContent = sample.declines;
-    document.getElementById('unchanged').textContent = sample.unchanged;
-    document.getElementById('high52').textContent = sample.high52;
-    document.getElementById('low52').textContent = sample.low52;
-    document.getElementById('upperCircuit').textContent = sample.upperCircuit;
-    document.getElementById('lowerCircuit').textContent = sample.lowerCircuit;
-    document.getElementById('regInvestors').textContent = sample.regInvestors;
-    document.getElementById('marketCap').textContent = sample.marketCap;
-    document.getElementById('marketCapDate').textContent = 'As of ' + sample.marketCapDate;
+  async function fetchFiiDii(){
+    try{
+      const d=await fetch('/api/data').then(r=>r.json());
+      const fii=parseFloat(d.fii_net),dii=parseFloat(d.dii_net);
+      const fs=document.getElementById('fiiNetStrip'); if(fs){fs.textContent=fmtCr(fii);fs.style.color=fii>=0?'var(--green)':'var(--red)';}
+      const ds=document.getElementById('diiNetStrip'); if(ds){ds.textContent=fmtCr(dii);ds.style.color=dii>=0?'var(--green)':'var(--red)';}
+      setText('sessionDateStrip',d.date||'—');
+      const cf=document.getElementById('cardFiiNet'); if(cf){cf.textContent=fmtCr(fii);cf.className='lv-num '+(fii>=0?'pos':'neg');}
+      const cd=document.getElementById('cardDiiNet'); if(cd){cd.textContent=fmtCr(dii);cd.className='lv-num '+(dii>=0?'pos':'neg');}
+      setText('lastUpdated','Updated: '+(d._updated_at||new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})));
+    }catch(e){}
   }
 
-  // ── Init ──
-  fetchMarket();
-  fetchFiiDii();
-  fetchNSEStats();
+  async function fetchNSEStats(){
+    try{
+      const res=await fetch('/api/market-stats');
+      if(res.ok){ const s=await res.json(); if(s&&s.stocksTraded){ setText('stocksTraded',s.stocksTraded.toLocaleString()); setText('advances',s.advances.toLocaleString()); setText('declines',s.declines.toLocaleString()); setText('unchanged',s.unchanged.toLocaleString()); setText('high52',s.high52); setText('low52',s.low52); setText('upperCircuit',s.upperCircuit); setText('lowerCircuit',s.lowerCircuit); setText('regInvestors',s.regInvestors); setText('marketCap',s.marketCapLacCr?'₹'+fmt(s.marketCapLacCr,2)+' Lac Cr':'—'); setText('marketCapDate','As of '+(s.asOnDate||'—')); return; } }
+    }catch(e){}
+    const s={stocksTraded:'3,325',advances:'1,884',declines:'1,337',unchanged:'104',high52:'26',low52:'232',upperCircuit:'85',lowerCircuit:'73',regInvestors:'25,39,83,170',marketCap:'₹427.51 Lac Cr',marketCapDate:'20-Mar-2026'};
+    ['stocksTraded','advances','declines','unchanged','high52','low52','upperCircuit','lowerCircuit','regInvestors','marketCap'].forEach(k=>setText(k,s[k]));
+    setText('marketCapDate','As of '+s.marketCapDate);
+  }
 
-  // Refresh every 5 minutes
-  setInterval(fetchMarket, 5 * 60 * 1000);
-  setInterval(fetchFiiDii, 5 * 60 * 1000);
+  fetchMarket(); fetchFiiDii(); fetchNSEStats();
+  setInterval(fetchMarket,5*60*1000); setInterval(fetchFiiDii,5*60*1000);
 </script>
 </body>
 </html>
