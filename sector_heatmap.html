@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sector Rotation Matrix · Market Studies</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════════
+   MARKET STUDIES — Sector Rotation Matrix
+   Smooth · Dense · Professional · Dark
+═══════════════════════════════════════════════════ */
+:root {
+  --bg:       #0b0e11;
+  --bg2:      #0f1318;
+  --bg3:      #141920;
+  --panel:    #181e28;
+  --panel2:   #1c2332;
+  --line:     #1f2937;
+  --line2:    #263040;
+  --text:     #e4e9f0;
+  --text2:    #8b99b0;
+  --text3:    #505c6e;
+  --accent:   #3b82f6;
+  --accentg:  #10b981;
+  --up:       #10b981;
+  --down:     #f43f5e;
+  --warm:     #f59e0b;
+  --mono:     'DM Mono', monospace;
+  --sans:     'Outfit', sans-serif;
+
+  /* Heat stops */
+  --h5bg: rgba(16,185,129,.20); --h5tx: #10b981;
+  --h4bg: rgba(16,185,129,.11); --h4tx: #34d399;
+  --h3bg: rgba(16,185,129,.05); --h3tx: #6ee7b7;
+  --h0bg: transparent;          --h0tx: #505c6e;
+  --c3bg: rgba(244,63,94,.05);  --c3tx: #fb923c;
+  --c4bg: rgba(244,63,94,.12);  --c4tx: #f43f5e;
+  --c5bg: rgba(244,63,94,.22);  --c5tx: #fb2c4b;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scrollbar-width:thin; scrollbar-color: var(--line2) var(--bg); }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Noise grain overlay ── */
+body::after {
+  content:'';
+  position:fixed; inset:0; z-index:999;
+  pointer-events:none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.4;
+}
+
+/* ════════════════════════════════════
+   HEADER
+════════════════════════════════════ */
+header {
+  position:sticky; top:0; z-index:200;
+  background: rgba(11,14,17,.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 28px;
+  height:52px;
+}
+
+.brand {
+  display:flex; align-items:center; gap:12px;
+  text-decoration:none;
+}
+.brand-mark {
+  width:32px; height:32px;
+  background: linear-gradient(135deg, var(--accent), #6366f1);
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; font-weight:800;
+  color:#fff; font-family:var(--sans);
+  letter-spacing:-.5px;
+  flex-shrink:0;
+}
+.brand-text {
+  display:flex; flex-direction:column; gap:1px;
+}
+.brand-name {
+  font-size:14px; font-weight:700;
+  color:var(--text); letter-spacing:-.2px;
+}
+.brand-sub {
+  font-size:10px; color:var(--text3);
+  font-family:var(--mono); letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.header-center {
+  position:absolute; left:50%; transform:translateX(-50%);
+  display:flex; align-items:center; gap:6px;
+}
+.page-pill {
+  background: var(--panel);
+  border: 1px solid var(--line2);
+  border-radius:20px;
+  padding:5px 14px;
+  font-size:11px; font-family:var(--mono);
+  color:var(--text2); letter-spacing:.06em;
+  display:flex; align-items:center; gap:8px;
+}
+.page-pill span.label { color:var(--text); font-weight:500; }
+
+.header-right {
+  display:flex; align-items:center; gap:10px;
+}
+
+.hdr-btn {
+  display:flex; align-items:center; gap:6px;
+  background:var(--panel); border:1px solid var(--line2);
+  color:var(--text2); font-family:var(--mono); font-size:11px;
+  padding:6px 12px; border-radius:7px;
+  cursor:pointer; transition:all .18s;
+  text-decoration:none; letter-spacing:.04em;
+}
+.hdr-btn:hover { border-color:var(--accent); color:var(--accent); }
+
+.live-pill {
+  display:flex; align-items:center; gap:7px;
+  background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.2);
+  padding:5px 12px; border-radius:20px;
+  font-family:var(--mono); font-size:11px;
+  color:var(--accentg); letter-spacing:.06em;
+}
+.live-dot { width:6px; height:6px; border-radius:50%; background:var(--accentg); animation:blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ════════════════════════════════════
+   LAYOUT
+════════════════════════════════════ */
+.wrap {
+  max-width:1320px; margin:0 auto;
+  padding:28px 28px 80px;
+}
+
+/* ════════════════════════════════════
+   TOP BAND — title + controls
+════════════════════════════════════ */
+.top-band {
+  display:flex; align-items:flex-end; justify-content:space-between;
+  flex-wrap:wrap; gap:16px;
+  margin-bottom:24px;
+  animation: rise .4s ease both;
+}
+
+.page-title {
+  font-size:22px; font-weight:700; letter-spacing:-.4px;
+  color:var(--text);
+  margin-bottom:4px;
+}
+.page-desc {
+  font-size:12px; color:var(--text3);
+  font-family:var(--mono); letter-spacing:.04em;
+}
+.page-desc b { color:var(--text2); font-weight:400; }
+
+.controls-row {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+}
+
+/* Segmented control */
+.seg {
+  display:flex;
+  background:var(--panel); border:1px solid var(--line);
+  border-radius:8px; overflow:hidden;
+}
+.seg-btn {
+  padding:6px 13px;
+  font-size:11px; font-family:var(--mono); letter-spacing:.04em;
+  color:var(--text3); background:transparent; border:none;
+  cursor:pointer; transition:all .15s;
+}
+.seg-btn.on {
+  background:var(--panel2);
+  color:var(--text); font-weight:500;
+}
+.seg-btn:hover:not(.on) { color:var(--text2); }
+
+.ctrl-sep { width:1px; height:22px; background:var(--line); margin:0 4px; }
+
+/* Sort-by tf pills */
+.tf-pills { display:flex; gap:5px; }
+.tf-pill {
+  padding:5px 12px;
+  font-size:11px; font-family:var(--mono); letter-spacing:.04em;
+  color:var(--text3); background:var(--panel); border:1px solid var(--line);
+  border-radius:6px; cursor:pointer; transition:all .15s;
+}
+.tf-pill.on {
+  background:rgba(59,130,246,.12);
+  border-color:rgba(59,130,246,.4);
+  color:var(--accent);
+}
+.tf-pill:hover:not(.on) { border-color:var(--line2); color:var(--text2); }
+
+/* ════════════════════════════════════
+   SUMMARY STRIP
+════════════════════════════════════ */
+.summary-strip {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:10px;
+  margin-bottom:18px;
+  animation: rise .45s .05s ease both;
+}
+
+.scard {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  position:relative; overflow:hidden;
+  transition: border-color .2s;
+}
+.scard:hover { border-color:var(--line2); }
+.scard::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  border-radius:2px 2px 0 0;
+}
+.scard.c-today::before  { background: linear-gradient(90deg, var(--warm), #fbbf24); }
+.scard.c-week::before   { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+.scard.c-month::before  { background: linear-gradient(90deg, var(--accent), #60a5fa); }
+.scard.c-month3::before { background: linear-gradient(90deg, var(--accentg), #34d399); }
+
+.scard-label {
+  font-size:9px; font-family:var(--mono); color:var(--text3);
+  letter-spacing:.12em; text-transform:uppercase;
+  margin-bottom:10px;
+}
+.sleader {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:5px;
+}
+.sleader-name { font-size:12px; font-weight:600; color:var(--text); }
+.sleader-val  { font-family:var(--mono); font-size:11px; font-weight:500; }
+.sleader-val.up  { color:var(--up); }
+.sleader-val.dn  { color:var(--down); }
+.scard-divider { height:1px; background:var(--line); margin:6px 0; }
+.scard-sub {
+  font-size:10px; color:var(--text3); font-family:var(--mono);
+  display:flex; justify-content:space-between;
+}
+.scard-sub span.bad { color:var(--down); }
+
+/* ════════════════════════════════════
+   STATS BAR (advances/declines row)
+════════════════════════════════════ */
+.stats-bar {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 20px;
+  display:flex; align-items:center; gap:28px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+  animation: rise .45s .08s ease both;
+}
+.sb-item { display:flex; align-items:center; gap:8px; }
+.sb-dot  { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.sb-dot.up   { background:var(--up); }
+.sb-dot.dn   { background:var(--down); }
+.sb-dot.flat { background:var(--text3); }
+.sb-label { font-size:11px; color:var(--text3); font-family:var(--mono); letter-spacing:.04em; }
+.sb-val   { font-size:13px; font-weight:700; font-family:var(--mono); }
+.sb-val.up { color:var(--up); }
+.sb-val.dn { color:var(--down); }
+.sb-val.flat { color:var(--text3); }
+.sb-sep   { width:1px; height:18px; background:var(--line); }
+
+/* Progress bar */
+.sb-prog-wrap { flex:1; min-width:120px; }
+.sb-prog-bar {
+  height:4px; background:var(--line); border-radius:4px; overflow:hidden;
+}
+.sb-prog-fill {
+  height:100%;
+  background:linear-gradient(90deg, var(--up), var(--accent));
+  border-radius:4px; transition:width .6s ease;
+}
+
+/* ════════════════════════════════════
+   MAIN HEATMAP TABLE
+════════════════════════════════════ */
+.matrix-wrap {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  animation: rise .5s .1s ease both;
+  margin-bottom:18px;
+}
+
+/* Header row */
+.mx-head {
+  display:grid;
+  grid-template-columns: 150px repeat(4, 1fr);
+  background:var(--bg3);
+  border-bottom: 1px solid var(--line);
+}
+.mx-th {
+  padding:10px 16px;
+  font-size:9px; font-family:var(--mono);
+  color:var(--text3); letter-spacing:.14em; text-transform:uppercase;
+  border-right:1px solid var(--line);
+  display:flex; align-items:center; gap:5px;
+  cursor:pointer; user-select:none;
+  transition:color .15s, background .15s;
+}
+.mx-th:last-child { border-right:none; }
+.mx-th:hover { color:var(--text2); background:rgba(255,255,255,.02); }
+.mx-th.active { color:var(--accent); }
+.sort-icon { font-size:10px; opacity:.6; }
+
+/* Data rows */
+.mx-body {}
+.mx-row {
+  display:grid;
+  grid-template-columns: 150px repeat(4, 1fr);
+  border-bottom:1px solid rgba(31,41,55,.5);
+  transition:background .12s;
+}
+.mx-row:last-child { border-bottom:none; }
+.mx-row:hover { background:rgba(255,255,255,.02); }
+
+.mx-name {
+  padding:11px 16px;
+  font-size:13px; font-weight:500; color:var(--text);
+  border-right:1px solid var(--line);
+  display:flex; align-items:center;
+  white-space:nowrap;
+}
+
+.mx-cell {
+  padding:11px 0;
+  font-family:var(--mono); font-size:12px; font-weight:500;
+  border-right:1px solid rgba(31,41,55,.4);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; transition:background .15s;
+  letter-spacing:.02em;
+}
+.mx-cell:last-child { border-right:none; }
+.mx-cell.na { color:var(--text3); font-size:11px; }
+
+/* Heat classes */
+.h5 { background:var(--h5bg); color:var(--h5tx); }
+.h4 { background:var(--h4bg); color:var(--h4tx); }
+.h3 { background:var(--h3bg); color:var(--h3tx); }
+.h0 { background:var(--h0bg); color:var(--h0tx); }
+.c3 { background:var(--c3bg); color:var(--c3tx); }
+.c4 { background:var(--c4bg); color:var(--c4tx); }
+.c5 { background:var(--c5bg); color:var(--c5tx); }
+
+/* ── Rank badge on name col ── */
+.rank-badge {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:18px; height:18px; border-radius:4px;
+  font-family:var(--mono); font-size:9px; font-weight:700;
+  margin-right:8px; flex-shrink:0;
+  background:var(--bg3); color:var(--text3);
+}
+.rank-badge.gold   { background:rgba(245,158,11,.15); color:var(--warm); }
+.rank-badge.silver { background:rgba(148,163,184,.1); color:#94a3b8; }
+.rank-badge.bronze { background:rgba(180,83,9,.12);   color:#c2773a; }
+
+/* ════════════════════════════════════
+   LEGEND STRIP
+════════════════════════════════════ */
+.legend-strip {
+  display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+  padding:10px 16px;
+  background:var(--bg3);
+  border:1px solid var(--line);
+  border-radius:8px;
+  margin-bottom:28px;
+  font-size:10px; font-family:var(--mono); color:var(--text3);
+  animation: rise .5s .12s ease both;
+}
+.leg { padding:3px 9px; border-radius:4px; font-size:10px; font-weight:500; }
+
+/* ════════════════════════════════════
+   BOTTOM PANEL — mini bar charts
+════════════════════════════════════ */
+.bottom-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:10px; margin-bottom:28px;
+  animation: rise .5s .15s ease both;
+}
+
+.bar-panel {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:18px 20px;
+}
+.bp-head {
+  display:flex; justify-content:space-between; align-items:baseline;
+  margin-bottom:14px;
+}
+.bp-title { font-size:12px; font-weight:600; color:var(--text); letter-spacing:-.1px; }
+.bp-sub   { font-size:10px; color:var(--text3); font-family:var(--mono); }
+
+.bar-list { display:flex; flex-direction:column; gap:7px; }
+.bar-item {
+  display:grid; align-items:center;
+  grid-template-columns: 90px 1fr 48px;
+  gap:10px;
+}
+.bar-name  { font-size:11px; color:var(--text2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.bar-track { height:6px; background:var(--bg3); border-radius:3px; overflow:hidden; }
+.bar-fill  { height:100%; border-radius:3px; transition:width .5s ease; }
+.bar-fill.pos { background:linear-gradient(90deg, #059669, #10b981); }
+.bar-fill.neg { background:linear-gradient(90deg, #f43f5e, #fb7185); }
+.bar-pct   { font-family:var(--mono); font-size:11px; text-align:right; }
+.bar-pct.pos { color:var(--up); }
+.bar-pct.neg { color:var(--down); }
+
+/* ════════════════════════════════════
+   FOOTER
+════════════════════════════════════ */
+footer {
+  border-top:1px solid var(--line);
+  padding:16px 28px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:12px;
+  font-size:11px; font-family:var(--mono); color:var(--text3);
+}
+footer a { color:var(--text3); text-decoration:none; }
+footer a:hover { color:var(--text2); }
+
+/* ════════════════════════════════════
+   SKELETON
+════════════════════════════════════ */
+.sk {
+  display:inline-block; border-radius:4px;
+  background:linear-gradient(90deg, var(--panel) 0%, var(--panel2) 50%, var(--panel) 100%);
+  background-size:200% 100%;
+  animation:sk 1.4s linear infinite;
+}
+@keyframes sk { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* ════════════════════════════════════
+   ANIMATIONS
+════════════════════════════════════ */
+@keyframes rise {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:none; }
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════ */
+@media(max-width:900px) {
+  .wrap { padding:18px 16px 60px; }
+  .mx-head, .mx-row { grid-template-columns: 120px repeat(4,1fr); }
+  .mx-name { font-size:12px; padding:10px 12px; }
+  .mx-cell { font-size:11px; }
+  .summary-strip { grid-template-columns:1fr 1fr; }
+  .bottom-grid   { grid-template-columns:1fr; }
+  .header-center { display:none; }
+}
+@media(max-width:560px) {
+  .summary-strip { grid-template-columns:1fr; }
+  .mx-head, .mx-row { grid-template-columns: 96px repeat(4,1fr); }
+  .mx-th, .mx-name { font-size:10px; padding:9px 8px; }
+  .mx-cell { font-size:10px; padding:9px 4px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header>
+  <a href="index.html" class="brand">
+    <div class="brand-mark">MS</div>
+    <div class="brand-text">
+      <div class="brand-name">Market Studies</div>
+      <div class="brand-sub">Sector Intelligence</div>
+    </div>
+  </a>
+
+  <div class="header-center">
+    <div class="page-pill">
+      <span class="label">Sector Rotation Matrix</span>
+      <span>·</span>
+      <span id="hdrDate">—</span>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <a href="index.html" class="hdr-btn">← Dashboard</a>
+    <div class="live-pill"><div class="live-dot"></div>LIVE</div>
+  </div>
+</header>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<div class="wrap">
+
+  <!-- Top band -->
+  <div class="top-band">
+    <div>
+      <div class="page-title">Sector Rotation Matrix</div>
+      <div class="page-desc">
+        NSE · <b>26 Sectors</b> · Returns across <b>Today · 1W · 1M · 3M</b> · Sorted by performance
+      </div>
+    </div>
+    <div class="controls-row">
+      <!-- Sort direction -->
+      <div class="seg" id="segSort">
+        <button class="seg-btn on" onclick="setSort('desc',this)">↓ Best First</button>
+        <button class="seg-btn"   onclick="setSort('asc',this)">↑ Worst First</button>
+        <button class="seg-btn"   onclick="setSort('alpha',this)">A–Z</button>
+      </div>
+      <div class="ctrl-sep"></div>
+      <!-- Sort by TF -->
+      <div class="tf-pills" id="tfPills">
+        <button class="tf-pill on" onclick="setSortTf('1d',this)">Today</button>
+        <button class="tf-pill"   onclick="setSortTf('1w',this)">1 Week</button>
+        <button class="tf-pill"   onclick="setSortTf('1m',this)">1 Month</button>
+        <button class="tf-pill"   onclick="setSortTf('3m',this)">3 Month</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary strip -->
+  <div class="summary-strip" id="summaryStrip">
+    <div class="scard c-today">
+      <div class="scard-label">Today — Leaders</div>
+      <div id="sum1d"><span class="sk" style="width:100%;height:12px;display:block">&nbsp;</span></div>
+    </div>
+    <div class="scard c-week">
+      <div class="scard-label">1 Week — Leaders</div>
+      <div id="sum1w"><span class="sk" style="width:100%;height:12px;display:block">&nbsp;</span></div>
+    </div>
+    <div class="scard c-month">
+      <div class="scard-label">1 Month — Leaders</div>
+      <div id="sum1m"><span class="sk" style="width:100%;height:12px;display:block">&nbsp;</span></div>
+    </div>
+    <div class="scard c-month3">
+      <div class="scard-label">3 Month — Leaders</div>
+      <div id="sum3m"><span class="sk" style="width:100%;height:12px;display:block">&nbsp;</span></div>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="stats-bar" id="statsBar">
+    <div class="sb-item">
+      <div class="sb-dot up"></div>
+      <span class="sb-label">Advancing</span>
+      <span class="sb-val up" id="sbAdv">—</span>
+    </div>
+    <div class="sb-sep"></div>
+    <div class="sb-item">
+      <div class="sb-dot dn"></div>
+      <span class="sb-label">Declining</span>
+      <span class="sb-val dn" id="sbDec">—</span>
+    </div>
+    <div class="sb-sep"></div>
+    <div class="sb-item">
+      <div class="sb-dot flat"></div>
+      <span class="sb-label">Flat</span>
+      <span class="sb-val flat" id="sbFlat">—</span>
+    </div>
+    <div class="sb-sep"></div>
+    <div class="sb-prog-wrap">
+      <div class="sb-prog-bar">
+        <div class="sb-prog-fill" id="sbProg" style="width:50%"></div>
+      </div>
+    </div>
+    <span class="sb-label" id="sbBreadth" style="margin-left:6px">—</span>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend-strip">
+    <span style="margin-right:4px;color:var(--text2)">HEAT KEY</span>
+    <span class="leg" style="background:var(--h5bg);color:var(--h5tx)">&gt; +3%</span>
+    <span class="leg" style="background:var(--h4bg);color:var(--h4tx)">+1 to +3%</span>
+    <span class="leg" style="background:var(--h3bg);color:var(--h3tx)">0 to +1%</span>
+    <span class="leg" style="background:var(--h0bg);border:1px solid var(--line);color:var(--text3)">0%</span>
+    <span class="leg" style="background:var(--c3bg);color:var(--c3tx)">0 to −1%</span>
+    <span class="leg" style="background:var(--c4bg);color:var(--c4tx)">−1 to −3%</span>
+    <span class="leg" style="background:var(--c5bg);color:var(--c5tx)">&lt; −3%</span>
+    <span style="margin-left:auto;font-size:10px">Data: NSE India · Auto-updated after market close</span>
+  </div>
+
+  <!-- Matrix table -->
+  <div class="matrix-wrap">
+    <div class="mx-head">
+      <div class="mx-th">Sector</div>
+      <div class="mx-th active" id="th1d" onclick="setSortTf('1d',null)">Today <span class="sort-icon" id="si1d">↓</span></div>
+      <div class="mx-th" id="th1w" onclick="setSortTf('1w',null)">1 Week <span class="sort-icon" id="si1w"></span></div>
+      <div class="mx-th" id="th1m" onclick="setSortTf('1m',null)">1 Month <span class="sort-icon" id="si1m"></span></div>
+      <div class="mx-th" id="th3m" onclick="setSortTf('3m',null)">3 Month <span class="sort-icon" id="si3m"></span></div>
+    </div>
+    <div class="mx-body" id="mxBody">
+      <!-- skeleton -->
+      <div id="mxSkel"></div>
+    </div>
+  </div>
+
+  <!-- Bottom bar charts -->
+  <div class="bottom-grid" id="bottomGrid">
+    <div class="bar-panel">
+      <div class="bp-head">
+        <div class="bp-title">Top Performers — Today</div>
+        <div class="bp-sub">Best 8 sectors</div>
+      </div>
+      <div class="bar-list" id="barTop"></div>
+    </div>
+    <div class="bar-panel">
+      <div class="bp-head">
+        <div class="bp-title">Worst Performers — Today</div>
+        <div class="bp-sub">Bottom 8 sectors</div>
+      </div>
+      <div class="bar-list" id="barBot"></div>
+    </div>
+  </div>
+
+</div><!-- /.wrap -->
+
+<footer>
+  <span>© Market Studies · Sector Rotation Matrix</span>
+  <span id="ftUpdated">Data source: NSE India</span>
+  <a href="index.html">← Back to Dashboard</a>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+   JAVASCRIPT
+══════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let sortDir = 'desc';
+let sortTf  = '1d';
+let DATA    = [];   // [{name, r1d, r1w, r1m, r3m}]
+
+// ═══════════════════════════════════════════
+// SKELETON ROWS
+// ═══════════════════════════════════════════
+const skel = document.getElementById('mxSkel');
+skel.innerHTML = Array.from({length:12}, (_,i) => `
+  <div class="mx-row">
+    <div class="mx-name"><span class="sk" style="width:${60+Math.random()*40|0}px;height:12px">&nbsp;</span></div>
+    ${[0,1,2,3].map(()=>`<div class="mx-cell"><span class="sk" style="width:44px;height:12px">&nbsp;</span></div>`).join('')}
+  </div>`).join('');
+
+// ═══════════════════════════════════════════
+// FALLBACK DATA  (matches your screenshot values)
+// Replace automatically when data/sector-returns.json exists
+// ═══════════════════════════════════════════
+const FALLBACK = [
+  { name:'IT',            r1d: 2.2,  r1w: 0.4,  r1m:-19.5, r3m: 12.6 },
+  { name:'PSUBank',       r1d: 2.1,  r1w: 0.8,  r1m:  8.9, r3m: 13.4 },
+  { name:'Pharma',        r1d: 2.0,  r1w:-1.3,  r1m:  5.7, r3m:  5.9 },
+  { name:'Healthcare',    r1d: 1.9,  r1w:-1.5,  r1m:  7.0, r3m:  3.5 },
+  { name:'MidSml Health', r1d: 1.6,  r1w:-1.2,  r1m:  6.0, r3m:  4.8 },
+  { name:'Metal',         r1d: 1.5,  r1w: 1.1,  r1m:  3.5, r3m: 11.3 },
+  { name:'Commodities',   r1d: 1.3,  r1w: 0.5,  r1m:  3.2, r3m:  5.9 },
+  { name:'Banking',       r1d: 1.2,  r1w: 0.6,  r1m:  3.1, r3m:  4.1 },
+  { name:'Finance',       r1d: 1.1,  r1w: 0.4,  r1m:  2.8, r3m:  3.6 },
+  { name:'Power',         r1d: 1.0,  r1w: 0.0,  r1m:  9.0, r3m: -3.2 },
+  { name:'Infra',         r1d: 1.0,  r1w: 0.4,  r1m:  4.1, r3m:  6.8 },
+  { name:'Midcap Select', r1d: 0.9,  r1w: 0.2,  r1m:  2.0, r3m:  3.2 },
+  { name:'Auto',          r1d: 0.8,  r1w: 2.2,  r1m:  5.3, r3m:  6.2 },
+  { name:'Cons Durables', r1d: 0.7,  r1w:-0.8,  r1m:  9.3, r3m: -1.0 },
+  { name:'SmallCap100',   r1d: 0.7,  r1w: 0.1,  r1m:  1.8, r3m:  2.9 },
+  { name:'Consumption',   r1d: 0.6,  r1w: 0.9,  r1m:  0.6, r3m:  1.9 },
+  { name:'PSE',           r1d: 0.6,  r1w:-1.9,  r1m:  2.8, r3m:  0.5 },
+  { name:'Cap Goods',     r1d: 0.4,  r1w: 0.3,  r1m:  1.2, r3m:  2.8 },
+  { name:'FMCG',          r1d: 0.3,  r1w:-1.9,  r1m: -0.1, r3m:  1.4 },
+  { name:'OilGas',        r1d: 0.3,  r1w:-3.3,  r1m:  5.3, r3m:  6.7 },
+  { name:'Energy',        r1d: 0.6,  r1w:-0.5,  r1m:  5.4, r3m:  0.9 },
+  { name:'Service',       r1d: 0.0,  r1w:-0.8,  r1m: -2.4, r3m:  5.7 },
+  { name:'Media',         r1d:-0.5,  r1w: 0.3,  r1m:  2.2, r3m: -6.4 },
+  { name:'PVTBank',       r1d:-0.6,  r1w:-1.2,  r1m:  0.2, r3m:  8.5 },
+  { name:'Defence',       r1d:-0.7,  r1w:-2.4,  r1m: -0.7, r3m: -1.3 },
+  { name:'Realty',        r1d:-0.9,  r1w:-1.9,  r1m: -0.3, r3m:  1.2 },
+];
+
+// ═══════════════════════════════════════════
+// FETCH
+// ═══════════════════════════════════════════
+async function init() {
+  // Try your repo's data file first
+  try {
+    const r = await fetch('data/sector-returns.json');
+    if (r.ok) {
+      const j = await r.json();
+      if (j.sectors?.length) {
+        DATA = j.sectors;
+        document.getElementById('ftUpdated').textContent =
+          'NSE India · Updated: ' + (j._updated_at ? new Date(j._updated_at).toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}) : '—');
+      }
+    }
+  } catch(e) {}
+
+  // Also try your existing FII/DII data for the date
+  try {
+    const r = await fetch('data/latest.json');
+    if (r.ok) {
+      const j = await r.json();
+      if (j.date) {
+        document.getElementById('hdrDate').textContent = j.date;
+      }
+    }
+  } catch(e) {}
+
+  if (!DATA.length) DATA = FALLBACK;
+
+  skel.remove();
+  render();
+}
+
+// ═══════════════════════════════════════════
+// HEAT CLASS
+// ═══════════════════════════════════════════
+function hc(v) {
+  if (v == null || isNaN(v)) return 'na';
+  if (v >=  3) return 'h5';
+  if (v >=  1) return 'h4';
+  if (v >   0) return 'h3';
+  if (v ===0 ) return 'h0';
+  if (v > -1)  return 'c3';
+  if (v > -3)  return 'c4';
+  return 'c5';
+}
+
+function fp(v, decimals=1) {
+  if (v == null || isNaN(v)) return 'N/A';
+  return (v>=0?'+':'')+v.toFixed(decimals)+'%';
+}
+
+// ═══════════════════════════════════════════
+// SORT
+// ═══════════════════════════════════════════
+function keyOf(tf) { return {1d:'r1d',1w:'r1w',1m:'r1m',3m:'r3m','1d':'r1d','1w':'r1w','1m':'r1m','3m':'r3m'}[tf]||'r1d'; }
+
+function sorted() {
+  const arr = [...DATA];
+  if (sortDir==='alpha') return arr.sort((a,b)=>a.name.localeCompare(b.name));
+  const k = keyOf(sortTf);
+  return arr.sort((a,b) => sortDir==='desc'
+    ? (b[k]??-999)-(a[k]??-999)
+    : (a[k]??999)-(b[k]??999));
+}
+
+// ═══════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════
+function render() {
+  const rows = sorted();
+
+  // ── Matrix rows ──────────────────────────
+  const body = document.getElementById('mxBody');
+  body.innerHTML = rows.map((s,i) => {
+    const rankClass = i===0?'gold':i===1?'silver':i===2?'bronze':'';
+    const rankLabel = sortDir!=='alpha' ? `<span class="rank-badge ${rankClass}">${i+1}</span>` : '';
+    return `
+    <div class="mx-row">
+      <div class="mx-name">${rankLabel}${s.name}</div>
+      <div class="mx-cell ${hc(s.r1d)}">${fp(s.r1d)}</div>
+      <div class="mx-cell ${hc(s.r1w)}">${fp(s.r1w)}</div>
+      <div class="mx-cell ${hc(s.r1m)}">${fp(s.r1m)}</div>
+      <div class="mx-cell ${hc(s.r3m)}">${fp(s.r3m)}</div>
+    </div>`;
+  }).join('');
+
+  // ── Update column header highlights ──────
+  ['1d','1w','1m','3m'].forEach(tf => {
+    const th = document.getElementById('th'+tf);
+    const si = document.getElementById('si'+tf);
+    if (!th || !si) return;
+    th.classList.toggle('active', sortTf===tf);
+    si.textContent = sortTf===tf ? (sortDir==='desc'?'↓':'↑') : '';
+  });
+
+  // ── Stats bar ────────────────────────────
+  const adv  = DATA.filter(s=>(s.r1d??0)>0).length;
+  const dec  = DATA.filter(s=>(s.r1d??0)<0).length;
+  const flat = DATA.length - adv - dec;
+  document.getElementById('sbAdv').textContent   = adv;
+  document.getElementById('sbDec').textContent   = dec;
+  document.getElementById('sbFlat').textContent  = flat;
+  const pct = Math.round(adv/DATA.length*100);
+  document.getElementById('sbProg').style.width  = pct+'%';
+  document.getElementById('sbBreadth').textContent = `Market Breadth: ${pct}% advancing`;
+
+  // ── Summary cards ────────────────────────
+  renderSummary('sum1d','r1d');
+  renderSummary('sum1w','r1w');
+  renderSummary('sum1m','r1m');
+  renderSummary('sum3m','r3m');
+
+  // ── Bar charts ───────────────────────────
+  renderBars();
+}
+
+function renderSummary(elId, key) {
+  const el = document.getElementById(elId);
+  const s  = [...DATA].sort((a,b)=>(b[key]??-999)-(a[key]??-999));
+  const top = s[0], bot = s[s.length-1];
+  el.innerHTML = `
+    ${s.slice(0,3).map((x,i)=>`
+    <div class="sleader">
+      <span class="sleader-name">${x.name}</span>
+      <span class="sleader-val ${(x[key]??0)>=0?'up':'dn'}">${fp(x[key])}</span>
+    </div>`).join('')}
+    <div class="scard-divider"></div>
+    <div class="scard-sub">
+      <span>Worst: ${bot.name}</span>
+      <span class="bad">${fp(bot[key])}</span>
+    </div>`;
+}
+
+function renderBars() {
+  const byToday = [...DATA].sort((a,b)=>(b.r1d??-999)-(a.r1d??-999));
+  const top8    = byToday.slice(0,8);
+  const bot8    = byToday.slice(-8).reverse();
+  const maxAbs  = Math.max(...DATA.map(s=>Math.abs(s.r1d??0)), 0.1);
+
+  function barHTML(list) {
+    return list.map(s => {
+      const pct = Math.abs(s.r1d??0)/maxAbs*100;
+      const pos = (s.r1d??0) >= 0;
+      return `
+      <div class="bar-item">
+        <span class="bar-name">${s.name}</span>
+        <div class="bar-track">
+          <div class="bar-fill ${pos?'pos':'neg'}" style="width:${pct.toFixed(1)}%"></div>
+        </div>
+        <span class="bar-pct ${pos?'pos':'neg'}">${fp(s.r1d)}</span>
+      </div>`;
+    }).join('');
+  }
+
+  document.getElementById('barTop').innerHTML = barHTML(top8);
+  document.getElementById('barBot').innerHTML = barHTML(bot8);
+}
+
+// ═══════════════════════════════════════════
+// CONTROLS
+// ═══════════════════════════════════════════
+function setSort(dir, btn) {
+  sortDir = dir;
+  document.querySelectorAll('#segSort .seg-btn').forEach(b=>b.classList.remove('on'));
+  if (btn) btn.classList.add('on');
+  if (DATA.length) render();
+}
+
+function setSortTf(tf, btn) {
+  sortTf = tf;
+  document.querySelectorAll('.tf-pill').forEach(b=>b.classList.remove('on'));
+  if (btn) btn.classList.add('on');
+  if (DATA.length) render();
+}
+
+// ═══════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════
+init();
+</script>
+</body>
+</html>
