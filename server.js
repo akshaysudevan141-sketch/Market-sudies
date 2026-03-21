@@ -11,6 +11,7 @@ console.log('[BOOT] Starting server.js…');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const http = require('http');
 
 let axios, cron, fetchAndProcessData, getDB;
@@ -36,7 +37,6 @@ try {
     console.log('[BOOT] fetch_data loaded ✓');
 } catch (e) {
     console.error('[BOOT] fetch_data failed:', e.message);
-    // Provide fallback so server still starts
     getDB = () => Promise.resolve({
         get: async () => null,
         all: async () => [],
@@ -53,7 +53,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Static files
 app.use(express.static(path.join(__dirname, '.'), {
     maxAge: '1h',
     setHeaders: (res, filePath) => {
@@ -134,7 +133,7 @@ app.get('/api/status', async (req, res) => {
     }
 });
 
-// Yahoo Finance proxy
+// Yahoo Finance proxy — Nifty & VIX
 app.get('/api/market', async (req, res) => {
     try {
         const fetchJSON = async (ticker) => {
@@ -152,17 +151,33 @@ app.get('/api/market', async (req, res) => {
     }
 });
 
+// ── NSE Market Statistics — reads from file saved by GitHub Actions ───────────
+app.get('/api/market-stats', (req, res) => {
+    try {
+        const filePath = path.join(__dirname, 'data', 'market-stats.json');
+        if (!fs.existsSync(filePath)) {
+            return res.status(404).json({
+                error: 'Market stats not available yet — GitHub Actions fetches this daily at 6 PM IST'
+            });
+        }
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        res.json(data);
+    } catch (err) {
+        console.error('❌ Market stats read error:', err.message);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // Health check
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', ts: new Date().toISOString() });
 });
 
-// ── Start server FIRST (before anything else) ───────────────────────────────
+// ── Start server ──────────────────────────────────────────────────────────────
 console.log(`[BOOT] Attempting to listen on 0.0.0.0:${PORT}…`);
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`[BOOT] ✅ Server running on port ${PORT}`);
 
-    // ── Scheduler (deferred until server is listening) ─────────────────────
     if (cron) {
         try {
             async function runFetchTask(label) {
@@ -174,8 +189,6 @@ app.listen(PORT, '0.0.0.0', () => {
                     console.error(`[${new Date().toISOString()}] ${label} fetch failed:`, err.message);
                 }
             }
-            // NSE FII/DII data publishes after market close (~6-7 PM IST)
-            // Run 3 targeted fetches during the publish window (IST = UTC+5:30)
             cron.schedule('30 12 * * 1-5', () => runFetchTask('Post-market-1'));  // 6:00 PM IST
             cron.schedule('0 13 * * 1-5',  () => runFetchTask('Post-market-2'));  // 6:30 PM IST
             cron.schedule('30 13 * * 1-5', () => runFetchTask('Post-market-3'));  // 7:00 PM IST
