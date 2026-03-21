@@ -1,14 +1,13 @@
-name: 📊 Auto-Update FII & DII Data
+name: 📊 Auto-Update Sector Returns
 
 on:
   schedule:
-    - cron: '15 10 * * 1-5'   # 3:45 PM IST
-    - cron: '30 12 * * 1-5'   # 6:00 PM IST
-    - cron: '00 13 * * 1-5'   # 6:30 PM IST
-  workflow_dispatch:
+    - cron: '30 10 * * 1-5'   # 4:00 PM IST (market closes 3:30 PM)
+    - cron: '00 12 * * 1-5'   # 5:30 PM IST (settled data)
+  workflow_dispatch:           # Manual trigger from GitHub UI
 
 jobs:
-  update-fii-dii-data:
+  update-sector-data:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -26,24 +25,18 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 📡 Fetch NSE FII/DII data
+      - name: 📡 Fetch NSE Sector Returns
         id: fetch
-        run: npm run fetch
+        run: node scripts/fetch_sectors.js
 
-      - name: 📊 Fetch NSE Market Statistics
-        id: fetchstats
-        run: node -e "require('./scripts/fetch_data').fetchMarketStats()"
-        continue-on-error: true
-
-      - name: 💾 Commit updated data
-        if: steps.fetch.outcome == 'success'
+      - name: 💾 Commit updated sector data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/history.json data/market-stats.json
+          git add data/sector-returns.json
           if git diff --staged --quiet; then
-            echo "ℹ️ No new data today (market likely closed)."
+            echo "ℹ️ No new sector data today (market may be closed)."
           else
-            git commit -m "data: auto-update $(date +'%d-%b-%Y %H:%M UTC')"
+            git commit -m "data: sector returns auto-update $(date +'%d-%b-%Y %H:%M UTC')"
             git push
           fi
