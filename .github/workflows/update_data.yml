@@ -30,6 +30,11 @@ jobs:
       - name: 📡 Fetch NSE FII/DII data
         id: fetch
         run: npm run fetch
+
+        - name: 📊 Fetch NSE Market Statistics
+        id: fetchstats
+        run: node -e "require('./scripts/fetch_data').fetchMarketStats()"
+        continue-on-error: true
         # Script exits with code 1 on critical failure — this step will fail
         # and prevent corrupt data from being committed.
 
@@ -38,7 +43,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/history.json
+          git add data/latest.json data/history.json data/market-stats.json
           if git diff --staged --quiet; then
             echo "ℹ️ No new data today (market likely closed)."
           else
