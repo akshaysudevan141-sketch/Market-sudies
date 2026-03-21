@@ -200,5 +200,12 @@ app.listen(PORT, '0.0.0.0', () => {
         console.warn('[BOOT] ⚠ node-cron not available, skipping scheduler');
     }
 });
+app.get('/api/sector-returns', (req, res) => {
+    try {
+        const filePath = path.join(__dirname, 'data', 'sector-returns.json');
+        if (!fs.existsSync(filePath)) return res.status(404).json({ error: 'Not available yet' });
+        res.json(JSON.parse(fs.readFileSync(filePath, 'utf8')));
+    } catch(err) { res.status(500).json({ error: err.message }); }
+});
 
 module.exports = app;
