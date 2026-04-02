@@ -51,7 +51,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git pull --rebase origin main
           git add data/
           git commit -m "📊 Auto-update: $(date +'%d-%b-%Y %H:%M IST')" || echo "Nothing to commit"
+          git pull --rebase origin main
           git push
