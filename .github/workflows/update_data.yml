@@ -27,7 +27,7 @@ jobs:
           python-version: '3.11'
 
       - name: 📦 Install Python dependencies
-        run: pip install requests
+        run: pip install requests python-dateutil
 
       - name: 📦 Install Node dependencies
         run: npm install
