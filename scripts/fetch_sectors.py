@@ -3,21 +3,17 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # 100% NSE data — accurate sector rotation calculations
 #
-#   1D  = percentChange                          ← NSE allIndices (direct, live)
-#   1W  = (last - close_5td_ago) / close_5td_ago ← niftyindices.com historical
-#   1M  = (last - close_1cal_month_ago)          ← niftyindices.com historical
-#   3M  = (last - close_3cal_months_ago)         ← niftyindices.com historical
-#   1Y  = (last - close_1cal_year_ago)           ← niftyindices.com historical
-#
-# Using calendar-month lookups (like Investing.com) instead of fixed trading
-# day counts, so numbers match external references closely.
+#   1D  = percentChange                          ← NSE allIndices (direct)
+#   1W  = hist[5] close (5 trading days)         ← niftyindices.com historical
+#   1M  = perChange30d                           ← NSE allIndices (direct)
+#   3M  = close on/before 3 calendar months ago  ← niftyindices.com historical
+#   1Y  = perChange365d                          ← NSE allIndices (direct)
 #
 # RS Rank, RRG Quadrant, Signal — auto-calculated
 # ─────────────────────────────────────────────────────────────────────────────
 
 import urllib.request, json, os, time, requests
 from datetime import datetime, timezone, timedelta
-from dateutil.relativedelta import relativedelta
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -58,22 +54,14 @@ def pct(current, old):
 def fmt(v):
     return 'N/A' if v is None else f"{'+'if v>=0 else ''}{v:.2f}%"
 
-# ── Find closest available close on or before target_date in sorted hist ────
-def find_close_on_or_before(hist, target_date):
-    """
-    hist: list of dicts with 'HistoricalDate' (str 'DD-Mon-YYYY') and 'CLOSE'
-          sorted newest-first from niftyindices.com
-    target_date: datetime object
-    Returns float close or None
-    """
-    for row in reversed(hist):  # oldest first
-        try:
-            row_date = datetime.strptime(row['HistoricalDate'].strip(), '%d-%b-%Y')
-        except:
-            continue
-        if row_date <= target_date:
-            return safe_float(row['CLOSE']), row['HistoricalDate']
-    return None, None
+def add_months(dt, months):
+    """Add calendar months to a datetime (no external deps needed)."""
+    month = dt.month - 1 + months
+    year  = dt.year + month // 12
+    month = month % 12 + 1
+    import calendar
+    day = min(dt.day, calendar.monthrange(year, month)[1])
+    return dt.replace(year=year, month=month, day=day)
 
 # ── Fetch NSE allIndices ──────────────────────────────────────────────────
 def fetch_nse_all():
@@ -90,14 +78,9 @@ def fetch_nse_all():
         data = json.loads(res.read().decode('utf-8'))
     return {(d.get('indexSymbol') or '').upper().strip(): d for d in data.get('data', [])}
 
-# ── Fetch full historical and compute all timeframes from closes ─────────
-def fetch_historical_all_timeframes(sectors_data):
-    """
-    Fetches ~400 calendar days of history from niftyindices.com for each
-    sector, then derives 1W, 1M, 3M, 1Y from actual closing prices
-    (calendar-month lookbacks, matching Investing.com methodology).
-    """
-    print('\n📈 Fetching historical closes from niftyindices.com (1W/1M/3M/1Y)...')
+# ── Fetch 1W + 3M from niftyindices.com ──────────────────────────────────
+def fetch_1w_and_3m(sectors_data):
+    print('\n📈 Fetching 1W + 3M from niftyindices.com...')
     try:
         session = requests.Session()
         session.headers.update({
@@ -109,18 +92,13 @@ def fetch_historical_all_timeframes(sectors_data):
         print(f'  ⚠️  Session failed: {e}')
         return
 
-    today = datetime.now(IST).replace(tzinfo=None)
+    today = datetime.now()
 
-    # Calendar-based lookback targets (same as Investing.com)
-    targets = {
-        '1w':  today - timedelta(days=7),
-        '1m':  today - relativedelta(months=1),
-        '3m':  today - relativedelta(months=3),
-        '1y':  today - relativedelta(years=1),
-    }
+    # 3 calendar months ago target (no external lib needed)
+    target_3m = add_months(today, -3)
 
-    # Fetch ~400 calendar days (covers 1Y + buffer)
-    from_date = (today - timedelta(days=400)).strftime('%b %d %Y')
+    # Fetch 110 calendar days — enough for ~75 trading days (covers 3M + buffer)
+    from_date = (today - timedelta(days=110)).strftime('%b %d %Y')
     to_date   = today.strftime('%b %d %Y')
 
     for s in sectors_data:
@@ -146,35 +124,50 @@ def fetch_historical_all_timeframes(sectors_data):
                 timeout=45
             )
             hist = json.loads(json.loads(res.text)['d'])
+
             if len(hist) < 10:
                 print(f'  ⚠️  {s["name"].ljust(16)} insufficient history ({len(hist)} rows)')
                 time.sleep(1)
                 continue
 
-            # hist[0] = most recent trading day close (yesterday or today if after close)
+            # hist[0] = most recent trading day (newest first)
             current_close = safe_float(hist[0]['CLOSE'])
             if not current_close:
                 time.sleep(1)
                 continue
 
-            results = {}
-            for period, target_dt in targets.items():
-                close_val, close_date = find_close_on_or_before(hist, target_dt)
-                results[period] = pct(current_close, close_val) if close_val else None
+            # ── 1W: 5 trading days back (index 5) ────────────────────────
+            close_1w = safe_float(hist[min(5, len(hist)-1)]['CLOSE'])
+            s['r1w'] = pct(current_close, close_1w)
 
-            s['r1w'] = results['1w']
-            s['r1m'] = results['1m']
-            s['r3m'] = results['3m']
-            s['r1y'] = results['1y']
+            # ── 3M: find first row whose date <= 3 calendar months ago ───
+            # hist is newest-first, so iterate and stop at first match
+            close_3m = None
+            date_3m_str = None
+            for row in hist:
+                raw_date = row.get('HistoricalDate', '').strip()
+                try:
+                    # niftyindices format: "03-Apr-2026" or "3-Apr-2026"
+                    row_date = datetime.strptime(raw_date, '%d-%b-%Y')
+                except ValueError:
+                    try:
+                        row_date = datetime.strptime(raw_date, '%Y-%m-%d')
+                    except:
+                        continue
+                if row_date <= target_3m:
+                    close_3m    = safe_float(row['CLOSE'])
+                    date_3m_str = raw_date
+                    break
+
+            s['r3m'] = pct(current_close, close_3m)
 
             print(
                 f"  ✅ {s['name'].ljust(16)}"
                 f"  1W:{fmt(s['r1w']).rjust(8)}"
-                f"  1M:{fmt(s['r1m']).rjust(8)}"
                 f"  3M:{fmt(s['r3m']).rjust(8)}"
-                f"  1Y:{fmt(s['r1y']).rjust(8)}"
+                + (f"  (vs {date_3m_str})" if date_3m_str else '  (3M date not found)')
             )
-            time.sleep(0.8)
+            time.sleep(1)
 
         except Exception as e:
             print(f'  ⚠️  {s["name"].ljust(16)} failed: {str(e)[:60]}')
@@ -209,16 +202,14 @@ def fetch_sectors():
 
     print('━' * 65)
     print(f'🔄 NSE Sector Rotation — {day_name} {now_ist.strftime("%Y-%m-%d %H:%M")} IST')
-    print('   1D   → NSE allIndices percentChange (live intraday)')
-    print('   1W   → niftyindices close on/before (today - 7 days)')
-    print('   1M   → niftyindices close on/before (today - 1 calendar month)')
-    print('   3M   → niftyindices close on/before (today - 3 calendar months)')
-    print('   1Y   → niftyindices close on/before (today - 1 calendar year)')
+    print('   1D / 1M / 1Y → NSE allIndices (direct)')
+    print('   1W            → niftyindices hist[5] (5 trading days)')
+    print('   3M            → niftyindices calendar 3-month lookback')
     print('   RS Rank / RRG / Signal → auto-calculated')
     print('━' * 65 + '\n')
 
-    # Step 1: NSE allIndices — get live 1D and current price
-    print('📡 Fetching NSE allIndices (live 1D + current price)...')
+    # Step 1: NSE allIndices
+    print('📡 Fetching NSE allIndices...')
     try:
         index_map = fetch_nse_all()
         print(f'   ✅ Got {len(index_map)} indices\n')
@@ -226,7 +217,7 @@ def fetch_sectors():
         print(f'   ❌ Failed: {e}')
         write_output([]); return
 
-    # Step 2: Extract 1D and current price for each sector
+    # Step 2: Extract each sector
     sectors = []
     for s in SECTORS:
         nse_sym = s['nse'].upper().strip()
@@ -239,23 +230,25 @@ def fetch_sectors():
         if found:
             current = safe_float(found.get('last'))
             r1d     = safe_float(found.get('percentChange'))
+            r1m     = safe_float(found.get('perChange30d')) or pct(current, safe_float(found.get('oneMonthAgoVal')))
+            r1y     = safe_float(found.get('perChange365d'))
+
             entry = {
                 'name':     s['name'],
                 'source':   'NSE+niftyindices',
                 'last':     current,
                 'lastDate': found.get('previousDay', now_ist.strftime('%d-%b-%Y')),
-                # 1D from NSE live; rest filled by historical fetch below
-                'r1d': r1d, 'r1w': None, 'r1m': None, 'r3m': None, 'r1y': None,
+                'r1d': r1d, 'r1w': None, 'r1m': r1m, 'r3m': None, 'r1y': r1y,
             }
             sectors.append(entry)
-            print(f"  ✅ {s['name'].ljust(16)}  1D:{fmt(r1d).rjust(8)}  last={current}")
+            print(f"  ✅ {s['name'].ljust(16)}  1D:{fmt(r1d).rjust(8)}  1M:{fmt(r1m).rjust(8)}  1Y:{fmt(r1y).rjust(8)}")
         else:
-            print(f"  ⚠️  {s['name'].ljust(16)} NOT FOUND in NSE allIndices")
+            print(f"  ⚠️  {s['name'].ljust(16)} NOT FOUND")
             sectors.append({'name':s['name'],'source':'NSE+niftyindices','last':None,'lastDate':None,
                             'r1d':None,'r1w':None,'r1m':None,'r3m':None,'r1y':None})
 
-    # Step 3: 1W / 1M / 3M / 1Y from niftyindices historical closes
-    fetch_historical_all_timeframes(sectors)
+    # Step 3: 1W + 3M from niftyindices
+    fetch_1w_and_3m(sectors)
 
     # Step 4: RS Rank, RRG, Signal
     sectors = calculate_signals(sectors)
@@ -263,10 +256,10 @@ def fetch_sectors():
     # Summary
     valid   = [s for s in sectors if s.get('r1d') is not None]
     ranked  = sorted([s for s in sectors if s.get('rsRank')], key=lambda x: x['rsRank'])
-    with_1m = [s for s in sectors if s.get('r1m') is not None]
+    with_3m = [s for s in sectors if s.get('r3m') is not None]
 
     print('\n' + '━' * 65)
-    print(f'📊 {len(valid)}/{len(sectors)} sectors | 1M+ data: {len(with_1m)}/{len(sectors)}')
+    print(f'📊 {len(valid)}/{len(sectors)} sectors | 3M data: {len(with_3m)}/{len(sectors)}')
     print(f'📅 As of: {now_ist.strftime("%d %b %Y %H:%M IST")}')
     if ranked:
         print('\n🏆 Top 5 (RS Rank by 1M):')
@@ -281,8 +274,8 @@ def fetch_sectors():
 def write_output(sectors):
     out = {
         '_updated_at': datetime.now(timezone.utc).isoformat(),
-        '_source':     'NSE allIndices (1D live) + niftyindices.com historical (1W/1M/3M/1Y)',
-        '_note':       '1D=NSE percentChange | 1W/1M/3M/1Y=niftyindices calendar-lookback closes (matches Investing.com)',
+        '_source':     'NSE allIndices (1D/1M/1Y) + niftyindices.com (1W=5td, 3M=calendar)',
+        '_note':       '1D=NSE percentChange | 1W=niftyindices hist[5] | 1M=NSE perChange30d | 3M=niftyindices calendar | 1Y=NSE perChange365d',
         'sectors':     sectors
     }
     out_dir  = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
