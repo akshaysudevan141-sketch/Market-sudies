@@ -1,7 +1,7 @@
 {
-  "_updated_at": "2026-04-03T15:38:11.682789+00:00",
-  "_source": "NSE allIndices (1D live) + niftyindices.com historical (1W/1M/3M/1Y)",
-  "_note": "1D=NSE percentChange | 1W/1M/3M/1Y=niftyindices calendar-lookback closes (matches Investing.com)",
+  "_updated_at": "2026-04-03T15:44:07.527527+00:00",
+  "_source": "NSE allIndices (1D/1M/1Y) + niftyindices.com (1W=5td, 3M=calendar)",
+  "_note": "1D=NSE percentChange | 1W=niftyindices hist[5] | 1M=NSE perChange30d | 3M=niftyindices calendar | 1Y=NSE perChange365d",
   "sectors": [
     {
       "name": "Auto",
@@ -9,13 +9,13 @@
       "last": 24089.65,
       "lastDate": "27-Mar-2026",
       "r1d": -0.62,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -1.74,
+      "r1m": -12.53,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 13.82,
+      "rsRank": 18,
+      "rrg": "Lagging",
+      "signal": "EXIT"
     },
     {
       "name": "Banking",
@@ -23,13 +23,13 @@
       "last": 51548.75,
       "lastDate": "27-Mar-2026",
       "r1d": 0.19,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -2.01,
+      "r1m": -13.86,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -0.09,
+      "rsRank": 21,
+      "rrg": "Lagging",
+      "signal": "EXIT"
     },
     {
       "name": "Commodities",
@@ -37,13 +37,13 @@
       "last": 9216.8,
       "lastDate": "27-Mar-2026",
       "r1d": -0.43,
-      "r1w": null,
-      "r1m": null,
+      "r1w": 0.34,
+      "r1m": -6.42,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 8.95,
+      "rsRank": 7,
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "Cons Durables",
@@ -51,13 +51,13 @@
       "last": 33345.0,
       "lastDate": "27-Mar-2026",
       "r1d": -0.93,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -0.7,
+      "r1m": -9.34,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -6.75,
+      "rsRank": 14,
+      "rrg": "Weakening",
+      "signal": "REDUCE"
     },
     {
       "name": "Consumption",
@@ -65,13 +65,13 @@
       "last": 10527.25,
       "lastDate": "27-Mar-2026",
       "r1d": -0.17,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -0.06,
+      "r1m": -7.27,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -2.79,
+      "rsRank": 11,
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "Defence",
@@ -79,13 +79,13 @@
       "last": 7600.65,
       "lastDate": "27-Mar-2026",
       "r1d": 0.04,
-      "r1w": null,
-      "r1m": null,
+      "r1w": 0.66,
+      "r1m": -6.93,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 17.59,
+      "rsRank": 10,
+      "rrg": "Improving",
+      "signal": "ACCUMULATE"
     },
     {
       "name": "Energy",
@@ -93,13 +93,13 @@
       "last": 35299.4,
       "lastDate": "27-Mar-2026",
       "r1d": -0.29,
-      "r1w": null,
-      "r1m": null,
+      "r1w": 0.62,
+      "r1m": -3.17,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 5.18,
+      "rsRank": 2,
+      "rrg": "Leading",
+      "signal": "OVERWEIGHT"
     },
     {
       "name": "Finance",
@@ -107,13 +107,13 @@
       "last": 24041.55,
       "lastDate": "27-Mar-2026",
       "r1d": 0.25,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -1.8,
+      "r1m": -12.78,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -2.76,
+      "rsRank": 19,
+      "rrg": "Lagging",
+      "signal": "EXIT"
     },
     {
       "name": "FMCG",
@@ -121,13 +121,13 @@
       "last": 46232.15,
       "lastDate": "27-Mar-2026",
       "r1d": 0.21,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -0.38,
+      "r1m": -8.91,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -14.08,
+      "rsRank": 13,
+      "rrg": "Weakening",
+      "signal": "REDUCE"
     },
     {
       "name": "Healthcare",
@@ -135,13 +135,13 @@
       "last": 13934.35,
       "lastDate": "27-Mar-2026",
       "r1d": -0.86,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -2.07,
+      "r1m": -6.21,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 0.61,
+      "rsRank": 5,
+      "rrg": "Weakening",
+      "signal": "REDUCE"
     },
     {
       "name": "Infra",
@@ -149,13 +149,13 @@
       "last": 8630.1,
       "lastDate": "27-Mar-2026",
       "r1d": -0.45,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -1.19,
+      "r1m": -7.4,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 2.07,
+      "rsRank": 12,
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "IT",
@@ -163,13 +163,13 @@
       "last": 30441.45,
       "lastDate": "27-Mar-2026",
       "r1d": 2.6,
-      "r1w": null,
-      "r1m": null,
+      "r1w": 2.67,
+      "r1m": 0.56,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -12.42,
+      "rsRank": 1,
+      "rrg": "Leading",
+      "signal": "OVERWEIGHT"
     },
     {
       "name": "Media",
@@ -177,13 +177,13 @@
       "last": 1303.35,
       "lastDate": "27-Mar-2026",
       "r1d": -0.39,
-      "r1w": null,
-      "r1m": null,
+      "r1w": 0.52,
+      "r1m": -6.26,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -15.04,
+      "rsRank": 6,
+      "rrg": "Improving",
+      "signal": "ACCUMULATE"
     },
     {
       "name": "Metal",
@@ -191,13 +191,13 @@
       "last": 11456.6,
       "lastDate": "27-Mar-2026",
       "r1d": 0.39,
-      "r1w": null,
-      "r1m": null,
+      "r1w": 3.59,
+      "r1m": -6.63,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 27.22,
+      "rsRank": 8,
+      "rrg": "Improving",
+      "signal": "ACCUMULATE"
     },
     {
       "name": "OilGas",
@@ -205,13 +205,13 @@
       "last": 10842.35,
       "lastDate": "27-Mar-2026",
       "r1d": -0.79,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -0.33,
+      "r1m": -9.66,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 2.95,
+      "rsRank": 16,
+      "rrg": "Weakening",
+      "signal": "REDUCE"
     },
     {
       "name": "Pharma",
@@ -219,13 +219,13 @@
       "last": 21808.4,
       "lastDate": "27-Mar-2026",
       "r1d": -0.92,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -1.94,
+      "r1m": -5.0,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 1.8,
+      "rsRank": 3,
+      "rrg": "Weakening",
+      "signal": "REDUCE"
     },
     {
       "name": "PSE",
@@ -233,13 +233,13 @@
       "last": 9666.9,
       "lastDate": "27-Mar-2026",
       "r1d": -0.34,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -0.18,
+      "r1m": -6.64,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 2.72,
+      "rsRank": 9,
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "PSUBank",
@@ -247,13 +247,13 @@
       "last": 8134.4,
       "lastDate": "27-Mar-2026",
       "r1d": -0.37,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -2.67,
+      "r1m": -15.61,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": 26.64,
+      "rsRank": 22,
+      "rrg": "Lagging",
+      "signal": "EXIT"
     },
     {
       "name": "PVTBank",
@@ -261,13 +261,13 @@
       "last": 24665.75,
       "lastDate": "27-Mar-2026",
       "r1d": 0.39,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -1.52,
+      "r1m": -13.02,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -4.0,
+      "rsRank": 20,
+      "rrg": "Lagging",
+      "signal": "EXIT"
     },
     {
       "name": "Realty",
@@ -275,13 +275,13 @@
       "last": 672.1,
       "lastDate": "27-Mar-2026",
       "r1d": 1.07,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -0.27,
+      "r1m": -12.49,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -21.28,
+      "rsRank": 17,
+      "rrg": "Weakening",
+      "signal": "REDUCE"
     },
     {
       "name": "Service",
@@ -289,13 +289,13 @@
       "last": 28979.45,
       "lastDate": "27-Mar-2026",
       "r1d": 0.54,
-      "r1w": null,
-      "r1m": null,
+      "r1w": -1.03,
+      "r1m": -9.37,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -5.54,
+      "rsRank": 15,
+      "rrg": "Weakening",
+      "signal": "REDUCE"
     },
     {
       "name": "SmallCap",
@@ -303,13 +303,13 @@
       "last": 15650.5,
       "lastDate": "27-Mar-2026",
       "r1d": -0.38,
-      "r1w": null,
-      "r1m": null,
+      "r1w": 1.0,
+      "r1m": -5.9,
       "r3m": null,
-      "r1y": null,
-      "rsRank": null,
-      "rrg": null,
-      "signal": null
+      "r1y": -3.72,
+      "rsRank": 4,
+      "rrg": "Leading",
+      "signal": "OVERWEIGHT"
     }
   ]
 }
