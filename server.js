@@ -190,6 +190,11 @@ app.get('/sector-rotation', (req, res) => {
     res.sendFile(path.join(__dirname, 'sector_rotation.html'));
 });
 
+// Commodity Tracker
+app.get('/commodity.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'commodity.html'));
+});
+
 // Health check
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', ts: new Date().toISOString() });
