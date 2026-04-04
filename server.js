@@ -195,6 +195,22 @@ app.get('/commodity.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'commodity.html'));
 });
 
+
+// Commodity data proxy (bypasses CORS for commodity tracker)
+app.get('/api/commodity-proxy', async (req, res) => {
+    try {
+        const targetUrl = decodeURIComponent(req.query.url || '');
+        if (!targetUrl) return res.status(400).json({ error: 'No URL' });
+        const { data } = await axios.get(targetUrl, {
+            headers: { 'User-Agent': 'Mozilla/5.0' },
+            timeout: 8000
+        });
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // Health check
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', ts: new Date().toISOString() });
