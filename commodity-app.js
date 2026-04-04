@@ -255,7 +255,6 @@ let state = {
 
 // ── YAHOO FINANCE PROXY (multiple CORS proxies for reliability) ──
 const CORS_PROXIES = [
-  '/api/commodity-proxy?url=',
   'https://api.allorigins.win/raw?url=',
   'https://corsproxy.io/?url=',
   'https://api.codetabs.com/v1/proxy?quest=',
@@ -970,7 +969,6 @@ async function fetchHistoricalData(symbol, range) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?range=${range}&interval=${interval}`;
 
   const proxies = [
-    u => `/api/commodity-proxy?url=${encodeURIComponent(u)}`,
     u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
     u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
   ];
