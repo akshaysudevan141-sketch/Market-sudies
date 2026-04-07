@@ -1,0 +1,107 @@
+name: 🔍 NSE Scanner Test
+
+on:
+  # Run manually from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      universe:
+        description: 'Stock Universe'
+        required: true
+        default: 'banknifty'
+        type: choice
+        options:
+          - banknifty
+          - nifty50
+          - nifty100
+      timeframe:
+        description: 'Timeframe'
+        required: true
+        default: '1d'
+        type: choice
+        options:
+          - 1d
+          - 1wk
+          - 1h
+          - 15m
+          - 5m
+
+  # Also run automatically every day at 4PM IST (10:30 UTC)
+  schedule:
+    - cron: '30 10 * * 1-5'   # Mon-Fri 4PM IST
+
+jobs:
+  run-scanner:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── Checkout repo ──────────────────────────────────────
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      # ── Setup Python ───────────────────────────────────────
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── Install dependencies ───────────────────────────────
+      - name: 📦 Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ── Run scanner ────────────────────────────────────────
+      - name: 🔍 Run NSE Scanner
+        run: |
+          python3 scripts/scanner/stock_scanner.py \
+            --universe ${{ github.event.inputs.universe || 'banknifty' }} \
+            --timeframes ${{ github.event.inputs.timeframe || '1d' }}
+
+      # ── Show results ───────────────────────────────────────
+      - name: 📊 Show Scan Results
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📈 SCAN RESULTS SUMMARY"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          python3 -c "
+          import json
+          with open('data/scanner-results.json') as f:
+              data = json.load(f)
+          print(f'Universe  : {data[\"_universe\"]}')
+          print(f'Updated   : {data[\"_updated_at\"]}')
+          print(f'Market    : {data[\"_market\"][\"status\"]}')
+          print()
+          for tf, summary in data['summary'].items():
+              print(f'── {tf.upper()} ──')
+              print(f'  Total Scanned : {summary[\"total_scanned\"]}')
+              print(f'  Strong Buy    : {summary[\"strong_buy\"]}')
+              print(f'  Buy           : {summary[\"buy\"]}')
+              print(f'  Neutral       : {summary[\"neutral\"]}')
+              print(f'  Sell          : {summary[\"sell\"]}')
+              print(f'  Strong Sell   : {summary[\"strong_sell\"]}')
+              print(f'  Has Pattern   : {summary[\"with_pattern\"]}')
+              print()
+              results = data['results'].get(tf, [])
+              strong_buys = [r for r in results if r['signal'] == 'STRONG BUY']
+              if strong_buys:
+                  print('  🟢 STRONG BUY stocks:')
+                  for r in strong_buys[:10]:
+                      pats = ', '.join(r['patterns']['bullish'][:2]) if r['patterns']['bullish'] else 'No pattern'
+                      print(f'     {r[\"symbol\"]:15} LTP: {r[\"ltp\"]:>8}  RSI: {r[\"rsi\"]}  Signal: {r[\"signal\"]}  Pattern: {pats}')
+              buys = [r for r in results if r['signal'] == 'BUY']
+              if buys:
+                  print()
+                  print('  🔵 BUY stocks:')
+                  for r in buys[:10]:
+                      pats = ', '.join(r['patterns']['bullish'][:2]) if r['patterns']['bullish'] else 'No pattern'
+                      print(f'     {r[\"symbol\"]:15} LTP: {r[\"ltp\"]:>8}  RSI: {r[\"rsi\"]}  Signal: {r[\"signal\"]}  Pattern: {pats}')
+          "
+
+      # ── Upload results as artifact ─────────────────────────
+      - name: 📁 Upload Scan Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-results-${{ github.event.inputs.universe || 'banknifty' }}-${{ github.event.inputs.timeframe || '1d' }}
+          path: data/scanner-results.json
+          retention-days: 7
