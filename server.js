@@ -239,6 +239,53 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok', ts: new Date().toISOString() });
 });
 
+// ── Stock Scanner Routes ───────────────────────────────────────────────────
+const { spawn } = require('child_process');
+
+// Serve scanner UI
+app.get('/scanner', (req, res) => {
+    res.sendFile(path.join(__dirname, 'scanner.html'));
+});
+
+// Get latest scan results
+app.get('/api/scanner/results', (req, res) => {
+    try {
+        const p = path.join(__dirname, 'data', 'scanner-results.json');
+        if (!fs.existsSync(p)) {
+            return res.json({ error: 'No scan results yet. Run a scan first.', results: {}, summary: {} });
+        }
+        res.json(JSON.parse(fs.readFileSync(p, 'utf8')));
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+// Trigger a new scan
+app.post('/api/scanner/run', (req, res) => {
+    const { universe = 'nifty50', timeframes } = req.body || {};
+    const args = ['scripts/scanner/stock_scanner.py', '--universe', universe];
+    if (timeframes && timeframes.length > 0) {
+        args.push('--timeframes', ...timeframes);
+    }
+    const py = spawn('python3', args, { cwd: __dirname });
+    let output = '';
+    py.stdout.on('data', d => { output += d.toString(); });
+    py.stderr.on('data', d => { output += d.toString(); });
+    py.on('close', code => {
+        if (code === 0) {
+            try {
+                const p = path.join(__dirname, 'data', 'scanner-results.json');
+                const results = JSON.parse(fs.readFileSync(p, 'utf8'));
+                res.json({ success: true, ...results });
+            } catch(e) {
+                res.json({ success: true, output });
+            }
+        } else {
+            res.status(500).json({ success: false, output });
+        }
+    });
+});
+
 // ── Start server ──────────────────────────────────────────────────────────────
 console.log(`[BOOT] Attempting to listen on 0.0.0.0:${PORT}…`);
 app.listen(PORT, '0.0.0.0', () => {
