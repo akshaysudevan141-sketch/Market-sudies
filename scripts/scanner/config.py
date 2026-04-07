@@ -1,134 +1,287 @@
 #!/usr/bin/env python3
 # scripts/scanner/config.py
-# ─────────────────────────────────────────────────────────────────────────────
-# All configurable settings for the NSE Stock Scanner
-# ─────────────────────────────────────────────────────────────────────────────
 
 # ── Timeframes ────────────────────────────────────────────────────────────────
-# All supported timeframes — user can pick any or ALL
 TIMEFRAMES = {
-    "5m":  { "label": "5 Min",    "period": "5d",   "interval": "5m",  "trading": True  },
-    "15m": { "label": "15 Min",   "period": "5d",   "interval": "15m", "trading": True  },
-    "30m": { "label": "30 Min",   "period": "10d",  "interval": "30m", "trading": True  },
-    "1h":  { "label": "1 Hour",   "period": "30d",  "interval": "60m", "trading": True  },
-    "1d":  { "label": "Daily",    "period": "180d", "interval": "1d",  "trading": False },
-    "1wk": { "label": "Weekly",   "period": "2y",   "interval": "1wk", "trading": False },
+    "5m":  {"label":"5 Min",  "period":"5d",   "interval":"5m" },
+    "15m": {"label":"15 Min", "period":"5d",   "interval":"15m"},
+    "30m": {"label":"30 Min", "period":"10d",  "interval":"30m"},
+    "1h":  {"label":"1 Hour", "period":"30d",  "interval":"60m"},
+    "1d":  {"label":"Daily",  "period":"180d", "interval":"1d" },
+    "1wk": {"label":"Weekly", "period":"2y",   "interval":"1wk"},
 }
 
-# Default timeframe when none selected
-DEFAULT_TIMEFRAME = "1d"
+# ── Master stock list — every stock tagged with its indices ───────────────────
+# Format: "SYMBOL": ["index1", "index2", ...]
+MASTER_STOCKS = {
+    # ── Nifty 50 ──
+    "RELIANCE":   ["Nifty 50","Nifty 500","F&O"],
+    "TCS":        ["Nifty 50","Nifty 500","Nifty IT","F&O"],
+    "HDFCBANK":   ["Nifty 50","Nifty 500","Bank Nifty","F&O"],
+    "INFY":       ["Nifty 50","Nifty 500","Nifty IT","F&O"],
+    "ICICIBANK":  ["Nifty 50","Nifty 500","Bank Nifty","F&O"],
+    "HINDUNILVR": ["Nifty 50","Nifty 500","Nifty FMCG","F&O"],
+    "ITC":        ["Nifty 50","Nifty 500","Nifty FMCG","F&O"],
+    "SBIN":       ["Nifty 50","Nifty 500","Bank Nifty","F&O"],
+    "BHARTIARTL": ["Nifty 50","Nifty 500","F&O"],
+    "KOTAKBANK":  ["Nifty 50","Nifty 500","Bank Nifty","F&O"],
+    "LT":         ["Nifty 50","Nifty 500","F&O"],
+    "AXISBANK":   ["Nifty 50","Nifty 500","Bank Nifty","F&O"],
+    "ASIANPAINT": ["Nifty 50","Nifty 500","F&O"],
+    "MARUTI":     ["Nifty 50","Nifty 500","Nifty Auto","F&O"],
+    "TITAN":      ["Nifty 50","Nifty 500","F&O"],
+    "SUNPHARMA":  ["Nifty 50","Nifty 500","Nifty Pharma","F&O"],
+    "ULTRACEMCO": ["Nifty 50","Nifty 500","F&O"],
+    "WIPRO":      ["Nifty 50","Nifty 500","Nifty IT","F&O"],
+    "ONGC":       ["Nifty 50","Nifty 500","F&O"],
+    "NTPC":       ["Nifty 50","Nifty 500","F&O"],
+    "POWERGRID":  ["Nifty 50","Nifty 500","F&O"],
+    "BAJFINANCE": ["Nifty 50","Nifty 500","F&O"],
+    "HCLTECH":    ["Nifty 50","Nifty 500","Nifty IT","F&O"],
+    "M&M":        ["Nifty 50","Nifty 500","Nifty Auto","F&O"],
+    "NESTLEIND":  ["Nifty 50","Nifty 500","Nifty FMCG","F&O"],
+    "TATAMOTORS": ["Nifty 50","Nifty 500","Nifty Auto","F&O"],
+    "TECHM":      ["Nifty 50","Nifty 500","Nifty IT","F&O"],
+    "BAJAJFINSV": ["Nifty 50","Nifty 500","F&O"],
+    "ADANIPORTS": ["Nifty 50","Nifty 500","F&O"],
+    "COALINDIA":  ["Nifty 50","Nifty 500","F&O"],
+    "DRREDDY":    ["Nifty 50","Nifty 500","Nifty Pharma","F&O"],
+    "DIVISLAB":   ["Nifty 50","Nifty 500","Nifty Pharma","F&O"],
+    "CIPLA":      ["Nifty 50","Nifty 500","Nifty Pharma","F&O"],
+    "EICHERMOT":  ["Nifty 50","Nifty 500","Nifty Auto","F&O"],
+    "GRASIM":     ["Nifty 50","Nifty 500","F&O"],
+    "HEROMOTOCO": ["Nifty 50","Nifty 500","Nifty Auto","F&O"],
+    "HINDALCO":   ["Nifty 50","Nifty 500","Nifty Metal","F&O"],
+    "INDUSINDBK": ["Nifty 50","Nifty 500","Bank Nifty","F&O"],
+    "JSWSTEEL":   ["Nifty 50","Nifty 500","Nifty Metal","F&O"],
+    "TATACONSUM": ["Nifty 50","Nifty 500","Nifty FMCG","F&O"],
+    "TATASTEEL":  ["Nifty 50","Nifty 500","Nifty Metal","F&O"],
+    "APOLLOHOSP": ["Nifty 50","Nifty 500","Nifty Pharma","F&O"],
+    "BPCL":       ["Nifty 50","Nifty 500","F&O"],
+    "BRITANNIA":  ["Nifty 50","Nifty 500","Nifty FMCG","F&O"],
+    "SHRIRAMFIN": ["Nifty 50","Nifty 500","F&O"],
+    "SBILIFE":    ["Nifty 50","Nifty 500","F&O"],
+    "HDFCLIFE":   ["Nifty 50","Nifty 500","F&O"],
+    "BAJAJ-AUTO": ["Nifty 50","Nifty 500","Nifty Auto","F&O"],
+    "LTIM":       ["Nifty 50","Nifty 500","Nifty IT","F&O"],
+    "ADANIENT":   ["Nifty 50","Nifty 500","F&O"],
 
-# ── Stock Universes ───────────────────────────────────────────────────────────
-UNIVERSES = {
-    "nifty50": {
-        "label": "Nifty 50",
-        "symbols": [
-            "RELIANCE", "TCS", "HDFCBANK", "INFY", "ICICIBANK",
-            "HINDUNILVR", "ITC", "SBIN", "BHARTIARTL", "KOTAKBANK",
-            "LT", "AXISBANK", "ASIANPAINT", "MARUTI", "TITAN",
-            "SUNPHARMA", "ULTRACEMCO", "WIPRO", "ONGC", "NTPC",
-            "POWERGRID", "BAJFINANCE", "HCLTECH", "M&M", "NESTLEIND",
-            "TATAMOTORS", "TECHM", "BAJAJFINSV", "ADANIPORTS", "COALINDIA",
-            "DRREDDY", "DIVISLAB", "CIPLA", "EICHERMOT", "GRASIM",
-            "HEROMOTOCO", "HINDALCO", "INDUSINDBK", "JSWSTEEL", "TATACONSUM",
-            "TATASTEEL", "APOLLOHOSP", "BPCL", "BRITANNIA", "SHRIRAMFIN",
-            "SBILIFE", "HDFCLIFE", "BAJAJ-AUTO", "LTIM", "ADANIENT"
-        ]
-    },
-    "nifty100": {
-        "label": "Nifty 100",
-        "symbols": [
-            # Nifty 50
-            "RELIANCE", "TCS", "HDFCBANK", "INFY", "ICICIBANK",
-            "HINDUNILVR", "ITC", "SBIN", "BHARTIARTL", "KOTAKBANK",
-            "LT", "AXISBANK", "ASIANPAINT", "MARUTI", "TITAN",
-            "SUNPHARMA", "ULTRACEMCO", "WIPRO", "ONGC", "NTPC",
-            "POWERGRID", "BAJFINANCE", "HCLTECH", "M&M", "NESTLEIND",
-            "TATAMOTORS", "TECHM", "BAJAJFINSV", "ADANIPORTS", "COALINDIA",
-            "DRREDDY", "DIVISLAB", "CIPLA", "EICHERMOT", "GRASIM",
-            "HEROMOTOCO", "HINDALCO", "INDUSINDBK", "JSWSTEEL", "TATACONSUM",
-            "TATASTEEL", "APOLLOHOSP", "BPCL", "BRITANNIA", "SHRIRAMFIN",
-            "SBILIFE", "HDFCLIFE", "BAJAJ-AUTO", "LTIM", "ADANIENT",
-            # Next 50
-            "SIEMENS", "HAL", "PIDILITIND", "DABUR", "MUTHOOTFIN",
-            "GODREJCP", "MARICO", "BERGEPAINT", "HAVELLS", "TRENT",
-            "AMBUJACEM", "DMART", "INDIGO", "NAUKRI", "BIOCON",
-            "TORNTPHARM", "LUPIN", "PGHH", "COLPAL", "BANDHANBNK",
-            "FEDERALBNK", "PNB", "CANBK", "BANKBARODA", "IDFCFIRSTB",
-            "CHOLAFIN", "MFSL", "PIIND", "AUROPHARMA", "ALKEM",
-            "CONCOR", "SAIL", "NMDC", "GAIL", "IOC",
-            "RECLTD", "PFC", "IRCTC", "ZOMATO", "PAYTM",
-            "NYKAA", "POLICYBZR", "DELHIVERY", "CARTRADE", "EASEMYTRIP",
-            "MEDIASSIST", "RAINBOW", "SYNGENE", "LICI", "RVNL"
-        ]
-    },
-    "banknifty": {
-        "label": "Bank Nifty",
-        "symbols": [
-            "HDFCBANK", "ICICIBANK", "KOTAKBANK", "AXISBANK", "SBIN",
-            "INDUSINDBK", "BANDHANBNK", "FEDERALBNK", "PNB", "CANBK",
-            "BANKBARODA", "IDFCFIRSTB", "AUBANK", "RBLBANK", "YESBANK"
-        ]
-    },
-    "watchlist": {
-        "label": "My Watchlist",
-        "symbols": []  # User can add custom symbols
-    }
+    # ── Nifty Next 50 (Nifty 100) ──
+    "SIEMENS":    ["Nifty 100","Nifty 500","F&O"],
+    "HAL":        ["Nifty 100","Nifty 500","F&O"],
+    "PIDILITIND": ["Nifty 100","Nifty 500","F&O"],
+    "DABUR":      ["Nifty 100","Nifty 500","Nifty FMCG","F&O"],
+    "MUTHOOTFIN": ["Nifty 100","Nifty 500","F&O"],
+    "GODREJCP":   ["Nifty 100","Nifty 500","Nifty FMCG","F&O"],
+    "MARICO":     ["Nifty 100","Nifty 500","Nifty FMCG","F&O"],
+    "BERGEPAINT": ["Nifty 100","Nifty 500","F&O"],
+    "HAVELLS":    ["Nifty 100","Nifty 500","F&O"],
+    "TRENT":      ["Nifty 100","Nifty 500","F&O"],
+    "AMBUJACEM":  ["Nifty 100","Nifty 500","F&O"],
+    "DMART":      ["Nifty 100","Nifty 500","F&O"],
+    "INDIGO":     ["Nifty 100","Nifty 500","F&O"],
+    "NAUKRI":     ["Nifty 100","Nifty 500","F&O"],
+    "BIOCON":     ["Nifty 100","Nifty 500","Nifty Pharma","F&O"],
+    "TORNTPHARM": ["Nifty 100","Nifty 500","Nifty Pharma","F&O"],
+    "LUPIN":      ["Nifty 100","Nifty 500","Nifty Pharma","F&O"],
+    "COLPAL":     ["Nifty 100","Nifty 500","Nifty FMCG","F&O"],
+    "BANDHANBNK": ["Nifty 100","Nifty 500","Bank Nifty","F&O"],
+    "FEDERALBNK": ["Nifty 100","Nifty 500","Bank Nifty","F&O"],
+    "PNB":        ["Nifty 100","Nifty 500","Bank Nifty","F&O"],
+    "CANBK":      ["Nifty 100","Nifty 500","Bank Nifty","F&O"],
+    "BANKBARODA": ["Nifty 100","Nifty 500","Bank Nifty","F&O"],
+    "IDFCFIRSTB": ["Nifty 100","Nifty 500","Bank Nifty","F&O"],
+    "CHOLAFIN":   ["Nifty 100","Nifty 500","F&O"],
+    "PIIND":      ["Nifty 100","Nifty 500","F&O"],
+    "AUROPHARMA": ["Nifty 100","Nifty 500","Nifty Pharma","F&O"],
+    "ALKEM":      ["Nifty 100","Nifty 500","Nifty Pharma","F&O"],
+    "CONCOR":     ["Nifty 100","Nifty 500","F&O"],
+    "SAIL":       ["Nifty 100","Nifty 500","Nifty Metal","F&O"],
+    "NMDC":       ["Nifty 100","Nifty 500","Nifty Metal","F&O"],
+    "GAIL":       ["Nifty 100","Nifty 500","F&O"],
+    "IOC":        ["Nifty 100","Nifty 500","F&O"],
+    "RECLTD":     ["Nifty 100","Nifty 500","F&O"],
+    "PFC":        ["Nifty 100","Nifty 500","F&O"],
+    "IRCTC":      ["Nifty 100","Nifty 500","F&O"],
+    "ZOMATO":     ["Nifty 100","Nifty 500","F&O"],
+    "LICI":       ["Nifty 100","Nifty 500","F&O"],
+    "RVNL":       ["Nifty 100","Nifty 500","F&O"],
+    "IRFC":       ["Nifty 100","Nifty 500","F&O"],
+
+    # ── IT Stocks ──
+    "PERSISTENT": ["Nifty 500","Nifty IT","F&O"],
+    "LTTS":       ["Nifty 500","Nifty IT","F&O"],
+    "MPHASIS":    ["Nifty 500","Nifty IT","F&O"],
+    "COFORGE":    ["Nifty 500","Nifty IT","F&O"],
+    "TATAELXSI":  ["Nifty 500","Nifty IT","F&O"],
+    "KPITTECH":   ["Nifty 500","Nifty IT","F&O"],
+    "BIRLASOFT":  ["Nifty 500","Nifty IT","F&O"],
+    "MASTEK":     ["Nifty 500","Nifty IT"],
+    "ZENSAR":     ["Nifty 500","Nifty IT"],
+    "TATATECH":   ["Nifty 500","Nifty IT","F&O"],
+
+    # ── Pharma ──
+    "GLAND":      ["Nifty 500","Nifty Pharma","F&O"],
+    "IPCA":       ["Nifty 500","Nifty Pharma","F&O"],
+    "NATCOPHARM": ["Nifty 500","Nifty Pharma"],
+    "GRANULES":   ["Nifty 500","Nifty Pharma","F&O"],
+    "AJANTPHARM": ["Nifty 500","Nifty Pharma"],
+
+    # ── Metal ──
+    "VEDL":       ["Nifty 500","Nifty Metal","F&O"],
+    "HINDZINC":   ["Nifty 500","Nifty Metal","F&O"],
+    "NALCO":      ["Nifty 500","Nifty Metal","F&O"],
+    "MOIL":       ["Nifty 500","Nifty Metal"],
+    "APLAPOLLO":  ["Nifty 500","Nifty Metal","F&O"],
+    "RATNAMANI":  ["Nifty 500","Nifty Metal"],
+    "APL":        ["Nifty 500","Nifty Metal"],
+    "JINDALSAW":  ["Nifty 500","Nifty Metal"],
+    "WELCORP":    ["Nifty 500","Nifty Metal"],
+    "JSPL":       ["Nifty 500","Nifty Metal","F&O"],
+
+    # ── Auto ──
+    "BOSCHLTD":   ["Nifty 500","Nifty Auto","F&O"],
+    "MOTHERSON":  ["Nifty 500","Nifty Auto","F&O"],
+    "EXIDEIND":   ["Nifty 500","Nifty Auto","F&O"],
+    "BHARATFORG": ["Nifty 500","Nifty Auto","F&O"],
+    "ESCORTS":    ["Nifty 500","Nifty Auto","F&O"],
+    "TIINDIA":    ["Nifty 500","Nifty Auto","F&O"],
+    "CRAFTSMAN":  ["Nifty 500","Nifty Auto"],
+    "ENDURANCE":  ["Nifty 500","Nifty Auto","F&O"],
+    "SUPRAJIT":   ["Nifty 500","Nifty Auto"],
+    "GABRIEL":    ["Nifty 500","Nifty Auto"],
+
+    # ── FMCG ──
+    "EMAMILTD":   ["Nifty 500","Nifty FMCG","F&O"],
+    "VBL":        ["Nifty 500","Nifty FMCG","F&O"],
+    "RADICO":     ["Nifty 500","Nifty FMCG","F&O"],
+    "PGHH":       ["Nifty 500","Nifty FMCG"],
+    "UNITDSPR":   ["Nifty 500","Nifty FMCG"],
+
+    # ── Realty ──
+    "DLF":        ["Nifty 500","Nifty Realty","F&O"],
+    "GODREJPROP": ["Nifty 500","Nifty Realty","F&O"],
+    "OBEROIRLTY": ["Nifty 500","Nifty Realty","F&O"],
+    "PRESTIGE":   ["Nifty 500","Nifty Realty","F&O"],
+    "BRIGADE":    ["Nifty 500","Nifty Realty","F&O"],
+    "PHOENIXLTD": ["Nifty 500","Nifty Realty","F&O"],
+    "SOBHA":      ["Nifty 500","Nifty Realty","F&O"],
+    "LODHA":      ["Nifty 500","Nifty Realty","F&O"],
+    "KOLTEPATIL": ["Nifty 500","Nifty Realty"],
+    "SUNTECK":    ["Nifty 500","Nifty Realty"],
+
+    # ── Banks ──
+    "AUBANK":     ["Nifty 500","Bank Nifty","F&O"],
+    "RBLBANK":    ["Nifty 500","Bank Nifty","F&O"],
+    "YESBANK":    ["Nifty 500","Bank Nifty","F&O"],
+    "UNIONBANK":  ["Nifty 500","Bank Nifty","F&O"],
+    "INDIANB":    ["Nifty 500","Bank Nifty","F&O"],
+    "MAHABANK":   ["Nifty 500","Bank Nifty"],
+    "CENTRALBK":  ["Nifty 500","Bank Nifty"],
+    "BANKINDIA":  ["Nifty 500","Bank Nifty","F&O"],
+    "UCOBANK":    ["Nifty 500","Bank Nifty"],
+    "KTKBANK":    ["Nifty 500","Bank Nifty"],
+    "DCBBANK":    ["Nifty 500","Bank Nifty"],
+    "SOUTHBANK":  ["Nifty 500","Bank Nifty"],
+
+    # ── Energy / Power ──
+    "ADANIGREEN": ["Nifty 500","F&O"],
+    "ADANIPOWER": ["Nifty 500","F&O"],
+    "TATAPOWER":  ["Nifty 500","F&O"],
+    "TORNTPOWER": ["Nifty 500","F&O"],
+    "CESC":       ["Nifty 500","F&O"],
+    "JPPOWER":    ["Nifty 500"],
+    "SUZLON":     ["Nifty 500","F&O"],
+    "NHPC":       ["Nifty 500","F&O"],
+    "SJVN":       ["Nifty 500","F&O"],
+    "ADANITRANS": ["Nifty 500","F&O"],
+
+    # ── Fintech / New Age ──
+    "NYKAA":      ["Nifty 500","F&O"],
+    "POLICYBZR":  ["Nifty 500","F&O"],
+    "PAYTM":      ["Nifty 500","F&O"],
+    "DELHIVERY":  ["Nifty 500","F&O"],
+    "SWIGGY":     ["Nifty 500"],
+    "ANGELONE":   ["Nifty 500","F&O"],
+    "CDSL":       ["Nifty 500","F&O"],
+    "CAMS":       ["Nifty 500","F&O"],
+    "BSE":        ["Nifty 500","F&O"],
+    "MCX":        ["Nifty 500","F&O"],
+
+    # ── Finance / NBFC ──
+    "MOTILALOSWAL":["Nifty 500","F&O"],
+    "MANAPPURAM": ["Nifty 500","F&O"],
+    "IIFL":       ["Nifty 500","F&O"],
+    "CANFINHOME": ["Nifty 500","F&O"],
+    "HUDCO":      ["Nifty 500","F&O"],
+    "PNBHOUSING": ["Nifty 500","F&O"],
+    "LICHSGFIN":  ["Nifty 500","F&O"],
+    "360ONE":     ["Nifty 500","F&O"],
+    "HDFCAMC":    ["Nifty 500","F&O"],
+    "NIPPONLIFE": ["Nifty 500","F&O"],
+    "UTIAMC":     ["Nifty 500","F&O"],
+    "ABSLAMC":    ["Nifty 500","F&O"],
+
+    # ── Infra / PSU ──
+    "NBCC":       ["Nifty 500","F&O"],
+    "RAILVIKAS":  ["Nifty 500","F&O"],
+    "TITAGARH":   ["Nifty 500","F&O"],
+    "TATACOMM":   ["Nifty 500","F&O"],
+    "HFCL":       ["Nifty 500","F&O"],
+    "STLTECH":    ["Nifty 500"],
+    "POLYCAB":    ["Nifty 500","F&O"],
+    "ASTRAL":     ["Nifty 500","F&O"],
+    "CROMPTON":   ["Nifty 500","F&O"],
+    "BLUESTARCO": ["Nifty 500","F&O"],
+    "VOLTAS":     ["Nifty 500","F&O"],
+    "VGUARD":     ["Nifty 500","F&O"],
+
+    # ── Jewellery / Consumer ──
+    "KALYANKJIL": ["Nifty 500","F&O"],
+    "SENCO":      ["Nifty 500"],
+    "BATAINDIA":  ["Nifty 500","F&O"],
+    "RELAXO":     ["Nifty 500","F&O"],
+    "CAMPUS":     ["Nifty 500","F&O"],
+
+    # ── Chemicals ──
+    "AARTIIND":   ["Nifty 500","F&O"],
+    "DEEPAKNITR": ["Nifty 500","F&O"],
+    "GNFC":       ["Nifty 500","F&O"],
+    "NAVINFLUOR": ["Nifty 500","F&O"],
+    "VINATIORGA": ["Nifty 500","F&O"],
+    "PIIND":      ["Nifty 500","F&O"],
 }
+
+# ── Index filter map — for UI filtering ───────────────────────────────────────
+INDEX_FILTERS = [
+    "All Stocks",
+    "Nifty 50",
+    "Nifty 100",
+    "Nifty 500",
+    "Bank Nifty",
+    "Nifty IT",
+    "Nifty Pharma",
+    "Nifty Metal",
+    "Nifty Auto",
+    "Nifty FMCG",
+    "Nifty Realty",
+    "F&O",
+]
 
 # ── Scanner Filters ───────────────────────────────────────────────────────────
 FILTERS = {
-    "min_price":       20.0,
-    "max_price":       50000.0,
-    "min_volume":      50000,       # Minimum daily volume
-    "volume_surge":    1.5,         # Volume must be 1.5x the 20-day average
-    "rsi_min":         0,
-    "rsi_max":         100,
-    "consolidation_pct": 10.0,      # % range for consolidation detection
-    "lookback_candles":  3,         # How many recent candles to check patterns
+    "min_price":         20.0,
+    "max_price":         50000.0,
+    "min_volume":        50000,
+    "volume_surge":      1.5,
+    "rsi_min":           0,
+    "rsi_max":           100,
+    "consolidation_pct": 10.0,
+    "lookback_candles":  3,
 }
 
-# ── Candlestick Patterns to Detect ───────────────────────────────────────────
-BULLISH_PATTERNS = [
-    "Morning Star",
-    "Morning Doji Star",
-    "Bullish Engulfing",
-    "Hammer",
-    "Dragonfly Doji",
-    "3 White Soldiers",
-    "3 Inside Up",
-    "3 Outside Up",
-    "Piercing Line",
-    "Bullish Harami",
-    "Bullish Marubozu",
-    "Tweezer Bottom",
-    "Inside Bar",
-    "Cup and Handle",
-]
-
-BEARISH_PATTERNS = [
-    "Evening Star",
-    "Evening Doji Star",
-    "Bearish Engulfing",
-    "Shooting Star",
-    "Gravestone Doji",
-    "Hanging Man",
-    "3 Black Crows",
-    "3 Inside Down",
-    "3 Outside Down",
-    "Dark Cloud Cover",
-    "Bearish Harami",
-    "Bearish Marubozu",
-    "Tweezer Top",
-]
-
-# ── Signal Weights (inspired by PKScreener) ───────────────────────────────────
+# ── Signal Weights ────────────────────────────────────────────────────────────
 SIGNAL_WEIGHTS = {
-    "rsi":         15,
-    "macd":        15,
-    "ema":         15,
-    "volume":      15,
-    "candle":      20,
-    "price_action":10,
-    "momentum":    10,
+    "rsi":15,"macd":15,"ema":15,"volume":15,
+    "candle":20,"price_action":10,"momentum":10,
 }

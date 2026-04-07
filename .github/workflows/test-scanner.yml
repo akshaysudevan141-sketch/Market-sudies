@@ -1,105 +1,47 @@
-name: 🔍 NSE Scanner Test
+name: 🔍 NSE Scanner
 
 on:
   workflow_dispatch:
-    inputs:
-      universe:
-        description: 'Stock Universe'
-        required: true
-        default: 'banknifty'
-        type: choice
-        options:
-          - banknifty
-          - nifty50
-          - nifty100
-      timeframes:
-        description: 'Timeframes to scan'
-        required: true
-        default: '1d'
-        type: choice
-        options:
-          - 1d
-          - 1wk
-          - 1h
-          - 30m
-          - 15m
-          - 5m
-          - 1d 1wk
-          - 1d 1h
-          - 15m 30m 1h
-          - 5m 15m 30m 1h 1d 1wk
-
   schedule:
-    - cron: '30 10 * * 1-5'
+    - cron: '0 11 * * 1-5'   # 4:30 PM IST Mon-Fri
 
 jobs:
-  run-scanner:
+  scan:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: 🐍 Setup Python 3.11
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Dependencies
+      - name: 📦 Install
         run: |
-          python -m pip install --upgrade pip
           pip install yfinance pandas numpy requests
 
-      - name: 🔍 Run NSE Scanner
-        run: |
-          python3 scripts/scanner/stock_scanner.py \
-            --universe ${{ github.event.inputs.universe || 'banknifty' }} \
-            --timeframes ${{ github.event.inputs.timeframes || '1d' }}
+      - name: 🔍 Scan ALL Stocks — ALL Timeframes
+        run: python3 scripts/scanner/stock_scanner.py
 
-      - name: 📊 Show Scan Results
+      - name: 📊 Summary
         run: |
           python3 -c "
           import json
-          with open('data/scanner-results.json') as f:
-              data = json.load(f)
-          print(f'Universe : {data[\"_universe\"]}')
-          print(f'Updated  : {data[\"_updated_at\"]}')
-          print(f'Market   : {data[\"_market\"][\"status\"]}')
-          print()
-          for tf, summary in data['summary'].items():
-              print(f'── Timeframe: {tf.upper()} ──')
-              print(f'  Total   : {summary[\"total_scanned\"]}')
-              print(f'  Strong Buy : {summary[\"strong_buy\"]}')
-              print(f'  Buy        : {summary[\"buy\"]}')
-              print(f'  Neutral    : {summary[\"neutral\"]}')
-              print(f'  Sell       : {summary[\"sell\"]}')
-              print(f'  Strong Sell: {summary[\"strong_sell\"]}')
-              print(f'  Pattern    : {summary[\"with_pattern\"]}')
-              print()
-              results = data['results'].get(tf, [])
-              strong_buys = [r for r in results if r['signal'] == 'STRONG BUY']
-              buys        = [r for r in results if r['signal'] == 'BUY']
-              sells       = [r for r in results if r['signal'] in ['SELL','STRONG SELL']]
-              if strong_buys:
-                  print('  STRONG BUY:')
-                  for r in strong_buys[:10]:
-                      pats = ', '.join(r['patterns']['bullish'][:2]) if r['patterns']['bullish'] else '-'
-                      print(f'    {r[\"symbol\"]:15} LTP:{r[\"ltp\"]:>10}  RSI:{str(r[\"rsi\"]):>6}  {pats}')
-              if buys:
-                  print('  BUY:')
-                  for r in buys[:10]:
-                      pats = ', '.join(r['patterns']['bullish'][:2]) if r['patterns']['bullish'] else '-'
-                      print(f'    {r[\"symbol\"]:15} LTP:{r[\"ltp\"]:>10}  RSI:{str(r[\"rsi\"]):>6}  {pats}')
-              if sells:
-                  print('  SELL:')
-                  for r in sells[:10]:
-                      pats = ', '.join(r['patterns']['bearish'][:2]) if r['patterns']['bearish'] else '-'
-                      print(f'    {r[\"symbol\"]:15} LTP:{r[\"ltp\"]:>10}  RSI:{str(r[\"rsi\"]):>6}  {pats}')
+          d = json.load(open('data/scanner-results.json'))
+          print(f'Total stocks : {d[\"_total_stocks\"]}')
+          print(f'Updated      : {d[\"_updated_at\"]}')
+          print(f'Market       : {d[\"_market\"][\"status\"]}')
+          for tf, s in d['summary'].items():
+              print(f'\n[{tf.upper()}] Scanned:{s[\"total_scanned\"]} | SB:{s[\"strong_buy\"]} | B:{s[\"buy\"]} | Pattern:{s[\"with_pattern\"]} | Sell:{s[\"sell\"]+s[\"strong_sell\"]}')
+              top = [r for r in d['results'][tf] if r['signal'] in ['STRONG BUY','BUY']][:5]
+              for r in top:
+                  idx = ', '.join(r['indices'][:2])
+                  p   = ', '.join(r['patterns']['bullish'][:1]) or '-'
+                  print(f'  {r[\"symbol\"]:15} {r[\"signal\"]:12} RSI:{str(r[\"rsi\"]):>5}  [{idx}]  {p}')
           "
 
       - name: 📁 Upload Results
         uses: actions/upload-artifact@v4
         with:
-          name: scanner-results-${{ github.event.inputs.universe || 'banknifty' }}-run${{ github.run_number }}
+          name: nse-scan-run${{ github.run_number }}
           path: data/scanner-results.json
-          retention-days: 7
+          retention-days: 30

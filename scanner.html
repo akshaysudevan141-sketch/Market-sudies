@@ -130,11 +130,20 @@
   <div class="controls">
     <div class="controls-row">
       <div class="ctrl-group">
-        <label>Stock Universe</label>
-        <select id="universe">
-          <option value="nifty50">Nifty 50</option>
-          <option value="nifty100">Nifty 100</option>
-          <option value="banknifty">Bank Nifty</option>
+        <label>Filter by Index</label>
+        <select id="indexFilter" onchange="renderTable()">
+          <option value="All Stocks">🌐 All Stocks</option>
+          <option value="Nifty 50">Nifty 50</option>
+          <option value="Nifty 100">Nifty 100</option>
+          <option value="Nifty 500">Nifty 500</option>
+          <option value="Bank Nifty">🏦 Bank Nifty</option>
+          <option value="Nifty IT">💻 Nifty IT</option>
+          <option value="Nifty Pharma">💊 Nifty Pharma</option>
+          <option value="Nifty Metal">⚙️ Nifty Metal</option>
+          <option value="Nifty Auto">🚗 Nifty Auto</option>
+          <option value="Nifty FMCG">🛒 Nifty FMCG</option>
+          <option value="Nifty Realty">🏠 Nifty Realty</option>
+          <option value="F&O">📊 F&amp;O Stocks</option>
         </select>
       </div>
       <div class="ctrl-group">
@@ -183,6 +192,7 @@
         <thead>
           <tr>
             <th onclick="sortBy('symbol')">Symbol</th>
+            <th>Indices</th>
             <th onclick="sortBy('ltp')">LTP</th>
             <th onclick="sortBy('change_pct')">Chg%</th>
             <th onclick="sortBy('rsi')">RSI</th>
@@ -257,7 +267,6 @@ async function runScan() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        universe:   document.getElementById('universe').value,
         timeframes: [...selectedTfs]
       })
     });
@@ -371,7 +380,13 @@ function renderTable() {
   const rows = scanData?.results?.[activeTf] || [];
   const search = document.getElementById('searchBox').value.toLowerCase();
 
+  let idxFilter = document.getElementById('indexFilter').value;
   let filtered = rows.filter(r => {
+    // Index filter
+    if (idxFilter !== 'All Stocks') {
+      const idxs = r.indices || [];
+      if (!idxs.includes(idxFilter)) return false;
+    }
     if (search && !r.symbol.toLowerCase().includes(search)) return false;
     if (activeFilter === 'ALL')        return true;
     if (activeFilter === 'PATTERN')    return r.patterns?.bullish?.length || r.patterns?.bearish?.length;
@@ -418,6 +433,7 @@ function renderTable() {
 
     return `<tr>
       <td><strong>${r.symbol}</strong>${extras ? `<br><small style="color:var(--muted)">${extras}</small>` : ''}</td>
+      <td>${(r.indices||[]).map(i=>`<span style="display:inline-block;padding:1px 5px;margin:1px;border-radius:3px;font-size:.68rem;background:rgba(56,189,248,.1);color:var(--blue);border:1px solid rgba(56,189,248,.2)">${i}</span>`).join('') || '—'}</td>
       <td>₹${r.ltp?.toLocaleString('en-IN')||'—'}</td>
       <td class="${chgCls}">${r.change_pct!=null?chgSign+r.change_pct+'%':'—'}</td>
       <td style="${rsiColor}">${r.rsi??'—'}</td>
