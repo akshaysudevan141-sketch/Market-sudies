@@ -1,0 +1,53 @@
+name: 📋 Fetch NSE Symbols (Once Daily)
+
+on:
+  workflow_dispatch:   # Manual trigger anytime
+
+  schedule:
+    # Run at 4:30 PM IST = 11:00 UTC — right after market close
+    - cron: '0 11 * * 1-5'
+
+jobs:
+  fetch-symbols:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install
+        run: pip install yfinance pandas numpy requests
+
+      - name: 📋 Fetch All NSE Symbols from NSE India + Validate Yahoo
+        run: python3 scripts/scanner/fetch_nse_symbols.py
+
+      - name: 📊 Show Stats
+        run: |
+          python3 -c "
+          import json
+          d = json.load(open('data/nse_symbols.json'))
+          print(f'Valid NSE symbols : {d[\"_total_valid\"]}')
+          print(f'Invalid/skipped   : {d[\"_total_invalid\"]}')
+          print(f'Updated at        : {d[\"_updated_at\"]}')
+          from collections import Counter
+          idx = Counter()
+          for s in d['symbols'].values():
+              for i in s['indices']: idx[i] += 1
+          print()
+          for k,v in sorted(idx.items(), key=lambda x:-x[1]):
+              print(f'  {k:<25} {v}')
+          "
+
+      # ── Commit nse_symbols.json back to repo ────────────────
+      # So the scanner workflow can use it without re-fetching
+      - name: 💾 Commit Symbol List to Repo
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/nse_symbols.json
+          git diff --cached --quiet || git commit -m "chore: Update NSE symbol list [$(date '+%Y-%m-%d')]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

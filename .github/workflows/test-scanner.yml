@@ -1,24 +1,32 @@
-name: 🔍 NSE Scanner
+name: 🔍 NSE Scanner (Every 3 Min)
 
 on:
   workflow_dispatch:
     inputs:
-      refresh_symbols:
-        description: 'Re-fetch NSE symbol list from NSE India?'
+      timeframes:
+        description: 'Timeframes to scan'
         required: false
-        default: 'false'
+        default: '5m 15m 1h 1d'
         type: choice
         options:
-          - 'false'
-          - 'true'
+          - '5m 15m 1h 1d'
+          - '5m 15m'
+          - '1h 1d'
+          - '1d 1wk'
+          - '5m 15m 30m 1h 1d 1wk'
 
-  # Auto run Mon-Fri after market close 4:30 PM IST = 11:00 UTC
   schedule:
-    - cron: '0 11 * * 1-5'
+    # Start every 6 hours — each run loops internally every 3 min for 6 hours
+    # This ensures continuous 3-min scanning all day
+    - cron: '15 3 * * 1-5'    # 8:45 AM IST  — pre market warmup
+    - cron: '0 10 * * 1-5'    # 3:30 PM IST  — afternoon session
+    - cron: '0 4 * * 6'       # Saturday EOD scan
 
 jobs:
-  scan:
+  scanner:
     runs-on: ubuntu-latest
+    # Max job time = 6 hours (GitHub limit)
+    timeout-minutes: 360
 
     steps:
       - uses: actions/checkout@v4
@@ -28,76 +36,142 @@ jobs:
           python-version: '3.11'
 
       - name: 📦 Install Dependencies
-        run: |
-          pip install yfinance pandas numpy requests
+        run: pip install yfinance pandas numpy requests
 
-      # ── Step 1: Fetch & validate all NSE symbols from Yahoo ──
-      - name: 📋 Fetch All NSE Symbols from Yahoo Finance
-        run: |
-          python3 scripts/scanner/fetch_nse_symbols.py
-
-      - name: 📊 Show Symbol Stats
+      - name: ✅ Check Symbol Cache
         run: |
           python3 -c "
-          import json
-          d = json.load(open('data/nse_symbols.json'))
-          print(f'Total valid NSE symbols : {d[\"_total_valid\"]}')
-          print(f'Total invalid/not found : {d[\"_total_invalid\"]}')
-          print(f'Updated at              : {d[\"_updated_at\"]}')
-          print()
-          # Show index breakdown
-          from collections import Counter
-          idx_count = Counter()
-          for sym, info in d['symbols'].items():
-              for idx in info['indices']:
-                  idx_count[idx] += 1
-          print('Index Breakdown:')
-          for idx, count in sorted(idx_count.items(), key=lambda x: -x[1]):
-              print(f'  {idx:<25} {count} stocks')
+          import json, os, sys
+          path = 'data/nse_symbols.json'
+          if not os.path.exists(path):
+              print('❌ nse_symbols.json missing! Run fetch-symbols workflow first.')
+              sys.exit(1)
+          d = json.load(open(path))
+          print(f'✅ {d[\"_total_valid\"]} NSE stocks ready')
+          print(f'   Updated: {d[\"_updated_at\"]}')
           "
 
-      # ── Step 2: Run full scan all timeframes ─────────────────
-      - name: 🔍 Scan ALL NSE Stocks — ALL Timeframes
+      # ── Main loop — scan every 3 minutes ─────────────────────
+      - name: 🔄 Scan Loop (Every 3 Minutes)
         run: |
-          python3 scripts/scanner/stock_scanner.py \
-            --timeframes 5m 15m 1h 1d 1wk
+          python3 << 'PYEOF'
+          import subprocess, time, json, os
+          from datetime import datetime, timezone, timedelta
 
-      # ── Step 3: Show results summary ─────────────────────────
-      - name: 📈 Show Scan Results
-        run: |
-          python3 -c "
-          import json
-          d = json.load(open('data/scanner-results.json'))
-          print('=' * 65)
-          print(f'NSE SCANNER — FULL RESULTS')
-          print(f'Stocks   : {d[\"_total_stocks\"]}')
-          print(f'Updated  : {d[\"_updated_at\"]}')
-          print(f'Market   : {d[\"_market\"][\"status\"]}')
-          print('=' * 65)
-          for tf, s in d['summary'].items():
-              print(f'\n── {tf.upper()} ──')
-              print(f'  Scanned    : {s[\"total_scanned\"]}')
-              print(f'  Strong Buy : {s[\"strong_buy\"]}')
-              print(f'  Buy        : {s[\"buy\"]}')
-              print(f'  Neutral    : {s[\"neutral\"]}')
-              print(f'  Sell       : {s[\"sell\"]}')
-              print(f'  Strong Sell: {s[\"strong_sell\"]}')
-              print(f'  Pattern    : {s[\"with_pattern\"]}')
-              top = [r for r in d['results'][tf] if r['signal'] in ['STRONG BUY','BUY']][:8]
-              if top:
-                  print(f'  Top Picks:')
-                  for r in top:
-                      idx = ', '.join(r['indices'][:2]) if r['indices'] else 'NSE'
-                      p   = ', '.join(r['patterns']['bullish'][:1]) or '-'
-                      print(f'    {r[\"symbol\"]:15} {r[\"signal\"]:12} RSI:{str(r[\"rsi\"]):>5}  [{idx}]  {p}')
-          "
+          IST        = timezone(timedelta(hours=5, minutes=30))
+          INTERVAL   = 180        # 3 minutes in seconds
+          MAX_HOURS  = 5.75       # run for ~6 hours max (just under GitHub limit)
+          MAX_SECS   = MAX_HOURS * 3600
+          start_time = time.time()
+          scan_count = 0
 
-      # ── Upload artifacts ──────────────────────────────────────
-      - name: 📁 Upload Results
+          def get_timeframes():
+              """Pick timeframes based on market time."""
+              now  = datetime.now(IST)
+              h, m = now.hour, now.minute
+              inp  = "${{ github.event.inputs.timeframes }}"
+              if inp and inp.strip():
+                  return inp.strip().split()
+              # Pre-market
+              if h < 9 or (h == 9 and m < 15):
+                  return ["1d"]
+              # Opening 30 min — volatile, short only
+              elif h == 9 and m < 45:
+                  return ["5m","15m"]
+              # Mid morning
+              elif h < 12:
+                  return ["5m","15m","1h"]
+              # Afternoon
+              elif h < 15 or (h == 15 and m <= 30):
+                  return ["5m","15m","1h","1d"]
+              # Post market EOD
+              else:
+                  return ["1d","1wk"]
+
+          def is_market_hours():
+              """Check if within scan hours (8:45 AM - 5 PM IST)."""
+              now = datetime.now(IST)
+              if now.weekday() >= 5:
+                  return False
+              start = now.replace(hour=8,  minute=45, second=0)
+              end   = now.replace(hour=17, minute=0,  second=0)
+              return start <= now <= end
+
+          print("━" * 60)
+          print("🔄 NSE Scanner — 3 Minute Loop Started")
+          print(f"   Max runtime : {MAX_HOURS} hours")
+          print(f"   Interval    : {INTERVAL} seconds (3 min)")
+          print("━" * 60)
+
+          while True:
+              elapsed = time.time() - start_time
+
+              # Stop if max time reached
+              if elapsed >= MAX_SECS:
+                  print(f"\n⏹  Max runtime reached ({MAX_HOURS}h). Stopping.")
+                  break
+
+              # Skip if outside market hours on weekdays
+              now_ist = datetime.now(IST)
+              if not is_market_hours():
+                  print(f"\n⏸  Outside scan hours ({now_ist.strftime('%H:%M IST')}). Waiting...")
+                  time.sleep(60)
+                  continue
+
+              scan_count += 1
+              tfs = get_timeframes()
+              ts  = now_ist.strftime("%H:%M:%S IST")
+
+              print(f"\n{'─'*55}")
+              print(f"🔍 Scan #{scan_count} | {ts} | TF: {' '.join(tfs)}")
+              print(f"{'─'*55}")
+
+              # Run the scanner
+              result = subprocess.run(
+                  ["python3", "scripts/scanner/stock_scanner.py",
+                   "--timeframes"] + tfs,
+                  capture_output=False,
+                  text=True
+              )
+
+              if result.returncode == 0:
+                  # Commit results to repo
+                  os.system('git config user.name "github-actions[bot]"')
+                  os.system('git config user.email "github-actions[bot]@users.noreply.github.com"')
+                  os.system('git pull --rebase origin main 2>/dev/null')
+                  os.system('git add data/scanner-results.json')
+                  commit_msg = f"scan: #{scan_count} {ts} [{\" \".join(tfs)}]"
+                  os.system(f'git diff --cached --quiet || git commit -m "{commit_msg}"')
+                  os.system('git push origin main 2>/dev/null')
+
+                  # Print quick summary
+                  try:
+                      d = json.load(open("data/scanner-results.json"))
+                      for tf, s in d["summary"].items():
+                          print(f"  [{tf}] Scanned:{s['total_scanned']} "
+                                f"SB:{s['strong_buy']} B:{s['buy']} "
+                                f"Pattern:{s['with_pattern']} "
+                                f"Sell:{s['sell']+s['strong_sell']}")
+                  except:
+                      pass
+              else:
+                  print(f"  ⚠️  Scan #{scan_count} failed")
+
+              # Wait 3 minutes before next scan
+              remaining = time.time() - start_time
+              next_scan = INTERVAL - (time.time() % INTERVAL)
+              print(f"\n  ⏳ Next scan in {int(next_scan)}s "
+                    f"| Runtime: {int(elapsed//60)}m "
+                    f"| Remaining: {int((MAX_SECS-elapsed)//60)}m")
+              time.sleep(next_scan)
+
+          print(f"\n✅ Completed {scan_count} scans")
+          PYEOF
+
+      - name: 📁 Upload Final Results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: nse-scan-run${{ github.run_number }}
-          path: |
-            data/scanner-results.json
-            data/nse_symbols.json
-          retention-days: 30
+          name: scan-final-run${{ github.run_number }}
+          path: data/scanner-results.json
+          retention-days: 7
