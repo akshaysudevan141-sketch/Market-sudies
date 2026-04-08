@@ -1,41 +1,35 @@
 name: 🔍 NSE Scanner (Every 3 Min)
 
 on:
+  # Manual trigger
   workflow_dispatch:
-    inputs:
-      timeframes:
-        description: 'Timeframes to scan'
-        required: false
-        default: '5m 15m 1h 1d'
-        type: choice
-        options:
-          - '5m 15m 1h 1d'
-          - '5m 15m'
-          - '1h 1d'
-          - '1d 1wk'
-          - '5m 15m 30m 1h 1d 1wk'
 
   schedule:
-    # Start every 6 hours — each run loops internally every 3 min for 6 hours
-    # This ensures continuous 3-min scanning all day
-    - cron: '15 3 * * 1-5'    # 8:45 AM IST  — pre market warmup
-    - cron: '0 10 * * 1-5'    # 3:30 PM IST  — afternoon session
-    - cron: '0 4 * * 6'       # Saturday EOD scan
+    # ── Starts the 3-min loop job at market open ──────────────
+    # IST = UTC+5:30 | 9:15 AM IST = 3:45 UTC
+    - cron: '45 3 * * 1-5'    # 9:15 AM IST — market open (Mon-Fri)
+    - cron: '0 11 * * 1-5'    # 4:30 PM IST — EOD full scan
+
+# Give write permission to commit results back to repo
+permissions:
+  contents: write
 
 jobs:
   scanner:
     runs-on: ubuntu-latest
-    # Max job time = 6 hours (GitHub limit)
-    timeout-minutes: 360
+    timeout-minutes: 360      # 6 hours max
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Dependencies
+      - name: 📦 Install
         run: pip install yfinance pandas numpy requests
 
       - name: ✅ Check Symbol Cache
@@ -44,134 +38,127 @@ jobs:
           import json, os, sys
           path = 'data/nse_symbols.json'
           if not os.path.exists(path):
-              print('❌ nse_symbols.json missing! Run fetch-symbols workflow first.')
+              print('❌ nse_symbols.json missing! Run Fetch NSE Symbols workflow first.')
               sys.exit(1)
           d = json.load(open(path))
           print(f'✅ {d[\"_total_valid\"]} NSE stocks ready')
           print(f'   Updated: {d[\"_updated_at\"]}')
           "
 
-      # ── Main loop — scan every 3 minutes ─────────────────────
-      - name: 🔄 Scan Loop (Every 3 Minutes)
+      # ── 3-minute loop — runs for up to 6 hours ───────────────
+      - name: 🔄 Scan Every 3 Minutes
         run: |
           python3 << 'PYEOF'
           import subprocess, time, json, os
           from datetime import datetime, timezone, timedelta
 
-          IST        = timezone(timedelta(hours=5, minutes=30))
-          INTERVAL   = 180        # 3 minutes in seconds
-          MAX_HOURS  = 5.75       # run for ~6 hours max (just under GitHub limit)
-          MAX_SECS   = MAX_HOURS * 3600
-          start_time = time.time()
-          scan_count = 0
+          IST      = timezone(timedelta(hours=5, minutes=30))
+          INTERVAL = 180        # 3 minutes
+          MAX_SECS = 5.75 * 3600
+          start    = time.time()
+          count    = 0
 
           def get_timeframes():
-              """Pick timeframes based on market time."""
-              now  = datetime.now(IST)
+              """Pick timeframes based on current market time."""
+              now = datetime.now(IST)
               h, m = now.hour, now.minute
-              inp  = "${{ github.event.inputs.timeframes }}"
-              if inp and inp.strip():
-                  return inp.strip().split()
-              # Pre-market
-              if h < 9 or (h == 9 and m < 15):
-                  return ["1d"]
-              # Opening 30 min — volatile, short only
+              # Pre-market / after hours → only daily + weekly
+              if h < 9 or (h == 9 and m < 15) or h >= 16:
+                  return ["1d", "1wk"]
+              # Market opening (9:15–9:45) — volatile, short TFs only
               elif h == 9 and m < 45:
-                  return ["5m","15m"]
-              # Mid morning
+                  return ["5m", "15m"]
+              # Mid morning (9:45–12:00)
               elif h < 12:
-                  return ["5m","15m","1h"]
-              # Afternoon
-              elif h < 15 or (h == 15 and m <= 30):
-                  return ["5m","15m","1h","1d"]
-              # Post market EOD
+                  return ["5m", "15m", "30m", "1h"]
+              # Afternoon (12:00–3:30)
               else:
-                  return ["1d","1wk"]
+                  return ["5m", "15m", "30m", "1h", "1d"]
 
-          def is_market_hours():
-              """Check if within scan hours (8:45 AM - 5 PM IST)."""
+          def is_scan_time():
               now = datetime.now(IST)
               if now.weekday() >= 5:
                   return False
-              start = now.replace(hour=8,  minute=45, second=0)
-              end   = now.replace(hour=17, minute=0,  second=0)
-              return start <= now <= end
+              s = now.replace(hour=9,  minute=0,  second=0)
+              e = now.replace(hour=17, minute=0,  second=0)
+              return s <= now <= e
+
+          def git_push(count, tfs):
+              ts = datetime.now(IST).strftime("%d-%b %H:%M IST")
+              os.system("git config user.name 'github-actions[bot]'")
+              os.system("git config user.email 'github-actions[bot]@users.noreply.github.com'")
+              os.system("git pull --rebase origin main 2>/dev/null || true")
+              os.system("git add data/scanner-results.json")
+              msg = f"scan: #{count} {ts} TF:[{' '.join(tfs)}]"
+              os.system(f'git diff --cached --quiet || git commit -m "{msg}"')
+              ret = os.system("git push origin HEAD:main 2>/dev/null")
+              if ret != 0:
+                  print("  ⚠️  Push failed — will retry next scan")
 
           print("━" * 60)
-          print("🔄 NSE Scanner — 3 Minute Loop Started")
-          print(f"   Max runtime : {MAX_HOURS} hours")
-          print(f"   Interval    : {INTERVAL} seconds (3 min)")
+          print("🔄 NSE Scanner — 3 Minute Loop")
+          now_ist = datetime.now(IST)
+          print(f"   Started : {now_ist.strftime('%d-%b-%Y %H:%M IST')}")
+          print(f"   Max run : 5.75 hours")
+          print(f"   Interval: 3 minutes")
           print("━" * 60)
 
           while True:
-              elapsed = time.time() - start_time
-
-              # Stop if max time reached
+              elapsed = time.time() - start
               if elapsed >= MAX_SECS:
-                  print(f"\n⏹  Max runtime reached ({MAX_HOURS}h). Stopping.")
+                  print(f"\n⏹  Max runtime reached. Stopping.")
                   break
 
-              # Skip if outside market hours on weekdays
-              now_ist = datetime.now(IST)
-              if not is_market_hours():
-                  print(f"\n⏸  Outside scan hours ({now_ist.strftime('%H:%M IST')}). Waiting...")
+              if not is_scan_time():
+                  now = datetime.now(IST)
+                  print(f"\n⏸  Outside hours ({now.strftime('%H:%M IST')}). Sleeping 60s...")
                   time.sleep(60)
                   continue
 
-              scan_count += 1
+              count += 1
               tfs = get_timeframes()
-              ts  = now_ist.strftime("%H:%M:%S IST")
+              ts  = datetime.now(IST).strftime("%H:%M:%S IST")
 
               print(f"\n{'─'*55}")
-              print(f"🔍 Scan #{scan_count} | {ts} | TF: {' '.join(tfs)}")
+              print(f"🔍 Scan #{count} | {ts} | TF: {' '.join(tfs)}")
               print(f"{'─'*55}")
 
-              # Run the scanner
-              result = subprocess.run(
+              r = subprocess.run(
                   ["python3", "scripts/scanner/stock_scanner.py",
-                   "--timeframes"] + tfs,
-                  capture_output=False,
-                  text=True
+                   "--timeframes"] + tfs
               )
 
-              if result.returncode == 0:
-                  # Commit results to repo
-                  os.system('git config user.name "github-actions[bot]"')
-                  os.system('git config user.email "github-actions[bot]@users.noreply.github.com"')
-                  os.system('git pull --rebase origin main 2>/dev/null')
-                  os.system('git add data/scanner-results.json')
-                  commit_msg = f"scan: #{scan_count} {ts} [{\" \".join(tfs)}]"
-                  os.system(f'git diff --cached --quiet || git commit -m "{commit_msg}"')
-                  os.system('git push origin main 2>/dev/null')
-
-                  # Print quick summary
+              if r.returncode == 0:
+                  git_push(count, tfs)
                   try:
                       d = json.load(open("data/scanner-results.json"))
                       for tf, s in d["summary"].items():
-                          print(f"  [{tf}] Scanned:{s['total_scanned']} "
-                                f"SB:{s['strong_buy']} B:{s['buy']} "
-                                f"Pattern:{s['with_pattern']} "
-                                f"Sell:{s['sell']+s['strong_sell']}")
-                  except:
-                      pass
+                          print(f"  [{tf.upper():<4}] "
+                                f"Total:{s['total_scanned']:>4} | "
+                                f"🟢{s['strong_buy']:>3} SB | "
+                                f"🔵{s['buy']:>3} B | "
+                                f"📊{s['with_pattern']:>3} Pat | "
+                                f"🔴{s['sell']+s['strong_sell']:>3} Sell")
+                  except Exception as e:
+                      print(f"  ⚠️  Result read error: {e}")
               else:
-                  print(f"  ⚠️  Scan #{scan_count} failed")
+                  print(f"  ❌ Scan #{count} failed (exit {r.returncode})")
 
-              # Wait 3 minutes before next scan
-              remaining = time.time() - start_time
-              next_scan = INTERVAL - (time.time() % INTERVAL)
-              print(f"\n  ⏳ Next scan in {int(next_scan)}s "
-                    f"| Runtime: {int(elapsed//60)}m "
-                    f"| Remaining: {int((MAX_SECS-elapsed)//60)}m")
-              time.sleep(next_scan)
+              # Wait exactly 3 minutes from scan start
+              wait = max(30, INTERVAL - (time.time() - start) % INTERVAL)
+              rem  = int((MAX_SECS - elapsed) // 60)
+              print(f"\n  ⏳ Next scan in {int(wait)}s | "
+                    f"Total runs: {count} | "
+                    f"Remaining: ~{rem}m")
+              time.sleep(wait)
 
-          print(f"\n✅ Completed {scan_count} scans")
+          print(f"\n✅ Loop ended — {count} scans completed")
           PYEOF
 
       - name: 📁 Upload Final Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: scan-final-run${{ github.run_number }}
+          name: scan-run${{ github.run_number }}
           path: data/scanner-results.json
           retention-days: 7
