@@ -204,6 +204,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
     </div>
     <div class="sidebar-section">
       <span class="sidebar-section-label">Coming Soon</span>
+      <button class="sidebar-item" id="sb-scanner" onclick="openDash('/scanner','NSE Scanner')"><span class="sidebar-icon">🔍</span> NSE Live Scanner</button>
       <button class="sidebar-item" style="opacity:0.35;pointer-events:none"><span class="sidebar-icon">💰</span> Options Chain</button>
       <button class="sidebar-item" style="opacity:0.35;pointer-events:none"><span class="sidebar-icon">🌐</span> Global Flows</button>
     </div>
@@ -350,6 +351,27 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
           </div>
         </button>
 
+
+        <!-- NSE Scanner Card -->
+        <button class="dash-card" onclick="openDash('/scanner','NSE Live Scanner')" style="border-color:rgba(0,212,170,0.25)!important;background:linear-gradient(135deg,var(--card),rgba(0,212,170,0.04))!important;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),transparent);"></div>
+          <div class="card-top">
+            <div class="card-icon">🔍</div>
+            <div><div class="card-title">NSE Live Scanner</div><div class="card-sub">Candlestick · Price Action · Signals</div></div>
+          </div>
+          <div class="card-desc">Scan all NSE stocks across every timeframe — 5m, 15m, 1h, Daily, Weekly. Detects 20+ candlestick patterns, RSI, MACD, EMA, VCP breakouts.</div>
+          <div class="card-live-val" id="cardScannerStats" style="font-size:11px">
+            <div><div class="lv-label">Strong Buy</div><div class="lv-num pos" id="cardSB">—</div></div>
+            <div style="text-align:center"><div class="lv-label">Patterns</div><div class="lv-num" id="cardPat" style="color:var(--blue)">—</div></div>
+            <div style="text-align:right"><div class="lv-label">Strong Sell</div><div class="lv-num neg" id="cardSS">—</div></div>
+          </div>
+          <div class="card-footer" style="margin-top:12px">
+            <span class="tag tag-source">Yahoo Finance</span>
+            <span class="tag tag-freq">Every 3 min</span>
+            <span class="tag tag-live">Live</span>
+          </div>
+        </button>
+
       </div>
 
       <!-- MARKET STATS -->
@@ -462,6 +484,22 @@ async function fetchFiiDii(){
   }catch(e){}
 }
 
+async function fetchScannerStats(){
+  try{
+    const d = await fetch('/api/scanner/results').then(r=>r.json());
+    if(!d || !d.summary) return;
+    // Get daily timeframe stats (most relevant for home card)
+    const tf = d.summary['1d'] || d.summary[Object.keys(d.summary)[0]];
+    if(!tf) return;
+    const sb = document.getElementById('cardSB');
+    const ss = document.getElementById('cardSS');
+    const pt = document.getElementById('cardPat');
+    if(sb) { sb.textContent = tf.strong_buy || '0'; }
+    if(ss) { ss.textContent = tf.strong_sell || '0'; }
+    if(pt) { pt.textContent = tf.with_pattern || '0'; }
+  }catch(e){}
+}
+
 async function fetchNSEStats(){
   try{
     const res=await fetch('/api/market-stats');
@@ -496,7 +534,8 @@ async function fetchSectorPreview(){
 }
 
 // ── Init ────────────────────────────────────────────────────────────────
-fetchMarket(); fetchFiiDii(); fetchNSEStats(); fetchSectorPreview();
+fetchMarket(); fetchFiiDii();
+  fetchScannerStats(); fetchNSEStats(); fetchSectorPreview();
 setInterval(fetchMarket, 5*60*1000);
 setInterval(fetchFiiDii, 5*60*1000);
 </script>
