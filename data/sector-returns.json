@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-04-09T14:21:38.911082+00:00",
+  "_updated_at": "2026-04-09T14:51:41.759493+00:00",
   "_source": "NSE allIndices (1D/1M/1Y) + niftyindices (1W=7d calendar, 3M=3mo calendar)",
   "_note": "Calendar lookbacks match NSE index tracker exactly",
   "sectors": [
@@ -51,13 +51,13 @@
       "last": 35842.0,
       "lastDate": "27-Mar-2026",
       "r1d": -0.24,
-      "r1w": null,
+      "r1w": 7.49,
       "r1m": 0.98,
-      "r3m": null,
+      "r3m": -4.68,
       "r1y": 2.5,
       "rsRank": 7,
-      "rrg": "Neutral",
-      "signal": "HOLD"
+      "rrg": "Improving",
+      "signal": "ACCUMULATE"
     },
     {
       "name": "Consumption",
@@ -205,9 +205,9 @@
       "last": 11092.2,
       "lastDate": "27-Mar-2026",
       "r1d": -0.39,
-      "r1w": null,
+      "r1w": 2.3,
       "r1m": -3.61,
-      "r3m": null,
+      "r3m": -4.61,
       "r1y": 10.47,
       "rsRank": 21,
       "rrg": "Lagging",
@@ -247,9 +247,9 @@
       "last": 8605.7,
       "lastDate": "27-Mar-2026",
       "r1d": -1.27,
-      "r1w": null,
+      "r1w": 5.79,
       "r1m": -2.42,
-      "r3m": null,
+      "r3m": 0.05,
       "r1y": 41.25,
       "rsRank": 18,
       "rrg": "Lagging",
