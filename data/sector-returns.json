@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-04-10T10:35:11.170538+00:00",
+  "_updated_at": "2026-04-10T11:14:15.471583+00:00",
   "_source": "NSE allIndices (1D/1M/1Y) + niftyindices (1W=7d calendar, 3M=3mo calendar)",
   "_note": "Calendar lookbacks match NSE index tracker exactly",
   "sectors": [
@@ -53,7 +53,7 @@
       "r1d": 1.74,
       "r1w": 7.49,
       "r1m": 0.06,
-      "r3m": -4.68,
+      "r3m": 1741.38,
       "r1y": 4.28,
       "rsRank": 9,
       "rrg": "Improving",
@@ -65,13 +65,13 @@
       "last": 11219.35,
       "lastDate": "27-Mar-2026",
       "r1d": 1.55,
-      "r1w": 4.95,
+      "r1w": 0.0,
       "r1m": 0.76,
-      "r3m": -8.14,
+      "r3m": -0.13,
       "r1y": 4.61,
       "rsRank": 8,
-      "rrg": "Improving",
-      "signal": "ACCUMULATE"
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "Defence",
@@ -79,9 +79,9 @@
       "last": 8299.75,
       "lastDate": "27-Mar-2026",
       "r1d": 1.5,
-      "r1w": 7.58,
+      "r1w": null,
       "r1m": -1.24,
-      "r3m": 3.62,
+      "r3m": null,
       "r1y": 35.93,
       "rsRank": 15,
       "rrg": "Weakening",
@@ -149,13 +149,13 @@
       "last": 9116.75,
       "lastDate": "27-Mar-2026",
       "r1d": 1.31,
-      "r1w": 4.28,
+      "r1w": 0.0,
       "r1m": -0.25,
-      "r3m": -3.27,
+      "r3m": 2.14,
       "r1y": 12.74,
       "rsRank": 11,
-      "rrg": "Improving",
-      "signal": "ACCUMULATE"
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "IT",
@@ -177,13 +177,13 @@
       "last": 1365.2,
       "lastDate": "27-Mar-2026",
       "r1d": 1.96,
-      "r1w": 2.73,
+      "r1w": 0.0,
       "r1m": 1.0,
-      "r3m": -6.06,
+      "r3m": 0.0,
       "r1y": -7.71,
       "rsRank": 7,
-      "rrg": "Improving",
-      "signal": "ACCUMULATE"
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "Metal",
