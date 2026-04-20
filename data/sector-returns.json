@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-04-20T11:44:22.059753+00:00",
+  "_updated_at": "2026-04-20T11:54:13.081560+00:00",
   "_source": "NSE allIndices (1D/1M/1Y) + niftyindices (1W=7d calendar, 3M=3mo calendar)",
   "_note": "Calendar lookbacks match NSE index tracker exactly",
   "sectors": [
@@ -163,13 +163,13 @@
       "last": 31585.75,
       "lastDate": "17-Apr-2026",
       "r1d": -0.7,
-      "r1w": 3.72,
+      "r1w": null,
       "r1m": 8.17,
-      "r3m": -16.51,
+      "r3m": null,
       "r1y": -5.35,
       "rsRank": 8,
-      "rrg": "Improving",
-      "signal": "ACCUMULATE"
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "Media",
