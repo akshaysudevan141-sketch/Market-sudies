@@ -3,7 +3,7 @@
   "advances": 1261,
   "declines": 2043,
   "unchanged": 123,
-  "high52": 131,
+  "high52": 132,
   "low52": 8,
   "upperCircuit": 117,
   "lowerCircuit": 71,
@@ -11,5 +11,5 @@
   "marketCapLacCr": null,
   "marketCapTri": null,
   "asOnDate": "20-Apr-2026 16:00:27",
-  "fetchedAt": "20 Apr 2026, 5:24 pm IST"
+  "fetchedAt": "20 Apr 2026, 7:50 pm IST"
 }
