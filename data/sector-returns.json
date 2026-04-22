@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-04-22T11:34:01.955482+00:00",
+  "_updated_at": "2026-04-22T11:40:26.908416+00:00",
   "_source": "NSE allIndices (1D/1M/1Y) + niftyindices (1W=7d calendar, 3M=3mo calendar)",
   "_note": "Calendar lookbacks match NSE index tracker exactly",
   "sectors": [
@@ -93,13 +93,13 @@
       "last": 39896.7,
       "lastDate": "21-Apr-2026",
       "r1d": 1.42,
-      "r1w": 3.54,
+      "r1w": null,
       "r1m": 11.11,
-      "r3m": 16.57,
+      "r3m": null,
       "r1y": 15.59,
       "rsRank": 6,
-      "rrg": "Improving",
-      "signal": "ACCUMULATE"
+      "rrg": "Neutral",
+      "signal": "HOLD"
     },
     {
       "name": "Finance",
@@ -247,9 +247,9 @@
       "last": 9022.2,
       "lastDate": "21-Apr-2026",
       "r1d": 0.12,
-      "r1w": 2.26,
+      "r1w": null,
       "r1m": 5.1,
-      "r3m": 0.3,
+      "r3m": null,
       "r1y": 33.97,
       "rsRank": 18,
       "rrg": "Lagging",
