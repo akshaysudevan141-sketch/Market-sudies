@@ -5,11 +5,11 @@
   "unchanged": 104,
   "high52": 95,
   "low52": 30,
-  "upperCircuit": 78,
-  "lowerCircuit": 95,
+  "upperCircuit": 80,
+  "lowerCircuit": 101,
   "regInvestors": "25,68,75,917",
   "marketCapLacCr": null,
   "marketCapTri": null,
-  "asOnDate": "24-Apr-2026 15:38:37",
-  "fetchedAt": "24 Apr 2026, 3:39 pm IST"
+  "asOnDate": "24-Apr-2026 16:00:28",
+  "fetchedAt": "24 Apr 2026, 5:06 pm IST"
 }
