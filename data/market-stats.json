@@ -1,7 +1,7 @@
 {
-  "stocksTraded": 3379,
+  "stocksTraded": 3378,
   "advances": 1490,
-  "declines": 1784,
+  "declines": 1783,
   "unchanged": 105,
   "high52": 140,
   "low52": 23,
@@ -11,5 +11,5 @@
   "marketCapLacCr": null,
   "marketCapTri": null,
   "asOnDate": "28-Apr-2026 16:00:28",
-  "fetchedAt": "28 Apr 2026, 4:52 pm IST"
+  "fetchedAt": "28 Apr 2026, 5:33 pm IST"
 }
