@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-04-30T18:01:56.755251+05:30",
+  "_updated_at": "2026-05-01T17:41:49.638320+05:30",
   "_total_valid": 2357,
   "_total_invalid": 0,
   "_invalid_list": [],
@@ -851,24 +851,6 @@
       ],
       "ltp": 1322.9
     },
-    "VEDL": {
-      "symbol": "VEDL",
-      "yf_symbol": "VEDL.NS",
-      "indices": [
-        "Nifty Next 50",
-        "Nifty 100",
-        "Nifty 200",
-        "Nifty 500",
-        "Nifty LargeMidcap 250",
-        "Nifty Total Market",
-        "Nifty Metal",
-        "Nifty MNC",
-        "Nifty Commodities",
-        "Nifty India Mfg",
-        "F&O"
-      ],
-      "ltp": 271.55
-    },
     "ADANIPOWER": {
       "symbol": "ADANIPOWER",
       "yf_symbol": "ADANIPOWER.NS",
@@ -1659,6 +1641,24 @@
         "F&O"
       ],
       "ltp": 10267.0
+    },
+    "VEDL": {
+      "symbol": "VEDL",
+      "yf_symbol": "VEDL.NS",
+      "indices": [
+        "Nifty Next 50",
+        "Nifty 100",
+        "Nifty 200",
+        "Nifty 500",
+        "Nifty LargeMidcap 250",
+        "Nifty Total Market",
+        "Nifty Metal",
+        "Nifty MNC",
+        "Nifty Commodities",
+        "Nifty India Mfg",
+        "F&O"
+      ],
+      "ltp": 271.55
     },
     "WAAREEENER": {
       "symbol": "WAAREEENER",
@@ -9318,7 +9318,7 @@
       "symbol": "ABMINTLLTD",
       "yf_symbol": "ABMINTLLTD.NS",
       "indices": [],
-      "ltp": 41.61
+      "ltp": 43.76
     },
     "ABMKNO": {
       "symbol": "ABMKNO",
