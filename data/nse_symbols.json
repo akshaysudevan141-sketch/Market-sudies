@@ -1,9 +1,11 @@
 {
-  "_updated_at": "2026-05-27T20:11:20.447196+05:30",
-  "_total_valid": 2361,
-  "_total_invalid": 1,
+  "_updated_at": "2026-05-28T20:24:23.346086+05:30",
+  "_total_valid": 2359,
+  "_total_invalid": 3,
   "_invalid_list": [
-    "ESSEN-RE3"
+    "CPPLUS",
+    "ESSEN-RE3",
+    "XTGLOBAL"
   ],
   "_index_keys": [
     "Nifty 50",
@@ -2851,12 +2853,6 @@
       "yf_symbol": "CPEDU.NS",
       "indices": [],
       "ltp": 192.58
-    },
-    "CPPLUS": {
-      "symbol": "CPPLUS",
-      "yf_symbol": "CPPLUS.NS",
-      "indices": [],
-      "ltp": 2639.6
     },
     "CRAFTSMAN": {
       "symbol": "CRAFTSMAN",
@@ -7266,7 +7262,7 @@
       "symbol": "LEMERITE",
       "yf_symbol": "LEMERITE.NS",
       "indices": [],
-      "ltp": 200.25
+      "ltp": 40.05
     },
     "LEMONTREE": {
       "symbol": "LEMONTREE",
@@ -7332,7 +7328,7 @@
       "symbol": "LICI",
       "yf_symbol": "LICI.NS",
       "indices": [],
-      "ltp": 830.0
+      "ltp": 415.0
     },
     "LIKHITHA": {
       "symbol": "LIKHITHA",
@@ -14065,12 +14061,6 @@
       "yf_symbol": "XPROINDIA.NS",
       "indices": [],
       "ltp": 1163.9
-    },
-    "XTGLOBAL": {
-      "symbol": "XTGLOBAL",
-      "yf_symbol": "XTGLOBAL.NS",
-      "indices": [],
-      "ltp": 31.67
     },
     "YASHO": {
       "symbol": "YASHO",
