@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-06-01T16:42:10.663174+05:30",
+  "_updated_at": "2026-06-01T17:03:43.112039+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:21 IST"
+    "time": "16:42 IST"
   },
   "_total_stocks": 2361,
   "_timeframes": [
@@ -15,8 +15,8 @@
       "total_scanned": 2092,
       "strong_buy": 214,
       "buy": 351,
-      "neutral": 1141,
-      "sell": 315,
+      "neutral": 1140,
+      "sell": 316,
       "strong_sell": 71,
       "with_pattern": 1166
     },
@@ -75366,60 +75366,6 @@
         "score": -10.0
       },
       {
-        "symbol": "PIONEEREMB",
-        "yf_symbol": "PIONEEREMB.NS",
-        "indices": [],
-        "timeframe": "1d",
-        "ltp": 24.5,
-        "change_pct": -6.17,
-        "volume": 65024,
-        "vol_ratio": 2.6,
-        "rsi": 41.19,
-        "macd": {
-          "macd": -0.0688,
-          "signal": 0.0935,
-          "histogram": -0.1623
-        },
-        "ema_trend": {
-          "direction": "neutral",
-          "strength": 0,
-          "ema20": 26.05,
-          "ema50": 26.03
-        },
-        "ma_trend": "Weak Down",
-        "supertrend": {
-          "direction": "bullish",
-          "value": 20.31
-        },
-        "support": 24.19,
-        "resistance": 25.15,
-        "breakout": {
-          "type": null,
-          "strength": 0
-        },
-        "patterns": {
-          "bullish": [],
-          "bearish": [
-            "Tweezer Top"
-          ],
-          "has_pattern": true
-        },
-        "vcp": false,
-        "momentum": false,
-        "near_52high": false,
-        "signal": "NEUTRAL",
-        "confidence": 40,
-        "reasons": [
-          "RSI 41.19",
-          "MACD bearish",
-          "Vol 2.6x avg",
-          "Bearish: Tweezer Top",
-          "Supertrend bullish"
-        ],
-        "momentum_pct": -6.17,
-        "score": -10.0
-      },
-      {
         "symbol": "POLYPLEX",
         "yf_symbol": "POLYPLEX.NS",
         "indices": [],
@@ -98111,6 +98057,60 @@
         "score": -25.0
       },
       {
+        "symbol": "PIONEEREMB",
+        "yf_symbol": "PIONEEREMB.NS",
+        "indices": [],
+        "timeframe": "1d",
+        "ltp": 24.36,
+        "change_pct": -6.7,
+        "volume": 65024,
+        "vol_ratio": 2.6,
+        "rsi": 40.58,
+        "macd": {
+          "macd": -0.0799,
+          "signal": 0.0913,
+          "histogram": -0.1712
+        },
+        "ema_trend": {
+          "direction": "bearish",
+          "strength": 2,
+          "ema20": 26.03,
+          "ema50": 26.03
+        },
+        "ma_trend": "Weak Down",
+        "supertrend": {
+          "direction": "bullish",
+          "value": 20.31
+        },
+        "support": 24.19,
+        "resistance": 25.15,
+        "breakout": {
+          "type": null,
+          "strength": 0
+        },
+        "patterns": {
+          "bullish": [],
+          "bearish": [
+            "Tweezer Top"
+          ],
+          "has_pattern": true
+        },
+        "vcp": false,
+        "momentum": false,
+        "near_52high": false,
+        "signal": "SELL",
+        "confidence": 25,
+        "reasons": [
+          "RSI 40.58",
+          "MACD bearish",
+          "Vol 2.6x avg",
+          "Bearish: Tweezer Top",
+          "Supertrend bullish"
+        ],
+        "momentum_pct": -6.7,
+        "score": -25.0
+      },
+      {
         "symbol": "PPLPHARMA",
         "yf_symbol": "PPLPHARMA.NS",
         "indices": [],
@@ -105077,7 +105077,7 @@
         "timeframe": "1d",
         "ltp": 1519.1,
         "change_pct": -2.09,
-        "volume": 4510,
+        "volume": 4513,
         "vol_ratio": 0.78,
         "rsi": 42.97,
         "macd": {
@@ -151001,7 +151001,7 @@
         "vol_ratio": 0.87,
         "rsi": 47.89,
         "macd": {
-          "macd": -640.8395,
+          "macd": -640.8394,
           "signal": -830.9502,
           "histogram": 190.1107
         },
@@ -158970,7 +158970,7 @@
         "vol_ratio": 2.09,
         "rsi": 47.48,
         "macd": {
-          "macd": -180.6694,
+          "macd": -180.6695,
           "signal": -220.0171,
           "histogram": 39.3477
         },
@@ -184819,7 +184819,7 @@
         "rsi": 41.66,
         "macd": {
           "macd": -42.1978,
-          "signal": -47.1984,
+          "signal": -47.1983,
           "histogram": 5.0006
         },
         "ema_trend": {
@@ -186573,7 +186573,7 @@
         "vol_ratio": 1.15,
         "rsi": 55.54,
         "macd": {
-          "macd": 77.871,
+          "macd": 77.8711,
           "signal": -809.9066,
           "histogram": 887.7777
         },
@@ -186588,8 +186588,8 @@
           "direction": "bullish",
           "value": 31015.29
         },
-        "support": 37725.2,
-        "resistance": 39939.05,
+        "support": 37725.19,
+        "resistance": 39939.06,
         "breakout": {
           "type": null,
           "strength": 0
@@ -202668,7 +202668,7 @@
         "rsi": 48.16,
         "macd": {
           "macd": -12.6303,
-          "signal": -43.5327,
+          "signal": -43.5326,
           "histogram": 30.9023
         },
         "ema_trend": {
