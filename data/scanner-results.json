@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-06-10T16:28:05.123013+05:30",
+  "_updated_at": "2026-06-10T16:52:14.137396+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:07 IST"
+    "time": "16:31 IST"
   },
   "_total_stocks": 2363,
   "_timeframes": [
@@ -144955,7 +144955,7 @@
         "rsi": 46.43,
         "macd": {
           "macd": -20.9577,
-          "signal": -2.601,
+          "signal": -2.6009,
           "histogram": -18.3567
         },
         "ema_trend": {
@@ -177215,7 +177215,7 @@
           "direction": "neutral",
           "strength": 0,
           "ema20": 644.42,
-          "ema50": 664.32
+          "ema50": 664.31
         },
         "ma_trend": "Strong Up",
         "supertrend": {
