@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-15T17:33:04.666493+00:00",
+  "_updated_at": "2026-06-15T17:48:53.160622+00:00",
   "_source": "NSE allIndices (1D/1M/1Y) + niftyindices (1W=7d calendar, 3M=3mo calendar)",
   "_note": "Calendar lookbacks match NSE index tracker exactly",
   "sectors": [
@@ -109,7 +109,7 @@
       "r1d": 1.28,
       "r1w": 5.93,
       "r1m": 3.67,
-      "r3m": 4.52,
+      "r3m": -1.32,
       "r1y": -0.23,
       "rsRank": 5,
       "rrg": "Leading",
@@ -233,9 +233,9 @@
       "last": 9953.9,
       "lastDate": "15-Jun-2026",
       "r1d": 0.57,
-      "r1w": -0.88,
+      "r1w": null,
       "r1m": -5.07,
-      "r3m": -1.16,
+      "r3m": null,
       "r1y": 0.68,
       "rsRank": 22,
       "rrg": "Lagging",
