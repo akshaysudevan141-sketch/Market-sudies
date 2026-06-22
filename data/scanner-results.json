@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-06-22T16:29:27.645241+05:30",
+  "_updated_at": "2026-06-22T16:53:53.816791+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:06 IST"
+    "time": "16:30 IST"
   },
   "_total_stocks": 2371,
   "_timeframes": [
@@ -117826,8 +117826,8 @@
           "direction": "bullish",
           "value": 161.26
         },
-        "support": 251.0,
-        "resistance": 256.97,
+        "support": 252.93,
+        "resistance": 265.54,
         "breakout": {
           "type": null,
           "strength": 0
@@ -137500,8 +137500,8 @@
         "vol_ratio": 1.26,
         "rsi": 61.15,
         "macd": {
-          "macd": 572.9646,
-          "signal": -213.2793,
+          "macd": 572.9647,
+          "signal": -213.2792,
           "histogram": 786.2439
         },
         "ema_trend": {
@@ -153823,7 +153823,7 @@
         "rsi": 44.99,
         "macd": {
           "macd": -176.8541,
-          "signal": -200.9383,
+          "signal": -200.9384,
           "histogram": 24.0843
         },
         "ema_trend": {
@@ -178125,7 +178125,7 @@
         "macd": {
           "macd": -21.6838,
           "signal": -6.3897,
-          "histogram": -15.2941
+          "histogram": -15.294
         },
         "ema_trend": {
           "direction": "neutral",
@@ -189609,7 +189609,7 @@
         "vol_ratio": 1.58,
         "rsi": 49.49,
         "macd": {
-          "macd": -58.351,
+          "macd": -58.3511,
           "signal": -55.1723,
           "histogram": -3.1787
         },
