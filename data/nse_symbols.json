@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-25T19:03:23.121005+05:30",
+  "_updated_at": "2026-06-26T18:54:52.971811+05:30",
   "_total_valid": 2369,
   "_total_invalid": 0,
   "_invalid_list": [],
@@ -12154,7 +12154,7 @@
       "symbol": "SUMEET-RE",
       "yf_symbol": "SUMEET-RE.NS",
       "indices": [],
-      "ltp": 3.03
+      "ltp": 3.04
     },
     "SUMEETINDS": {
       "symbol": "SUMEETINDS",
