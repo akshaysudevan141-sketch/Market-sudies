@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-06-26T14:06:04.090855+05:30",
+  "_updated_at": "2026-06-26T15:03:07.391570+05:30",
   "_market": {
     "open": true,
     "status": "\ud83d\udfe2 Market Open",
-    "time": "13:07 IST"
+    "time": "14:07 IST"
   },
   "_total_stocks": 2369,
   "_timeframes": [
@@ -370448,7 +370448,7 @@
         "ma_trend": "Weak Up",
         "supertrend": {
           "direction": "bullish",
-          "value": 602.83
+          "value": 602.8
         },
         "support": 634.06,
         "resistance": 644.41,
