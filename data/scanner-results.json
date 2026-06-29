@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-06-29T16:48:50.460226+05:30",
+  "_updated_at": "2026-06-29T17:12:49.500180+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:25 IST"
+    "time": "16:49 IST"
   },
   "_total_stocks": 2369,
   "_timeframes": [
@@ -119481,7 +119481,7 @@
         "rsi": 63.72,
         "macd": {
           "macd": 808.9049,
-          "signal": -8.9699,
+          "signal": -8.9698,
           "histogram": 817.8748
         },
         "ema_trend": {
