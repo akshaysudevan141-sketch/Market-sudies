@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-17T10:06:57.150931+00:00",
+  "_updated_at": "2026-08-17T10:49:32.463052+00:00",
   "_source": "NSE allIndices (1D/1M/1Y) + niftyindices (1W=7d calendar, 3M=3mo calendar)",
   "_note": "Calendar lookbacks match NSE index tracker exactly",
   "sectors": [
