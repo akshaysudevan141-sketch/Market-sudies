@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-09-01T16:47:51.458644+05:30",
+  "_updated_at": "2026-09-01T17:11:53.862508+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:24 IST"
+    "time": "16:48 IST"
   },
   "_total_stocks": 2571,
   "_timeframes": [
@@ -12,10 +12,10 @@
   ],
   "summary": {
     "1d": {
-      "total_scanned": 2242,
+      "total_scanned": 2243,
       "strong_buy": 220,
-      "buy": 389,
-      "neutral": 1142,
+      "buy": 391,
+      "neutral": 1141,
       "sell": 378,
       "strong_sell": 113,
       "with_pattern": 1570
@@ -24,10 +24,10 @@
       "total_scanned": 2232,
       "strong_buy": 233,
       "buy": 405,
-      "neutral": 1077,
+      "neutral": 1078,
       "sell": 327,
-      "strong_sell": 190,
-      "with_pattern": 1627
+      "strong_sell": 189,
+      "with_pattern": 1626
     }
   },
   "results": {
@@ -16185,6 +16185,57 @@
         "score": 32.5
       },
       {
+        "symbol": "IITL",
+        "yf_symbol": "IITL.NS",
+        "indices": [],
+        "timeframe": "1d",
+        "ltp": 153.0,
+        "change_pct": -2.98,
+        "volume": 93467,
+        "vol_ratio": 0.8,
+        "rsi": 55.43,
+        "macd": {
+          "macd": 5.022,
+          "signal": 4.8594,
+          "histogram": 0.1625
+        },
+        "ema_trend": {
+          "direction": "bullish",
+          "strength": 2,
+          "ema20": 150.26,
+          "ema50": 144.68
+        },
+        "ma_trend": "Strong Up",
+        "supertrend": {
+          "direction": "bullish",
+          "value": 130.23
+        },
+        "support": 152.1,
+        "resistance": 154.54,
+        "breakout": {
+          "type": null,
+          "strength": 0
+        },
+        "patterns": {
+          "bullish": [],
+          "bearish": [],
+          "has_pattern": false
+        },
+        "vcp": false,
+        "momentum": false,
+        "near_52high": false,
+        "signal": "BUY",
+        "confidence": 82,
+        "reasons": [
+          "RSI 55.43 overbought",
+          "MACD bullish",
+          "EMA Strong Up",
+          "Supertrend bullish"
+        ],
+        "momentum_pct": -2.98,
+        "score": 32.5
+      },
+      {
         "symbol": "INDOSTAR",
         "yf_symbol": "INDOSTAR.NS",
         "indices": [],
@@ -18591,6 +18642,60 @@
           "Supertrend bullish"
         ],
         "momentum_pct": -2.63,
+        "score": 30.0
+      },
+      {
+        "symbol": "AKCAPIT",
+        "yf_symbol": "AKCAPIT.NS",
+        "indices": [],
+        "timeframe": "1d",
+        "ltp": 1735.1,
+        "change_pct": -0.17,
+        "volume": 774,
+        "vol_ratio": 0.65,
+        "rsi": 54.18,
+        "macd": {
+          "macd": 2.6221,
+          "signal": 1.4963,
+          "histogram": 1.1258
+        },
+        "ema_trend": {
+          "direction": "bullish",
+          "strength": 2,
+          "ema20": 1712.99,
+          "ema50": 1701.74
+        },
+        "ma_trend": "Weak Up",
+        "supertrend": {
+          "direction": "bullish",
+          "value": 1510.33
+        },
+        "support": 1733.39,
+        "resistance": 1812.98,
+        "breakout": {
+          "type": null,
+          "strength": 0
+        },
+        "patterns": {
+          "bullish": [],
+          "bearish": [
+            "Doji"
+          ],
+          "has_pattern": true
+        },
+        "vcp": true,
+        "momentum": false,
+        "near_52high": false,
+        "signal": "BUY",
+        "confidence": 80,
+        "reasons": [
+          "MACD bullish",
+          "EMA Weak Up",
+          "Bearish: Doji",
+          "Supertrend bullish",
+          "VCP"
+        ],
+        "momentum_pct": -0.17,
         "score": 30.0
       },
       {
@@ -83671,55 +83776,6 @@
         "score": -15
       },
       {
-        "symbol": "AKCAPIT",
-        "yf_symbol": "AKCAPIT.NS",
-        "indices": [],
-        "timeframe": "1d",
-        "ltp": 1733.9,
-        "change_pct": -0.29,
-        "volume": 1648,
-        "vol_ratio": null,
-        "rsi": null,
-        "macd": {
-          "macd": null,
-          "signal": null,
-          "histogram": null
-        },
-        "ema_trend": {
-          "direction": "neutral",
-          "strength": 0
-        },
-        "ma_trend": "Unknown",
-        "supertrend": {
-          "direction": null,
-          "value": null
-        },
-        "support": null,
-        "resistance": null,
-        "breakout": {
-          "type": null,
-          "strength": 0
-        },
-        "patterns": {
-          "bullish": [],
-          "bearish": [
-            "Tweezer Top"
-          ],
-          "has_pattern": true
-        },
-        "vcp": false,
-        "momentum": false,
-        "near_52high": true,
-        "signal": "NEUTRAL",
-        "confidence": 35,
-        "reasons": [
-          "Bearish: Tweezer Top",
-          "Near 52W High"
-        ],
-        "momentum_pct": -0.29,
-        "score": -15
-      },
-      {
         "symbol": "CGVAK",
         "yf_symbol": "CGVAK.NS",
         "indices": [],
@@ -127725,7 +127781,7 @@
         "vol_ratio": 0.42,
         "rsi": 60.79,
         "macd": {
-          "macd": 66.8111,
+          "macd": 66.811,
           "signal": 58.2143,
           "histogram": 8.5967
         },
@@ -144534,7 +144590,7 @@
         "rsi": 59.24,
         "macd": {
           "macd": 166.9237,
-          "signal": 114.6336,
+          "signal": 114.6335,
           "histogram": 52.2902
         },
         "ema_trend": {
@@ -151455,7 +151511,7 @@
         "rsi": 52.56,
         "macd": {
           "macd": 18.7114,
-          "signal": -6.9613,
+          "signal": -6.9614,
           "histogram": 25.6727
         },
         "ema_trend": {
@@ -157248,7 +157304,7 @@
         "rsi": 48.29,
         "macd": {
           "macd": 146.1588,
-          "signal": 226.5752,
+          "signal": 226.5753,
           "histogram": -80.4164
         },
         "ema_trend": {
@@ -170857,6 +170913,61 @@
         "score": 5.0
       },
       {
+        "symbol": "RSDFIN",
+        "yf_symbol": "RSDFIN.NS",
+        "indices": [],
+        "timeframe": "1wk",
+        "ltp": 97.05,
+        "change_pct": -4.99,
+        "volume": 4164,
+        "vol_ratio": 0.71,
+        "rsi": 50.89,
+        "macd": {
+          "macd": 5.205,
+          "signal": 3.1294,
+          "histogram": 2.0755
+        },
+        "ema_trend": {
+          "direction": "neutral",
+          "strength": 0,
+          "ema20": 96.12,
+          "ema50": 96.62
+        },
+        "ma_trend": "Strong Up",
+        "supertrend": {
+          "direction": "bullish",
+          "value": 29.99
+        },
+        "support": 96.15,
+        "resistance": 97.45,
+        "breakout": {
+          "type": null,
+          "strength": 0
+        },
+        "patterns": {
+          "bullish": [],
+          "bearish": [
+            "Doji",
+            "Shooting Star",
+            "Bearish Harami",
+            "Inside Bar"
+          ],
+          "has_pattern": true
+        },
+        "vcp": false,
+        "momentum": false,
+        "near_52high": false,
+        "signal": "NEUTRAL",
+        "confidence": 55,
+        "reasons": [
+          "MACD bullish",
+          "Bearish: Doji, Shooting Star, Bearish Harami, Inside Bar",
+          "Supertrend bullish"
+        ],
+        "momentum_pct": -4.99,
+        "score": 5.0
+      },
+      {
         "symbol": "SAHLIBHFI",
         "yf_symbol": "SAHLIBHFI.NS",
         "indices": [],
@@ -171032,7 +171143,7 @@
         "rsi": 60.2,
         "macd": {
           "macd": 35.5532,
-          "signal": 35.5521,
+          "signal": 35.5522,
           "histogram": 0.001
         },
         "ema_trend": {
@@ -175169,6 +175280,56 @@
           "Supertrend bullish"
         ],
         "momentum_pct": -2.25,
+        "score": 2.5
+      },
+      {
+        "symbol": "INNOVANA",
+        "yf_symbol": "INNOVANA.NS",
+        "indices": [],
+        "timeframe": "1wk",
+        "ltp": 309.45,
+        "change_pct": -1.76,
+        "volume": 706,
+        "vol_ratio": 0.08,
+        "rsi": 40.17,
+        "macd": {
+          "macd": -21.1036,
+          "signal": -21.9571,
+          "histogram": 0.8535
+        },
+        "ema_trend": {
+          "direction": "bearish",
+          "strength": 2,
+          "ema20": 337.93,
+          "ema50": 374.95
+        },
+        "ma_trend": "Strong Down",
+        "supertrend": {
+          "direction": "bullish",
+          "value": 198.81
+        },
+        "support": 306.3,
+        "resistance": 319.04,
+        "breakout": {
+          "type": null,
+          "strength": 0
+        },
+        "patterns": {
+          "bullish": [],
+          "bearish": [],
+          "has_pattern": false
+        },
+        "vcp": false,
+        "momentum": false,
+        "near_52high": false,
+        "signal": "NEUTRAL",
+        "confidence": 52,
+        "reasons": [
+          "RSI 40.17",
+          "MACD bullish",
+          "Supertrend bullish"
+        ],
+        "momentum_pct": -1.76,
         "score": 2.5
       },
       {
@@ -185219,7 +185380,7 @@
         "rsi": 51.0,
         "macd": {
           "macd": 7.1928,
-          "signal": -3.5645,
+          "signal": -3.5646,
           "histogram": 10.7574
         },
         "ema_trend": {
@@ -203625,59 +203786,6 @@
           "Supertrend bullish"
         ],
         "momentum_pct": -2.78,
-        "score": -17.5
-      },
-      {
-        "symbol": "INNOVANA",
-        "yf_symbol": "INNOVANA.NS",
-        "indices": [],
-        "timeframe": "1wk",
-        "ltp": 300.0,
-        "change_pct": -2.2,
-        "volume": 4317,
-        "vol_ratio": 0.08,
-        "rsi": 34.55,
-        "macd": {
-          "macd": -21.2764,
-          "signal": -21.5364,
-          "histogram": 0.26
-        },
-        "ema_trend": {
-          "direction": "bearish",
-          "strength": 2,
-          "ema20": 335.43,
-          "ema50": 373.23
-        },
-        "ma_trend": "Strong Down",
-        "supertrend": {
-          "direction": "bullish",
-          "value": 214.58
-        },
-        "support": 292.71,
-        "resistance": 300.45,
-        "breakout": {
-          "type": null,
-          "strength": 0
-        },
-        "patterns": {
-          "bullish": [],
-          "bearish": [
-            "Bearish Marubozu"
-          ],
-          "has_pattern": true
-        },
-        "vcp": false,
-        "momentum": false,
-        "near_52high": false,
-        "signal": "NEUTRAL",
-        "confidence": 32,
-        "reasons": [
-          "RSI 34.55",
-          "MACD bullish",
-          "Bearish: Bearish Marubozu",
-          "Supertrend bullish"
-        ],
-        "momentum_pct": -2.2,
         "score": -17.5
       },
       {
@@ -226993,58 +227101,6 @@
         "score": -40.0
       },
       {
-        "symbol": "BERGEPAINT",
-        "yf_symbol": "BERGEPAINT.NS",
-        "indices": [],
-        "timeframe": "1wk",
-        "ltp": 490.85,
-        "change_pct": -0.71,
-        "volume": 396080,
-        "vol_ratio": 0.14,
-        "rsi": 47.29,
-        "macd": {
-          "macd": 5.6058,
-          "signal": 6.1028,
-          "histogram": -0.497
-        },
-        "ema_trend": {
-          "direction": "bearish",
-          "strength": 2,
-          "ema20": 503.95,
-          "ema50": 504.24
-        },
-        "ma_trend": "Flat",
-        "supertrend": {
-          "direction": "bullish",
-          "value": 405.95
-        },
-        "support": 490.48,
-        "resistance": 517.92,
-        "breakout": {
-          "type": null,
-          "strength": 0
-        },
-        "patterns": {
-          "bullish": [],
-          "bearish": [
-            "3 Black Crows"
-          ],
-          "has_pattern": true
-        },
-        "vcp": false,
-        "momentum": false,
-        "near_52high": false,
-        "signal": "STRONG SELL",
-        "confidence": 10,
-        "reasons": [
-          "MACD bearish",
-          "Bearish: 3 Black Crows",
-          "Supertrend bullish"
-        ],
-        "momentum_pct": -0.71,
-        "score": -40.0
-      },
-      {
         "symbol": "BFUTILITIE",
         "yf_symbol": "BFUTILITIE.NS",
         "indices": [],
@@ -232394,7 +232450,7 @@
         "vol_ratio": 0.3,
         "rsi": 37.67,
         "macd": {
-          "macd": -338.0901,
+          "macd": -338.09,
           "signal": -189.1191,
           "histogram": -148.9709
         },
