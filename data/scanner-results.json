@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-09-07T16:27:56.952731+05:30",
+  "_updated_at": "2026-09-07T16:51:52.556872+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:05 IST"
+    "time": "16:29 IST"
   },
   "_total_stocks": 2565,
   "_timeframes": [
@@ -156399,7 +156399,7 @@
         "rsi": 47.73,
         "macd": {
           "macd": -21.5421,
-          "signal": -25.1812,
+          "signal": -25.1813,
           "histogram": 3.6391
         },
         "ema_trend": {
@@ -169466,7 +169466,7 @@
         "rsi": 62.06,
         "macd": {
           "macd": 66.981,
-          "signal": 78.1215,
+          "signal": 78.1214,
           "histogram": -11.1404
         },
         "ema_trend": {
@@ -199769,7 +199769,7 @@
         "vol_ratio": 1.25,
         "rsi": 49.01,
         "macd": {
-          "macd": -31.8326,
+          "macd": -31.8325,
           "signal": -76.6684,
           "histogram": 44.8358
         },
@@ -210931,7 +210931,7 @@
         "vol_ratio": 0.77,
         "rsi": 45.25,
         "macd": {
-          "macd": 91.2411,
+          "macd": 91.2412,
           "signal": 528.8759,
           "histogram": -437.6348
         },
@@ -215992,7 +215992,7 @@
         "rsi": 34.29,
         "macd": {
           "macd": -77.222,
-          "signal": -85.4999,
+          "signal": -85.4998,
           "histogram": 8.2778
         },
         "ema_trend": {
