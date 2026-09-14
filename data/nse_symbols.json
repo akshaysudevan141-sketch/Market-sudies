@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-11T20:52:39.504574+05:30",
+  "_updated_at": "2026-09-14T22:34:48.661686+05:30",
   "_total_valid": 2565,
   "_total_invalid": 0,
   "_invalid_list": [],
@@ -6712,7 +6712,7 @@
       "symbol": "JAYKAY-RE1",
       "yf_symbol": "JAYKAY-RE1.NS",
       "indices": [],
-      "ltp": 87.07
+      "ltp": 88.0
     },
     "JAYNECOIND": {
       "symbol": "JAYNECOIND",
