@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-09-18T16:37:32.674431+05:30",
+  "_updated_at": "2026-09-18T17:04:18.869461+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:08 IST"
+    "time": "16:38 IST"
   },
   "_total_stocks": 2574,
   "_timeframes": [
@@ -26448,7 +26448,7 @@
         "rsi": 52.24,
         "macd": {
           "macd": -586.3386,
-          "signal": -712.8269,
+          "signal": -712.8268,
           "histogram": 126.4882
         },
         "ema_trend": {
@@ -121077,7 +121077,7 @@
         "vol_ratio": 0.62,
         "rsi": 59.67,
         "macd": {
-          "macd": 32.7996,
+          "macd": 32.7995,
           "signal": 19.7064,
           "histogram": 13.0932
         },
@@ -121093,7 +121093,7 @@
           "value": 985.06
         },
         "support": 1275.1,
-        "resistance": 1303.33,
+        "resistance": 1303.32,
         "breakout": {
           "type": null,
           "strength": 0
@@ -140672,7 +140672,7 @@
         "rsi": 61.99,
         "macd": {
           "macd": 128.5634,
-          "signal": 85.5192,
+          "signal": 85.5193,
           "histogram": 43.0441
         },
         "ema_trend": {
@@ -163875,7 +163875,7 @@
         "macd": {
           "macd": 23.0924,
           "signal": 53.3956,
-          "histogram": -30.3033
+          "histogram": -30.3032
         },
         "ema_trend": {
           "direction": "bullish",
@@ -166456,7 +166456,7 @@
         "rsi": 55.32,
         "macd": {
           "macd": 64.2606,
-          "signal": 59.4712,
+          "signal": 59.4711,
           "histogram": 4.7895
         },
         "ema_trend": {
@@ -166887,8 +166887,8 @@
         "vol_ratio": 0.92,
         "rsi": 61.65,
         "macd": {
-          "macd": 528.9978,
-          "signal": 454.0288,
+          "macd": 528.9977,
+          "signal": 454.0287,
           "histogram": 74.969
         },
         "ema_trend": {
@@ -178680,8 +178680,8 @@
         "vol_ratio": 0.62,
         "rsi": 46.43,
         "macd": {
-          "macd": -169.4838,
-          "signal": 288.3906,
+          "macd": -169.4837,
+          "signal": 288.3907,
           "histogram": -457.8744
         },
         "ema_trend": {
@@ -192289,7 +192289,7 @@
           "direction": "bullish",
           "value": 6856.58
         },
-        "support": 8642.08,
+        "support": 8642.09,
         "resistance": 9041.14,
         "breakout": {
           "type": null,
@@ -221159,7 +221159,7 @@
         "rsi": 48.92,
         "macd": {
           "macd": 12.6035,
-          "signal": 15.7481,
+          "signal": 15.7482,
           "histogram": -3.1446
         },
         "ema_trend": {
