@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-09-30T16:55:22.129491+05:30",
+  "_updated_at": "2026-09-30T17:23:27.115244+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:32 IST"
+    "time": "16:56 IST"
   },
   "_total_stocks": 2584,
   "_timeframes": [
@@ -41087,17 +41087,17 @@
         "change_pct": 1.62,
         "volume": 302244,
         "vol_ratio": 0.78,
-        "rsi": 40.6,
+        "rsi": 40.73,
         "macd": {
-          "macd": -12.9762,
-          "signal": -14.6404,
-          "histogram": 1.6642
+          "macd": -12.8173,
+          "signal": -14.4148,
+          "histogram": 1.5975
         },
         "ema_trend": {
           "direction": "bearish",
           "strength": 2,
-          "ema20": 464.05,
-          "ema50": 483.78
+          "ema20": 463.99,
+          "ema50": 483.04
         },
         "ma_trend": "Strong Down",
         "supertrend": {
@@ -41121,7 +41121,7 @@
         "signal": "NEUTRAL",
         "confidence": 60,
         "reasons": [
-          "RSI 40.6",
+          "RSI 40.73",
           "MACD bullish",
           "Supertrend bullish"
         ],
@@ -131805,7 +131805,7 @@
         "ema_trend": {
           "direction": "bullish",
           "strength": 2,
-          "ema20": 1894.62,
+          "ema20": 1894.63,
           "ema50": 1840.86
         },
         "ma_trend": "Strong Up",
@@ -147323,7 +147323,7 @@
         "vol_ratio": 3.13,
         "rsi": 48.51,
         "macd": {
-          "macd": -1.5939,
+          "macd": -1.594,
           "signal": -1.0343,
           "histogram": -0.5597
         },
@@ -148960,7 +148960,7 @@
         "vol_ratio": 1.77,
         "rsi": 46.82,
         "macd": {
-          "macd": 57.3049,
+          "macd": 57.305,
           "signal": 26.8304,
           "histogram": 30.4745
         },
