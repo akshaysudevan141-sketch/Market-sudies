@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-10-01T22:59:30.214668+05:30",
+  "_updated_at": "2026-10-02T22:12:31.721001+05:30",
   "_total_valid": 2590,
   "_total_invalid": 0,
   "_invalid_list": [],
@@ -1024,7 +1024,7 @@
       "symbol": "AONESTEELS",
       "yf_symbol": "AONESTEELS.NS",
       "indices": [],
-      "ltp": 416.55
+      "ltp": 414.4
     },
     "APARINDS": {
       "symbol": "APARINDS",
@@ -1210,7 +1210,7 @@
       "symbol": "ARMEE",
       "yf_symbol": "ARMEE.NS",
       "indices": [],
-      "ltp": 273.35
+      "ltp": 273.5
     },
     "AROGRANITE": {
       "symbol": "AROGRANITE",
@@ -2728,7 +2728,7 @@
       "symbol": "CENTEXT-RE",
       "yf_symbol": "CENTEXT-RE.NS",
       "indices": [],
-      "ltp": 3.16
+      "ltp": 3.45
     },
     "CENTRALBK": {
       "symbol": "CENTRALBK",
@@ -4048,7 +4048,7 @@
       "symbol": "ELEVATE",
       "yf_symbol": "ELEVATE.NS",
       "indices": [],
-      "ltp": 344.8
+      "ltp": 345.0
     },
     "ELGIEQUIP": {
       "symbol": "ELGIEQUIP",
@@ -8974,7 +8974,7 @@
       "symbol": "MONEYVIEW",
       "yf_symbol": "MONEYVIEW.NS",
       "indices": [],
-      "ltp": 53.88
+      "ltp": 53.38
     },
     "MONTECARLO": {
       "symbol": "MONTECARLO",
@@ -13042,7 +13042,7 @@
       "symbol": "SSRETAIL",
       "yf_symbol": "SSRETAIL.NS",
       "indices": [],
-      "ltp": 714.35
+      "ltp": 702.0
     },
     "SSWL": {
       "symbol": "SSWL",
@@ -13534,7 +13534,7 @@
       "symbol": "SWASTIKAIN",
       "yf_symbol": "SWASTIKAIN.NS",
       "indices": [],
-      "ltp": 215.53
+      "ltp": 220.5
     },
     "SWELECTES": {
       "symbol": "SWELECTES",
