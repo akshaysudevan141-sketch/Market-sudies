@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-10-05T16:45:36.625063+05:30",
+  "_updated_at": "2026-10-05T17:10:15.987230+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:20 IST"
+    "time": "16:47 IST"
   },
   "_total_stocks": 2590,
   "_timeframes": [
@@ -146321,7 +146321,7 @@
         "vol_ratio": 2.06,
         "rsi": 45.4,
         "macd": {
-          "macd": 41.7315,
+          "macd": 41.7316,
           "signal": 23.7944,
           "histogram": 17.9371
         },
@@ -198271,7 +198271,7 @@
         "macd": {
           "macd": 219.5005,
           "signal": 260.6109,
-          "histogram": -41.1103
+          "histogram": -41.1104
         },
         "ema_trend": {
           "direction": "bullish",
@@ -207474,7 +207474,7 @@
         "vol_ratio": 0.44,
         "rsi": 30.82,
         "macd": {
-          "macd": -54.7775,
+          "macd": -54.7774,
           "signal": -52.7468,
           "histogram": -2.0307
         },
@@ -230468,15 +230468,15 @@
         "vol_ratio": 1.06,
         "rsi": 47.53,
         "macd": {
-          "macd": -158.3491,
-          "signal": 133.1107,
+          "macd": -158.3492,
+          "signal": 133.1106,
           "histogram": -291.4598
         },
         "ema_trend": {
           "direction": "bearish",
           "strength": 2,
           "ema20": 37313.62,
-          "ema50": 37841.84
+          "ema50": 37841.85
         },
         "ma_trend": "Weak Down",
         "supertrend": {
