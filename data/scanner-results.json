@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-10-20T15:31:09.433228+05:30",
+  "_updated_at": "2026-10-20T16:36:31.949148+05:30",
   "_market": {
-    "open": true,
-    "status": "\ud83d\udfe2 Market Open",
-    "time": "14:22 IST"
+    "open": false,
+    "status": "\ud83d\udd34 Market Closed",
+    "time": "15:31 IST"
   },
   "_total_stocks": 2616,
   "_timeframes": [
