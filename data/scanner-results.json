@@ -1,9 +1,9 @@
 {
-  "_updated_at": "2026-10-23T16:53:53.368771+05:30",
+  "_updated_at": "2026-10-23T17:20:48.368512+05:30",
   "_market": {
     "open": false,
     "status": "\ud83d\udd34 Market Closed",
-    "time": "16:28 IST"
+    "time": "16:55 IST"
   },
   "_total_stocks": 2606,
   "_timeframes": [
@@ -15,8 +15,8 @@
       "total_scanned": 2263,
       "strong_buy": 50,
       "buy": 172,
-      "neutral": 970,
-      "sell": 853,
+      "neutral": 969,
+      "sell": 854,
       "strong_sell": 218,
       "with_pattern": 1706
     },
@@ -3101,11 +3101,11 @@
         "yf_symbol": "GSPLTRANS.NS",
         "indices": [],
         "timeframe": "1d",
-        "ltp": 115.0,
-        "change_pct": 1.71,
+        "ltp": 114.34,
+        "change_pct": 1.12,
         "volume": 630950,
         "vol_ratio": null,
-        "rsi": 36.05,
+        "rsi": 34.95,
         "macd": {
           "macd": null,
           "signal": null,
@@ -3128,7 +3128,6 @@
         },
         "patterns": {
           "bullish": [
-            "Hammer",
             "3 Inside Up"
           ],
           "bearish": [],
@@ -3140,11 +3139,11 @@
         "signal": "BUY",
         "confidence": 88,
         "reasons": [
-          "RSI 36.05",
-          "Bullish: Hammer, 3 Inside Up",
+          "RSI 34.95",
+          "Bullish: 3 Inside Up",
           "Supertrend bullish"
         ],
-        "momentum_pct": 1.71,
+        "momentum_pct": 1.12,
         "score": 37.5
       },
       {
@@ -47684,62 +47683,6 @@
         "score": -12.5
       },
       {
-        "symbol": "GYFTR",
-        "yf_symbol": "GYFTR.NS",
-        "indices": [],
-        "timeframe": "1d",
-        "ltp": 160.45,
-        "change_pct": -1.96,
-        "volume": 320701,
-        "vol_ratio": 1.27,
-        "rsi": 41.16,
-        "macd": {
-          "macd": -0.7513,
-          "signal": -0.373,
-          "histogram": -0.3784
-        },
-        "ema_trend": {
-          "direction": "bearish",
-          "strength": 2,
-          "ema20": 167.7,
-          "ema50": 167.83
-        },
-        "ma_trend": "Weak Down",
-        "supertrend": {
-          "direction": "bullish",
-          "value": 131.93
-        },
-        "support": 158.21,
-        "resistance": 163.87,
-        "breakout": {
-          "type": null,
-          "strength": 0
-        },
-        "patterns": {
-          "bullish": [
-            "Hammer"
-          ],
-          "bearish": [
-            "3 Black Crows"
-          ],
-          "has_pattern": true
-        },
-        "vcp": false,
-        "momentum": false,
-        "near_52high": false,
-        "signal": "NEUTRAL",
-        "confidence": 38,
-        "reasons": [
-          "RSI 41.16",
-          "MACD bearish",
-          "Bullish: Hammer",
-          "Bearish: 3 Black Crows",
-          "Supertrend bullish"
-        ],
-        "momentum_pct": -1.96,
-        "score": -12.5
-      },
-      {
         "symbol": "HEGAM",
         "yf_symbol": "HEGAM.NS",
         "indices": [],
@@ -54530,7 +54473,7 @@
         "timeframe": "1d",
         "ltp": 1702.7,
         "change_pct": -2.7,
-        "volume": 1627813,
+        "volume": 1628379,
         "vol_ratio": 0.54,
         "rsi": 42.52,
         "macd": {
@@ -64274,21 +64217,21 @@
         "yf_symbol": "KAMATHOTEL.NS",
         "indices": [],
         "timeframe": "1d",
-        "ltp": 219.0,
-        "change_pct": -4.77,
+        "ltp": 218.28,
+        "change_pct": -5.09,
         "volume": 60244,
         "vol_ratio": 0.73,
-        "rsi": 36.99,
+        "rsi": 36.63,
         "macd": {
-          "macd": 1.9739,
-          "signal": 6.2406,
-          "histogram": -4.2667
+          "macd": 1.9165,
+          "signal": 6.2291,
+          "histogram": -4.3126
         },
         "ema_trend": {
           "direction": "neutral",
           "strength": 0,
-          "ema20": 238.98,
-          "ema50": 226.78
+          "ema20": 238.91,
+          "ema50": 226.76
         },
         "ma_trend": "Weak Down",
         "supertrend": {
@@ -64316,13 +64259,13 @@
         "signal": "SELL",
         "confidence": 30,
         "reasons": [
-          "RSI 36.99",
+          "RSI 36.63",
           "MACD bearish",
           "Bearish: 3 Black Crows",
           "Supertrend bullish",
           "Breakdown \u2193 225.74"
         ],
-        "momentum_pct": -4.77,
+        "momentum_pct": -5.09,
         "score": -20.0
       },
       {
@@ -67023,7 +66966,7 @@
         "timeframe": "1d",
         "ltp": 363.0,
         "change_pct": -1.36,
-        "volume": 1118120,
+        "volume": 1123440,
         "vol_ratio": 0.66,
         "rsi": 36.72,
         "macd": {
@@ -69183,21 +69126,21 @@
         "yf_symbol": "AARTIDRUGS.NS",
         "indices": [],
         "timeframe": "1d",
-        "ltp": 375.0,
-        "change_pct": -1.33,
+        "ltp": 374.9,
+        "change_pct": -1.36,
         "volume": 193036,
         "vol_ratio": 1.07,
-        "rsi": 26.69,
+        "rsi": 26.66,
         "macd": {
-          "macd": -10.6633,
-          "signal": -6.3636,
-          "histogram": -4.2996
+          "macd": -10.6712,
+          "signal": -6.3652,
+          "histogram": -4.306
         },
         "ema_trend": {
           "direction": "bearish",
           "strength": 2,
-          "ema20": 405.13,
-          "ema50": 411.79
+          "ema20": 405.12,
+          "ema50": 411.78
         },
         "ma_trend": "Strong Down",
         "supertrend": {
@@ -69223,12 +69166,12 @@
         "signal": "SELL",
         "confidence": 25,
         "reasons": [
-          "RSI 26.69",
+          "RSI 26.66",
           "MACD bearish",
           "Bearish: 3 Black Crows",
           "Supertrend bullish"
         ],
-        "momentum_pct": -1.33,
+        "momentum_pct": -1.36,
         "score": -25.0
       },
       {
@@ -84892,21 +84835,21 @@
         "yf_symbol": "ETHOSLTD.NS",
         "indices": [],
         "timeframe": "1d",
-        "ltp": 2410.1,
-        "change_pct": -1.87,
+        "ltp": 2411.4,
+        "change_pct": -1.82,
         "volume": 30441,
         "vol_ratio": 0.63,
-        "rsi": 32.04,
+        "rsi": 32.12,
         "macd": {
-          "macd": -47.3367,
-          "signal": -38.064,
-          "histogram": -9.2727
+          "macd": -47.233,
+          "signal": -38.0433,
+          "histogram": -9.1897
         },
         "ema_trend": {
           "direction": "bearish",
           "strength": 2,
-          "ema20": 2563.39,
-          "ema50": 2616.47
+          "ema20": 2563.51,
+          "ema50": 2616.52
         },
         "ma_trend": "Strong Down",
         "supertrend": {
@@ -84932,12 +84875,12 @@
         "signal": "SELL",
         "confidence": 18,
         "reasons": [
-          "RSI 32.04",
+          "RSI 32.12",
           "MACD bearish",
           "Bearish: 3 Black Crows",
           "Supertrend bullish"
         ],
-        "momentum_pct": -1.87,
+        "momentum_pct": -1.82,
         "score": -32.5
       },
       {
@@ -85472,6 +85415,59 @@
           "Supertrend bullish"
         ],
         "momentum_pct": -3.15,
+        "score": -32.5
+      },
+      {
+        "symbol": "GYFTR",
+        "yf_symbol": "GYFTR.NS",
+        "indices": [],
+        "timeframe": "1d",
+        "ltp": 160.02,
+        "change_pct": -2.22,
+        "volume": 320701,
+        "vol_ratio": 1.27,
+        "rsi": 40.77,
+        "macd": {
+          "macd": -0.7856,
+          "signal": -0.3798,
+          "histogram": -0.4058
+        },
+        "ema_trend": {
+          "direction": "bearish",
+          "strength": 2,
+          "ema20": 167.66,
+          "ema50": 167.81
+        },
+        "ma_trend": "Strong Down",
+        "supertrend": {
+          "direction": "bullish",
+          "value": 131.93
+        },
+        "support": 158.21,
+        "resistance": 163.87,
+        "breakout": {
+          "type": null,
+          "strength": 0
+        },
+        "patterns": {
+          "bullish": [],
+          "bearish": [
+            "3 Black Crows"
+          ],
+          "has_pattern": true
+        },
+        "vcp": false,
+        "momentum": false,
+        "near_52high": false,
+        "signal": "SELL",
+        "confidence": 18,
+        "reasons": [
+          "RSI 40.77",
+          "MACD bearish",
+          "Bearish: 3 Black Crows",
+          "Supertrend bullish"
+        ],
+        "momentum_pct": -2.22,
         "score": -32.5
       },
       {
@@ -129999,7 +129995,7 @@
         "vol_ratio": 1.24,
         "rsi": 57.93,
         "macd": {
-          "macd": 119.4336,
+          "macd": 119.4335,
           "signal": 77.2159,
           "histogram": 42.2176
         },
