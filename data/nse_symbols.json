@@ -1,8 +1,10 @@
 {
-  "_updated_at": "2026-11-05T00:17:54.021698+05:30",
-  "_total_valid": 2624,
-  "_total_invalid": 0,
-  "_invalid_list": [],
+  "_updated_at": "2026-11-06T00:16:33.367821+05:30",
+  "_total_valid": 2626,
+  "_total_invalid": 1,
+  "_invalid_list": [
+    "BRIGHTOUTD"
+  ],
   "_index_keys": [
     "Nifty 50",
     "Nifty Next 50",
@@ -136,7 +138,7 @@
       "symbol": "AARNAV",
       "yf_symbol": "AARNAV.NS",
       "indices": [],
-      "ltp": 30.52
+      "ltp": 32.0
     },
     "AARON": {
       "symbol": "AARON",
@@ -748,7 +750,7 @@
       "symbol": "ALFREDHE",
       "yf_symbol": "ALFREDHE.NS",
       "indices": [],
-      "ltp": 2577.4
+      "ltp": NaN
     },
     "ALGOQUANT": {
       "symbol": "ALGOQUANT",
@@ -964,7 +966,7 @@
       "symbol": "ANKITMETAL",
       "yf_symbol": "ANKITMETAL.NS",
       "indices": [],
-      "ltp": 2.05
+      "ltp": NaN
     },
     "ANMOL": {
       "symbol": "ANMOL",
@@ -1108,7 +1110,7 @@
       "symbol": "APOORVA",
       "yf_symbol": "APOORVA.NS",
       "indices": [],
-      "ltp": 29.1
+      "ltp": NaN
     },
     "APTECHT": {
       "symbol": "APTECHT",
@@ -1258,7 +1260,7 @@
       "symbol": "ARTEMISMED",
       "yf_symbol": "ARTEMISMED.NS",
       "indices": [],
-      "ltp": 300.25
+      "ltp": 301.2
     },
     "ARTNIRMAN": {
       "symbol": "ARTNIRMAN",
@@ -1414,7 +1416,7 @@
       "symbol": "ASSAMENT",
       "yf_symbol": "ASSAMENT.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 873.0
     },
     "ASTAR": {
       "symbol": "ASTAR",
@@ -1716,6 +1718,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "BAHETI": {
+      "symbol": "BAHETI",
+      "yf_symbol": "BAHETI.NS",
+      "indices": [],
+      "ltp": 791.4
+    },
     "BAIDFIN": {
       "symbol": "BAIDFIN",
       "yf_symbol": "BAIDFIN.NS",
@@ -1991,6 +1999,12 @@
       "yf_symbol": "BCPL.NS",
       "indices": [],
       "ltp": NaN
+    },
+    "BCSSL": {
+      "symbol": "BCSSL",
+      "yf_symbol": "BCSSL.NS",
+      "indices": [],
+      "ltp": 94.81
     },
     "BDL": {
       "symbol": "BDL",
@@ -3718,7 +3732,7 @@
       "symbol": "DISAQ",
       "yf_symbol": "DISAQ.NS",
       "indices": [],
-      "ltp": 11457.0
+      "ltp": 11173.0
     },
     "DISHTV": {
       "symbol": "DISHTV",
@@ -4246,7 +4260,7 @@
       "symbol": "ENNATURE",
       "yf_symbol": "ENNATURE.NS",
       "indices": [],
-      "ltp": 251.7
+      "ltp": NaN
     },
     "ENRIN": {
       "symbol": "ENRIN",
@@ -5350,7 +5364,7 @@
       "symbol": "GROBTEA",
       "yf_symbol": "GROBTEA.NS",
       "indices": [],
-      "ltp": 854.95
+      "ltp": NaN
     },
     "GROWW": {
       "symbol": "GROWW",
@@ -5458,7 +5472,7 @@
       "symbol": "GUJRAFFIA",
       "yf_symbol": "GUJRAFFIA.NS",
       "indices": [],
-      "ltp": 42.91
+      "ltp": 43.69
     },
     "GUJTHEM": {
       "symbol": "GUJTHEM",
@@ -6202,7 +6216,7 @@
       "symbol": "IGLSPIRITS",
       "yf_symbol": "IGLSPIRITS.NS",
       "indices": [],
-      "ltp": 921.27
+      "ltp": NaN
     },
     "IGPL": {
       "symbol": "IGPL",
@@ -8944,7 +8958,7 @@
       "symbol": "MKJEWELS",
       "yf_symbol": "MKJEWELS.NS",
       "indices": [],
-      "ltp": 162.2
+      "ltp": NaN
     },
     "MKPL": {
       "symbol": "MKPL",
@@ -11674,7 +11688,7 @@
       "symbol": "RRECL",
       "yf_symbol": "RRECL.NS",
       "indices": [],
-      "ltp": 129.95
+      "ltp": NaN
     },
     "RRIL": {
       "symbol": "RRIL",
@@ -12544,7 +12558,7 @@
       "symbol": "SHIVAAGRO",
       "yf_symbol": "SHIVAAGRO.NS",
       "indices": [],
-      "ltp": 36.4
+      "ltp": NaN
     },
     "SHIVACEM": {
       "symbol": "SHIVACEM",
@@ -12562,7 +12576,7 @@
       "symbol": "SHIVAM-RE1",
       "yf_symbol": "SHIVAM-RE1.NS",
       "indices": [],
-      "ltp": 0.46
+      "ltp": 0.5
     },
     "SHIVAMAUTO": {
       "symbol": "SHIVAMAUTO",
@@ -12802,7 +12816,7 @@
       "symbol": "SILINV",
       "yf_symbol": "SILINV.NS",
       "indices": [],
-      "ltp": 425.75
+      "ltp": NaN
     },
     "SILVERTUC": {
       "symbol": "SILVERTUC",
@@ -12844,7 +12858,7 @@
       "symbol": "SINGERIND",
       "yf_symbol": "SINGERIND.NS",
       "indices": [],
-      "ltp": 88.91
+      "ltp": 88.37
     },
     "SINTERCOM": {
       "symbol": "SINTERCOM",
@@ -13936,7 +13950,7 @@
       "symbol": "TCC",
       "yf_symbol": "TCC.NS",
       "indices": [],
-      "ltp": 40.58
+      "ltp": 42.61
     },
     "TCI": {
       "symbol": "TCI",
@@ -14770,7 +14784,7 @@
       "symbol": "UPHOT",
       "yf_symbol": "UPHOT.NS",
       "indices": [],
-      "ltp": 1456.1
+      "ltp": NaN
     },
     "UPL": {
       "symbol": "UPL",
@@ -15526,7 +15540,7 @@
       "symbol": "WHBRADY",
       "yf_symbol": "WHBRADY.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 480.0
     },
     "WHEELS": {
       "symbol": "WHEELS",
@@ -15748,7 +15762,7 @@
       "symbol": "ZODIAC",
       "yf_symbol": "ZODIAC.NS",
       "indices": [],
-      "ltp": 204.83
+      "ltp": 208.26
     },
     "ZODIACLOTH": {
       "symbol": "ZODIACLOTH",
