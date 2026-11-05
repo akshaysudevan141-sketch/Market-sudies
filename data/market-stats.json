@@ -1,15 +1,15 @@
 {
-  "stocksTraded": 3704,
-  "advances": 2720,
-  "declines": 883,
-  "unchanged": 101,
-  "high52": 71,
-  "low52": 74,
-  "upperCircuit": 154,
-  "lowerCircuit": 81,
-  "regInvestors": "27,58,72,286",
+  "stocksTraded": 3723,
+  "advances": 2547,
+  "declines": 1084,
+  "unchanged": 92,
+  "high52": 99,
+  "low52": 43,
+  "upperCircuit": 164,
+  "lowerCircuit": 79,
+  "regInvestors": "27,59,83,544",
   "marketCapLacCr": null,
   "marketCapTri": null,
-  "asOnDate": "04-Nov-2026 16:00:27",
-  "fetchedAt": "5 Nov 2026, 1:41 am IST"
+  "asOnDate": "05-Nov-2026 16:00:28",
+  "fetchedAt": "5 Nov 2026, 4:09 pm IST"
 }
