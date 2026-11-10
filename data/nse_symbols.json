@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-11-10T03:03:55.065507+05:30",
+  "_updated_at": "2026-11-11T00:13:13.653292+05:30",
   "_total_valid": 2640,
   "_total_invalid": 2,
   "_invalid_list": [
@@ -391,7 +391,7 @@
       "symbol": "ADFFOODS",
       "yf_symbol": "ADFFOODS.NS",
       "indices": [],
-      "ltp": 241.67
+      "ltp": 241.07
     },
     "ADL": {
       "symbol": "ADL",
@@ -1543,7 +1543,7 @@
       "symbol": "AUROPHARMA",
       "yf_symbol": "AUROPHARMA.NS",
       "indices": [],
-      "ltp": 1855.3
+      "ltp": 1848.3
     },
     "AURUM": {
       "symbol": "AURUM",
@@ -1837,7 +1837,7 @@
       "symbol": "BALKRISIND",
       "yf_symbol": "BALKRISIND.NS",
       "indices": [],
-      "ltp": 2343.6
+      "ltp": 2339.6
     },
     "BALMLAWRIE": {
       "symbol": "BALMLAWRIE",
@@ -1855,7 +1855,7 @@
       "symbol": "BALRAMCHIN",
       "yf_symbol": "BALRAMCHIN.NS",
       "indices": [],
-      "ltp": 658.4
+      "ltp": 654.4
     },
     "BALUFORGE": {
       "symbol": "BALUFORGE",
@@ -2413,7 +2413,7 @@
       "symbol": "BNALTD",
       "yf_symbol": "BNALTD.NS",
       "indices": [],
-      "ltp": 389.0
+      "ltp": 389.5
     },
     "BODALCHEM": {
       "symbol": "BODALCHEM",
@@ -2881,7 +2881,7 @@
       "symbol": "CHAMBLFERT",
       "yf_symbol": "CHAMBLFERT.NS",
       "indices": [],
-      "ltp": 389.35
+      "ltp": 384.35
     },
     "CHEMBOND": {
       "symbol": "CHEMBOND",
@@ -3127,7 +3127,7 @@
       "symbol": "CONCOR",
       "yf_symbol": "CONCOR.NS",
       "indices": [],
-      "ltp": 446.0
+      "ltp": 444.1
     },
     "CONCORDBIO": {
       "symbol": "CONCORDBIO",
@@ -4765,7 +4765,7 @@
       "symbol": "GALAXYSURF",
       "yf_symbol": "GALAXYSURF.NS",
       "indices": [],
-      "ltp": 2197.1
+      "ltp": 2179.1
     },
     "GALLANTT": {
       "symbol": "GALLANTT",
@@ -5293,7 +5293,7 @@
       "symbol": "GPTINFRA",
       "yf_symbol": "GPTINFRA.NS",
       "indices": [],
-      "ltp": 111.97
+      "ltp": 110.97
     },
     "GRADIENTE": {
       "symbol": "GRADIENTE",
@@ -6091,7 +6091,7 @@
       "symbol": "HUDCO",
       "yf_symbol": "HUDCO.NS",
       "indices": [],
-      "ltp": 169.14
+      "ltp": 167.79
     },
     "HUHTAMAKI": {
       "symbol": "HUHTAMAKI",
@@ -7057,7 +7057,7 @@
       "symbol": "JMFINANCIL",
       "yf_symbol": "JMFINANCIL.NS",
       "indices": [],
-      "ltp": 112.66
+      "ltp": 111.01
     },
     "JNKINDIA": {
       "symbol": "JNKINDIA",
@@ -7957,7 +7957,7 @@
       "symbol": "LALPATHLAB",
       "yf_symbol": "LALPATHLAB.NS",
       "indices": [],
-      "ltp": 2016.5
+      "ltp": 2011.5
     },
     "LAMBODHARA": {
       "symbol": "LAMBODHARA",
@@ -9493,7 +9493,7 @@
       "symbol": "NAVNETEDUL",
       "yf_symbol": "NAVNETEDUL.NS",
       "indices": [],
-      "ltp": 128.8
+      "ltp": 125.8
     },
     "NAZARA": {
       "symbol": "NAZARA",
@@ -9505,7 +9505,7 @@
       "symbol": "NBCC",
       "yf_symbol": "NBCC.NS",
       "indices": [],
-      "ltp": 80.4
+      "ltp": 80.15
     },
     "NBIFIN": {
       "symbol": "NBIFIN",
@@ -9871,7 +9871,7 @@
       "symbol": "NRBBEARING",
       "yf_symbol": "NRBBEARING.NS",
       "indices": [],
-      "ltp": 433.55
+      "ltp": 431.05
     },
     "NRL": {
       "symbol": "NRL",
@@ -10315,7 +10315,7 @@
       "symbol": "PANCHMAHQ",
       "yf_symbol": "PANCHMAHQ.NS",
       "indices": [],
-      "ltp": 300.0
+      "ltp": 300.9
     },
     "PANORAMA": {
       "symbol": "PANORAMA",
@@ -10483,7 +10483,7 @@
       "symbol": "PDSL",
       "yf_symbol": "PDSL.NS",
       "indices": [],
-      "ltp": 407.75
+      "ltp": 405.55
     },
     "PEARLPOLY": {
       "symbol": "PEARLPOLY",
@@ -10939,7 +10939,7 @@
       "symbol": "PREMIERENE",
       "yf_symbol": "PREMIERENE.NS",
       "indices": [],
-      "ltp": 886.0
+      "ltp": 885.5
     },
     "PREMIERPOL": {
       "symbol": "PREMIERPOL",
@@ -11599,7 +11599,7 @@
       "symbol": "RITES",
       "yf_symbol": "RITES.NS",
       "indices": [],
-      "ltp": 196.8
+      "ltp": 194.9
     },
     "RKDL": {
       "symbol": "RKDL",
@@ -13141,7 +13141,7 @@
       "symbol": "SONATSOFTW",
       "yf_symbol": "SONATSOFTW.NS",
       "indices": [],
-      "ltp": 256.07
+      "ltp": 254.82
     },
     "SOTL": {
       "symbol": "SOTL",
@@ -13759,7 +13759,7 @@
       "symbol": "SVLL",
       "yf_symbol": "SVLL.NS",
       "indices": [],
-      "ltp": 798.0
+      "ltp": 791.5
     },
     "SVPGLOB": {
       "symbol": "SVPGLOB",
@@ -14197,7 +14197,7 @@
       "symbol": "THACKER",
       "yf_symbol": "THACKER.NS",
       "indices": [],
-      "ltp": 955.5
+      "ltp": 903.25
     },
     "THAKDEV": {
       "symbol": "THAKDEV",
