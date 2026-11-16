@@ -1,6 +1,6 @@
 {
-  "_updated_at": "2026-11-14T00:13:06.489212+05:30",
-  "_total_valid": 2631,
+  "_updated_at": "2026-11-17T02:35:05.310607+05:30",
+  "_total_valid": 2642,
   "_total_invalid": 1,
   "_invalid_list": [
     "ELCIDIN"
@@ -54,2899 +54,2911 @@
       "symbol": "20MICRONS",
       "yf_symbol": "20MICRONS.NS",
       "indices": [],
-      "ltp": 184.09
+      "ltp": NaN
     },
     "21STCENMGM": {
       "symbol": "21STCENMGM",
       "yf_symbol": "21STCENMGM.NS",
       "indices": [],
-      "ltp": 54.1
+      "ltp": NaN
     },
     "360ONE": {
       "symbol": "360ONE",
       "yf_symbol": "360ONE.NS",
       "indices": [],
-      "ltp": 1176.8
+      "ltp": NaN
     },
     "3BBLACKBIO": {
       "symbol": "3BBLACKBIO",
       "yf_symbol": "3BBLACKBIO.NS",
       "indices": [],
-      "ltp": 1341.5
+      "ltp": NaN
     },
     "3IINFOLTD": {
       "symbol": "3IINFOLTD",
       "yf_symbol": "3IINFOLTD.NS",
       "indices": [],
-      "ltp": 20.73
+      "ltp": NaN
     },
     "3MINDIA": {
       "symbol": "3MINDIA",
       "yf_symbol": "3MINDIA.NS",
       "indices": [],
-      "ltp": 28380.0
+      "ltp": NaN
     },
     "3PLAND": {
       "symbol": "3PLAND",
       "yf_symbol": "3PLAND.NS",
       "indices": [],
-      "ltp": 32.44
+      "ltp": NaN
     },
     "5PAISA": {
       "symbol": "5PAISA",
       "yf_symbol": "5PAISA.NS",
       "indices": [],
-      "ltp": 339.1
+      "ltp": NaN
     },
     "63MOONS": {
       "symbol": "63MOONS",
       "yf_symbol": "63MOONS.NS",
       "indices": [],
-      "ltp": 923.45
+      "ltp": NaN
     },
     "A2ZINFRA": {
       "symbol": "A2ZINFRA",
       "yf_symbol": "A2ZINFRA.NS",
       "indices": [],
-      "ltp": 13.5
+      "ltp": NaN
     },
     "AAATECH": {
       "symbol": "AAATECH",
       "yf_symbol": "AAATECH.NS",
       "indices": [],
-      "ltp": 92.48
+      "ltp": NaN
     },
     "AADHARHFC": {
       "symbol": "AADHARHFC",
       "yf_symbol": "AADHARHFC.NS",
       "indices": [],
-      "ltp": 432.5
+      "ltp": NaN
     },
     "AAKASH": {
       "symbol": "AAKASH",
       "yf_symbol": "AAKASH.NS",
       "indices": [],
-      "ltp": 7.88
+      "ltp": NaN
     },
     "AAREYDRUGS": {
       "symbol": "AAREYDRUGS",
       "yf_symbol": "AAREYDRUGS.NS",
       "indices": [],
-      "ltp": 115.15
+      "ltp": NaN
     },
     "AARNAV": {
       "symbol": "AARNAV",
       "yf_symbol": "AARNAV.NS",
       "indices": [],
-      "ltp": 35.19
+      "ltp": 36.0
     },
     "AARON": {
       "symbol": "AARON",
       "yf_symbol": "AARON.NS",
       "indices": [],
-      "ltp": 133.93
+      "ltp": NaN
     },
     "AARTECH": {
       "symbol": "AARTECH",
       "yf_symbol": "AARTECH.NS",
       "indices": [],
-      "ltp": 45.38
+      "ltp": NaN
     },
     "AARTIDRUGS": {
       "symbol": "AARTIDRUGS",
       "yf_symbol": "AARTIDRUGS.NS",
       "indices": [],
-      "ltp": 507.35
+      "ltp": NaN
     },
     "AARTIIND": {
       "symbol": "AARTIIND",
       "yf_symbol": "AARTIIND.NS",
       "indices": [],
-      "ltp": 481.95
+      "ltp": NaN
     },
     "AARTIPHARM": {
       "symbol": "AARTIPHARM",
       "yf_symbol": "AARTIPHARM.NS",
       "indices": [],
-      "ltp": 997.95
+      "ltp": NaN
     },
     "AARTISURF": {
       "symbol": "AARTISURF",
       "yf_symbol": "AARTISURF.NS",
       "indices": [],
-      "ltp": 529.8
+      "ltp": NaN
     },
     "AARVI": {
       "symbol": "AARVI",
       "yf_symbol": "AARVI.NS",
       "indices": [],
-      "ltp": 144.07
+      "ltp": NaN
     },
     "AASTHA": {
       "symbol": "AASTHA",
       "yf_symbol": "AASTHA.NS",
       "indices": [],
-      "ltp": 25.01
+      "ltp": NaN
     },
     "AAVAS": {
       "symbol": "AAVAS",
       "yf_symbol": "AAVAS.NS",
       "indices": [],
-      "ltp": 1123.5
+      "ltp": NaN
     },
     "ABAN": {
       "symbol": "ABAN",
       "yf_symbol": "ABAN.NS",
       "indices": [],
-      "ltp": 14.56
+      "ltp": NaN
     },
     "ABANSENT": {
       "symbol": "ABANSENT",
       "yf_symbol": "ABANSENT.NS",
       "indices": [],
-      "ltp": 27.55
+      "ltp": NaN
     },
     "ABB": {
       "symbol": "ABB",
       "yf_symbol": "ABB.NS",
       "indices": [],
-      "ltp": 7054.5
+      "ltp": NaN
     },
     "ABBOTINDIA": {
       "symbol": "ABBOTINDIA",
       "yf_symbol": "ABBOTINDIA.NS",
       "indices": [],
-      "ltp": 26440.0
+      "ltp": NaN
     },
     "ABCAPITAL": {
       "symbol": "ABCAPITAL",
       "yf_symbol": "ABCAPITAL.NS",
       "indices": [],
-      "ltp": 408.0
+      "ltp": NaN
     },
     "ABCIND": {
       "symbol": "ABCIND",
       "yf_symbol": "ABCIND.NS",
       "indices": [],
-      "ltp": 167.73
+      "ltp": NaN
     },
     "ABDL": {
       "symbol": "ABDL",
       "yf_symbol": "ABDL.NS",
       "indices": [],
-      "ltp": 757.7
+      "ltp": NaN
     },
     "ABFRL": {
       "symbol": "ABFRL",
       "yf_symbol": "ABFRL.NS",
       "indices": [],
-      "ltp": 39.29
+      "ltp": NaN
     },
     "ABINFRA": {
       "symbol": "ABINFRA",
       "yf_symbol": "ABINFRA.NS",
       "indices": [],
-      "ltp": 12.48
+      "ltp": NaN
     },
     "ABLBL": {
       "symbol": "ABLBL",
       "yf_symbol": "ABLBL.NS",
       "indices": [],
-      "ltp": 78.26
+      "ltp": NaN
     },
     "ABMINTLLTD": {
       "symbol": "ABMINTLLTD",
       "yf_symbol": "ABMINTLLTD.NS",
       "indices": [],
-      "ltp": 40.57
+      "ltp": NaN
     },
     "ABMKNO": {
       "symbol": "ABMKNO",
       "yf_symbol": "ABMKNO.NS",
       "indices": [],
-      "ltp": 166.04
+      "ltp": NaN
     },
     "ABREL": {
       "symbol": "ABREL",
       "yf_symbol": "ABREL.NS",
       "indices": [],
-      "ltp": 1203.0
+      "ltp": NaN
     },
     "ABSLAMC": {
       "symbol": "ABSLAMC",
       "yf_symbol": "ABSLAMC.NS",
       "indices": [],
-      "ltp": 895.75
+      "ltp": NaN
     },
     "ACC": {
       "symbol": "ACC",
       "yf_symbol": "ACC.NS",
       "indices": [],
-      "ltp": 1220.1
+      "ltp": NaN
     },
     "ACCELYA": {
       "symbol": "ACCELYA",
       "yf_symbol": "ACCELYA.NS",
       "indices": [],
-      "ltp": 1006.15
+      "ltp": NaN
     },
     "ACCURACY": {
       "symbol": "ACCURACY",
       "yf_symbol": "ACCURACY.NS",
       "indices": [],
-      "ltp": 4.04
+      "ltp": NaN
     },
     "ACE": {
       "symbol": "ACE",
       "yf_symbol": "ACE.NS",
       "indices": [],
-      "ltp": 1180.0
+      "ltp": NaN
     },
     "ACEINTEG": {
       "symbol": "ACEINTEG",
       "yf_symbol": "ACEINTEG.NS",
       "indices": [],
-      "ltp": 17.56
+      "ltp": NaN
     },
     "ACEVECTOR": {
       "symbol": "ACEVECTOR",
       "yf_symbol": "ACEVECTOR.NS",
       "indices": [],
-      "ltp": 21.34
+      "ltp": NaN
     },
     "ACGL": {
       "symbol": "ACGL",
       "yf_symbol": "ACGL.NS",
       "indices": [],
-      "ltp": 1854.6
+      "ltp": NaN
     },
     "ACI": {
       "symbol": "ACI",
       "yf_symbol": "ACI.NS",
       "indices": [],
-      "ltp": 455.05
+      "ltp": NaN
     },
     "ACL": {
       "symbol": "ACL",
       "yf_symbol": "ACL.NS",
       "indices": [],
-      "ltp": 38.7
+      "ltp": NaN
     },
     "ACMESOLAR": {
       "symbol": "ACMESOLAR",
       "yf_symbol": "ACMESOLAR.NS",
       "indices": [],
-      "ltp": 414.35
+      "ltp": NaN
     },
     "ACSTECH": {
       "symbol": "ACSTECH",
       "yf_symbol": "ACSTECH.NS",
       "indices": [],
-      "ltp": 73.59
+      "ltp": NaN
     },
     "ACUTAAS": {
       "symbol": "ACUTAAS",
       "yf_symbol": "ACUTAAS.NS",
       "indices": [],
-      "ltp": 4039.1
+      "ltp": NaN
     },
     "ADANIENSOL": {
       "symbol": "ADANIENSOL",
       "yf_symbol": "ADANIENSOL.NS",
       "indices": [],
-      "ltp": 1438.5
+      "ltp": NaN
     },
     "ADANIENT": {
       "symbol": "ADANIENT",
       "yf_symbol": "ADANIENT.NS",
       "indices": [],
-      "ltp": 2688.0
+      "ltp": NaN
     },
     "ADANIGREEN": {
       "symbol": "ADANIGREEN",
       "yf_symbol": "ADANIGREEN.NS",
       "indices": [],
-      "ltp": 1403.0
+      "ltp": NaN
     },
     "ADANIPORTS": {
       "symbol": "ADANIPORTS",
       "yf_symbol": "ADANIPORTS.NS",
       "indices": [],
-      "ltp": 1903.3
+      "ltp": NaN
     },
     "ADANIPOWER": {
       "symbol": "ADANIPOWER",
       "yf_symbol": "ADANIPOWER.NS",
       "indices": [],
-      "ltp": 205.67
+      "ltp": NaN
     },
     "ADDIND": {
       "symbol": "ADDIND",
       "yf_symbol": "ADDIND.NS",
       "indices": [],
-      "ltp": 75.69
+      "ltp": NaN
     },
     "ADFFOODS": {
       "symbol": "ADFFOODS",
       "yf_symbol": "ADFFOODS.NS",
       "indices": [],
-      "ltp": 241.97
+      "ltp": NaN
     },
     "ADL": {
       "symbol": "ADL",
       "yf_symbol": "ADL.NS",
       "indices": [],
-      "ltp": 73.71
+      "ltp": NaN
     },
     "ADOR": {
       "symbol": "ADOR",
       "yf_symbol": "ADOR.NS",
       "indices": [],
-      "ltp": 1492.1
+      "ltp": NaN
     },
     "ADROITIND": {
       "symbol": "ADROITIND",
       "yf_symbol": "ADROITIND.NS",
       "indices": [],
-      "ltp": 204.08
+      "ltp": NaN
     },
     "ADROITINFO": {
       "symbol": "ADROITINFO",
       "yf_symbol": "ADROITINFO.NS",
       "indices": [],
-      "ltp": 14.83
+      "ltp": NaN
     },
     "ADSL": {
       "symbol": "ADSL",
       "yf_symbol": "ADSL.NS",
       "indices": [],
-      "ltp": 104.43
+      "ltp": NaN
     },
     "ADVAIT": {
       "symbol": "ADVAIT",
       "yf_symbol": "ADVAIT.NS",
       "indices": [],
-      "ltp": 1893.5
+      "ltp": NaN
     },
     "ADVANCE": {
       "symbol": "ADVANCE",
       "yf_symbol": "ADVANCE.NS",
       "indices": [],
-      "ltp": 123.89
+      "ltp": NaN
     },
     "ADVANIHOTR": {
       "symbol": "ADVANIHOTR",
       "yf_symbol": "ADVANIHOTR.NS",
       "indices": [],
-      "ltp": 46.57
+      "ltp": NaN
     },
     "ADVENTHTL": {
       "symbol": "ADVENTHTL",
       "yf_symbol": "ADVENTHTL.NS",
       "indices": [],
-      "ltp": 117.41
+      "ltp": NaN
     },
     "ADVENZYMES": {
       "symbol": "ADVENZYMES",
       "yf_symbol": "ADVENZYMES.NS",
       "indices": [],
-      "ltp": 283.6
+      "ltp": NaN
     },
     "ADVIKCA": {
       "symbol": "ADVIKCA",
       "yf_symbol": "ADVIKCA.NS",
       "indices": [],
-      "ltp": 0.93
+      "ltp": NaN
     },
     "AEGISLOG": {
       "symbol": "AEGISLOG",
       "yf_symbol": "AEGISLOG.NS",
       "indices": [],
-      "ltp": 1224.4
+      "ltp": NaN
     },
     "AEGISVOPAK": {
       "symbol": "AEGISVOPAK",
       "yf_symbol": "AEGISVOPAK.NS",
       "indices": [],
-      "ltp": 285.93
+      "ltp": NaN
     },
     "AEPL": {
       "symbol": "AEPL",
       "yf_symbol": "AEPL.NS",
       "indices": [],
-      "ltp": 14.95
+      "ltp": NaN
     },
     "AEQUS": {
       "symbol": "AEQUS",
       "yf_symbol": "AEQUS.NS",
       "indices": [],
-      "ltp": 243.62
+      "ltp": NaN
     },
     "AEROENTER": {
       "symbol": "AEROENTER",
       "yf_symbol": "AEROENTER.NS",
       "indices": [],
-      "ltp": 131.7
+      "ltp": NaN
     },
     "AEROFLEX": {
       "symbol": "AEROFLEX",
       "yf_symbol": "AEROFLEX.NS",
       "indices": [],
-      "ltp": 507.4
+      "ltp": NaN
     },
     "AERONEU": {
       "symbol": "AERONEU",
       "yf_symbol": "AERONEU.NS",
       "indices": [],
-      "ltp": 91.13
+      "ltp": NaN
     },
     "AEROPLANE": {
       "symbol": "AEROPLANE",
       "yf_symbol": "AEROPLANE.NS",
       "indices": [],
-      "ltp": 243.14
+      "ltp": NaN
     },
     "AETHER": {
       "symbol": "AETHER",
       "yf_symbol": "AETHER.NS",
       "indices": [],
-      "ltp": 1677.2
+      "ltp": NaN
     },
     "AFCONS": {
       "symbol": "AFCONS",
       "yf_symbol": "AFCONS.NS",
       "indices": [],
-      "ltp": 222.14
+      "ltp": NaN
     },
     "AFFLE": {
       "symbol": "AFFLE",
       "yf_symbol": "AFFLE.NS",
       "indices": [],
-      "ltp": 1608.2
+      "ltp": NaN
     },
     "AFFORDABLE": {
       "symbol": "AFFORDABLE",
       "yf_symbol": "AFFORDABLE.NS",
       "indices": [],
-      "ltp": 219.62
+      "ltp": NaN
     },
     "AFIL": {
       "symbol": "AFIL",
       "yf_symbol": "AFIL.NS",
       "indices": [],
-      "ltp": 6.99
+      "ltp": NaN
     },
     "AFSL": {
       "symbol": "AFSL",
       "yf_symbol": "AFSL.NS",
       "indices": [],
-      "ltp": 201.01
+      "ltp": NaN
     },
     "AGARIND": {
       "symbol": "AGARIND",
       "yf_symbol": "AGARIND.NS",
       "indices": [],
-      "ltp": 422.75
+      "ltp": NaN
     },
     "AGARWALEYE": {
       "symbol": "AGARWALEYE",
       "yf_symbol": "AGARWALEYE.NS",
       "indices": [],
-      "ltp": 550.8
+      "ltp": NaN
     },
     "AGASTYAEN": {
       "symbol": "AGASTYAEN",
       "yf_symbol": "AGASTYAEN.NS",
       "indices": [],
-      "ltp": 50.9
+      "ltp": NaN
     },
     "AGI": {
       "symbol": "AGI",
       "yf_symbol": "AGI.NS",
       "indices": [],
-      "ltp": 698.25
+      "ltp": NaN
     },
     "AGIIL": {
       "symbol": "AGIIL",
       "yf_symbol": "AGIIL.NS",
       "indices": [],
-      "ltp": 316.63
+      "ltp": NaN
     },
     "AGL": {
       "symbol": "AGL",
       "yf_symbol": "AGL.NS",
       "indices": [],
-      "ltp": 13.29
+      "ltp": NaN
     },
     "AGOL": {
       "symbol": "AGOL",
       "yf_symbol": "AGOL.NS",
       "indices": [],
-      "ltp": 6.14
+      "ltp": NaN
     },
     "AGRITECH": {
       "symbol": "AGRITECH",
       "yf_symbol": "AGRITECH.NS",
       "indices": [],
-      "ltp": 87.28
+      "ltp": NaN
     },
     "AGROPHOS": {
       "symbol": "AGROPHOS",
       "yf_symbol": "AGROPHOS.NS",
       "indices": [],
-      "ltp": 22.51
+      "ltp": NaN
     },
     "AGSTRA": {
       "symbol": "AGSTRA",
       "yf_symbol": "AGSTRA.NS",
       "indices": [],
-      "ltp": 2.11
+      "ltp": NaN
     },
     "AHCL": {
       "symbol": "AHCL",
       "yf_symbol": "AHCL.NS",
       "indices": [],
-      "ltp": 26.94
+      "ltp": NaN
     },
     "AHLADA": {
       "symbol": "AHLADA",
       "yf_symbol": "AHLADA.NS",
       "indices": [],
-      "ltp": 38.59
+      "ltp": NaN
     },
     "AHLEAST": {
       "symbol": "AHLEAST",
       "yf_symbol": "AHLEAST.NS",
       "indices": [],
-      "ltp": 134.25
+      "ltp": NaN
     },
     "AHLUCONT": {
       "symbol": "AHLUCONT",
       "yf_symbol": "AHLUCONT.NS",
       "indices": [],
-      "ltp": 528.0
+      "ltp": NaN
     },
     "AHLWEST": {
       "symbol": "AHLWEST",
       "yf_symbol": "AHLWEST.NS",
       "indices": [],
-      "ltp": 555.55
+      "ltp": NaN
     },
     "AIAENG": {
       "symbol": "AIAENG",
       "yf_symbol": "AIAENG.NS",
       "indices": [],
-      "ltp": 3186.0
+      "ltp": NaN
     },
     "AIIL": {
       "symbol": "AIIL",
       "yf_symbol": "AIIL.NS",
       "indices": [],
-      "ltp": 576.75
+      "ltp": NaN
     },
     "AIRAN": {
       "symbol": "AIRAN",
       "yf_symbol": "AIRAN.NS",
       "indices": [],
-      "ltp": 15.83
+      "ltp": NaN
     },
     "AIROLAM": {
       "symbol": "AIROLAM",
       "yf_symbol": "AIROLAM.NS",
       "indices": [],
-      "ltp": 108.37
+      "ltp": NaN
     },
     "AJANTPHARM": {
       "symbol": "AJANTPHARM",
       "yf_symbol": "AJANTPHARM.NS",
       "indices": [],
-      "ltp": 3284.0
+      "ltp": NaN
     },
     "AJAXENGG": {
       "symbol": "AJAXENGG",
       "yf_symbol": "AJAXENGG.NS",
       "indices": [],
-      "ltp": 578.85
+      "ltp": NaN
     },
     "AJMERA": {
       "symbol": "AJMERA",
       "yf_symbol": "AJMERA.NS",
       "indices": [],
-      "ltp": 133.28
+      "ltp": NaN
     },
     "AJOONI": {
       "symbol": "AJOONI",
       "yf_symbol": "AJOONI.NS",
       "indices": [],
-      "ltp": 3.13
+      "ltp": NaN
     },
     "AKASH": {
       "symbol": "AKASH",
       "yf_symbol": "AKASH.NS",
       "indices": [],
-      "ltp": 25.0
+      "ltp": NaN
     },
     "AKCAPIT": {
       "symbol": "AKCAPIT",
       "yf_symbol": "AKCAPIT.NS",
       "indices": [],
-      "ltp": 1902.5
+      "ltp": NaN
     },
     "AKG": {
       "symbol": "AKG",
       "yf_symbol": "AKG.NS",
       "indices": [],
-      "ltp": 9.35
+      "ltp": NaN
     },
     "AKI": {
       "symbol": "AKI",
       "yf_symbol": "AKI.NS",
       "indices": [],
-      "ltp": 5.39
+      "ltp": NaN
     },
     "AKSHAR": {
       "symbol": "AKSHAR",
       "yf_symbol": "AKSHAR.NS",
       "indices": [],
-      "ltp": 0.45
+      "ltp": NaN
     },
     "AKSHARCHEM": {
       "symbol": "AKSHARCHEM",
       "yf_symbol": "AKSHARCHEM.NS",
       "indices": [],
-      "ltp": 355.2
+      "ltp": NaN
     },
     "AKSHOPTFBR": {
       "symbol": "AKSHOPTFBR",
       "yf_symbol": "AKSHOPTFBR.NS",
       "indices": [],
-      "ltp": 7.02
+      "ltp": NaN
     },
     "AKUMS": {
       "symbol": "AKUMS",
       "yf_symbol": "AKUMS.NS",
       "indices": [],
-      "ltp": 741.05
+      "ltp": NaN
     },
     "ALANKIT": {
       "symbol": "ALANKIT",
       "yf_symbol": "ALANKIT.NS",
       "indices": [],
-      "ltp": 8.38
+      "ltp": NaN
     },
     "ALBERTDAVD": {
       "symbol": "ALBERTDAVD",
       "yf_symbol": "ALBERTDAVD.NS",
       "indices": [],
-      "ltp": 785.0
+      "ltp": NaN
     },
     "ALEMBICLTD": {
       "symbol": "ALEMBICLTD",
       "yf_symbol": "ALEMBICLTD.NS",
       "indices": [],
-      "ltp": 113.47
+      "ltp": NaN
     },
     "ALFREDHE": {
       "symbol": "ALFREDHE",
       "yf_symbol": "ALFREDHE.NS",
       "indices": [],
-      "ltp": 2719.0
+      "ltp": NaN
     },
     "ALGOQUANT": {
       "symbol": "ALGOQUANT",
       "yf_symbol": "ALGOQUANT.NS",
       "indices": [],
-      "ltp": 84.21
+      "ltp": NaN
     },
     "ALICON": {
       "symbol": "ALICON",
       "yf_symbol": "ALICON.NS",
       "indices": [],
-      "ltp": 976.15
+      "ltp": NaN
     },
     "ALIVUS": {
       "symbol": "ALIVUS",
       "yf_symbol": "ALIVUS.NS",
       "indices": [],
-      "ltp": 1460.6
+      "ltp": NaN
     },
     "ALKALI": {
       "symbol": "ALKALI",
       "yf_symbol": "ALKALI.NS",
       "indices": [],
-      "ltp": 78.73
+      "ltp": NaN
     },
     "ALKEM": {
       "symbol": "ALKEM",
       "yf_symbol": "ALKEM.NS",
       "indices": [],
-      "ltp": 5114.0
+      "ltp": NaN
     },
     "ALKYLAMINE": {
       "symbol": "ALKYLAMINE",
       "yf_symbol": "ALKYLAMINE.NS",
       "indices": [],
-      "ltp": 1623.3
+      "ltp": NaN
     },
     "ALLCARGO": {
       "symbol": "ALLCARGO",
       "yf_symbol": "ALLCARGO.NS",
       "indices": [],
-      "ltp": 9.86
+      "ltp": NaN
     },
     "ALLDIGI": {
       "symbol": "ALLDIGI",
       "yf_symbol": "ALLDIGI.NS",
       "indices": [],
-      "ltp": 834.4
+      "ltp": NaN
     },
     "ALLTIME": {
       "symbol": "ALLTIME",
       "yf_symbol": "ALLTIME.NS",
       "indices": [],
-      "ltp": 202.93
+      "ltp": NaN
     },
     "ALMONDZ": {
       "symbol": "ALMONDZ",
       "yf_symbol": "ALMONDZ.NS",
       "indices": [],
-      "ltp": 17.64
+      "ltp": NaN
     },
     "ALOKINDS": {
       "symbol": "ALOKINDS",
       "yf_symbol": "ALOKINDS.NS",
       "indices": [],
-      "ltp": 8.13
+      "ltp": NaN
     },
     "ALPA": {
       "symbol": "ALPA",
       "yf_symbol": "ALPA.NS",
       "indices": [],
-      "ltp": 55.98
+      "ltp": NaN
     },
     "ALPHAGEO": {
       "symbol": "ALPHAGEO",
       "yf_symbol": "ALPHAGEO.NS",
       "indices": [],
-      "ltp": 246.27
+      "ltp": NaN
     },
     "ALPINETEX": {
       "symbol": "ALPINETEX",
       "yf_symbol": "ALPINETEX.NS",
       "indices": [],
-      "ltp": 43.16
+      "ltp": NaN
     },
     "ALUFLUOR": {
       "symbol": "ALUFLUOR",
       "yf_symbol": "ALUFLUOR.NS",
       "indices": [],
-      "ltp": 626.2
+      "ltp": NaN
     },
     "AMAGI": {
       "symbol": "AMAGI",
       "yf_symbol": "AMAGI.NS",
       "indices": [],
-      "ltp": 547.0
+      "ltp": NaN
     },
     "AMAL": {
       "symbol": "AMAL",
       "yf_symbol": "AMAL.NS",
       "indices": [],
-      "ltp": 655.25
+      "ltp": NaN
     },
     "AMANTA": {
       "symbol": "AMANTA",
       "yf_symbol": "AMANTA.NS",
       "indices": [],
-      "ltp": 234.47
+      "ltp": NaN
     },
     "AMARJOTHI": {
       "symbol": "AMARJOTHI",
       "yf_symbol": "AMARJOTHI.NS",
       "indices": [],
-      "ltp": 151.13
+      "ltp": NaN
     },
     "AMBALALSA": {
       "symbol": "AMBALALSA",
       "yf_symbol": "AMBALALSA.NS",
       "indices": [],
-      "ltp": 38.23
+      "ltp": NaN
     },
     "AMBER": {
       "symbol": "AMBER",
       "yf_symbol": "AMBER.NS",
       "indices": [],
-      "ltp": 6772.0
+      "ltp": NaN
     },
     "AMBICAAGAR": {
       "symbol": "AMBICAAGAR",
       "yf_symbol": "AMBICAAGAR.NS",
       "indices": [],
-      "ltp": 22.79
+      "ltp": NaN
     },
     "AMBIKCO": {
       "symbol": "AMBIKCO",
       "yf_symbol": "AMBIKCO.NS",
       "indices": [],
-      "ltp": 1538.8
+      "ltp": NaN
     },
     "AMBUJACEM": {
       "symbol": "AMBUJACEM",
       "yf_symbol": "AMBUJACEM.NS",
       "indices": [],
-      "ltp": 381.45
+      "ltp": NaN
     },
     "AMDIND": {
       "symbol": "AMDIND",
       "yf_symbol": "AMDIND.NS",
       "indices": [],
-      "ltp": 51.71
+      "ltp": NaN
     },
     "AMJLAND": {
       "symbol": "AMJLAND",
       "yf_symbol": "AMJLAND.NS",
       "indices": [],
-      "ltp": 35.96
+      "ltp": NaN
     },
     "AMNPLST": {
       "symbol": "AMNPLST",
       "yf_symbol": "AMNPLST.NS",
       "indices": [],
-      "ltp": 151.14
+      "ltp": NaN
     },
     "AMRUTANJAN": {
       "symbol": "AMRUTANJAN",
       "yf_symbol": "AMRUTANJAN.NS",
       "indices": [],
-      "ltp": 508.45
+      "ltp": NaN
     },
     "ANANDRATHI": {
       "symbol": "ANANDRATHI",
       "yf_symbol": "ANANDRATHI.NS",
       "indices": [],
-      "ltp": 2381.2
+      "ltp": NaN
     },
     "ANANTRAJ": {
       "symbol": "ANANTRAJ",
       "yf_symbol": "ANANTRAJ.NS",
       "indices": [],
-      "ltp": 478.55
+      "ltp": NaN
     },
     "ANDHRAPAP": {
       "symbol": "ANDHRAPAP",
       "yf_symbol": "ANDHRAPAP.NS",
       "indices": [],
-      "ltp": 62.71
+      "ltp": NaN
     },
     "ANDHRSUGAR": {
       "symbol": "ANDHRSUGAR",
       "yf_symbol": "ANDHRSUGAR.NS",
       "indices": [],
-      "ltp": 81.53
+      "ltp": NaN
     },
     "ANDREWYU": {
       "symbol": "ANDREWYU",
       "yf_symbol": "ANDREWYU.NS",
       "indices": [],
-      "ltp": 24.12
+      "ltp": NaN
     },
     "ANGELONE": {
       "symbol": "ANGELONE",
       "yf_symbol": "ANGELONE.NS",
       "indices": [],
-      "ltp": 349.0
+      "ltp": NaN
     },
     "ANIKINDS": {
       "symbol": "ANIKINDS",
       "yf_symbol": "ANIKINDS.NS",
       "indices": [],
-      "ltp": 39.36
+      "ltp": NaN
     },
     "ANKITMETAL": {
       "symbol": "ANKITMETAL",
       "yf_symbol": "ANKITMETAL.NS",
       "indices": [],
-      "ltp": 1.82
+      "ltp": NaN
     },
     "ANMOL": {
       "symbol": "ANMOL",
       "yf_symbol": "ANMOL.NS",
       "indices": [],
-      "ltp": 11.26
+      "ltp": NaN
     },
     "ANNAPURNA": {
       "symbol": "ANNAPURNA",
       "yf_symbol": "ANNAPURNA.NS",
       "indices": [],
-      "ltp": 126.5
+      "ltp": NaN
     },
     "ANNU": {
       "symbol": "ANNU",
       "yf_symbol": "ANNU.NS",
       "indices": [],
-      "ltp": 41.98
+      "ltp": NaN
     },
     "ANSALAPI": {
       "symbol": "ANSALAPI",
       "yf_symbol": "ANSALAPI.NS",
       "indices": [],
-      "ltp": 3.05
+      "ltp": NaN
     },
     "ANSALBU": {
       "symbol": "ANSALBU",
       "yf_symbol": "ANSALBU.NS",
       "indices": [],
-      "ltp": 88.98
+      "ltp": NaN
     },
     "ANTELOPUS": {
       "symbol": "ANTELOPUS",
       "yf_symbol": "ANTELOPUS.NS",
       "indices": [],
-      "ltp": 871.55
+      "ltp": NaN
     },
     "ANTGRAPHIC": {
       "symbol": "ANTGRAPHIC",
       "yf_symbol": "ANTGRAPHIC.NS",
       "indices": [],
-      "ltp": 0.84
+      "ltp": NaN
     },
     "ANTHEM": {
       "symbol": "ANTHEM",
       "yf_symbol": "ANTHEM.NS",
       "indices": [],
-      "ltp": 936.95
+      "ltp": NaN
     },
     "ANUHPHR": {
       "symbol": "ANUHPHR",
       "yf_symbol": "ANUHPHR.NS",
       "indices": [],
-      "ltp": 82.45
+      "ltp": NaN
     },
     "ANUP": {
       "symbol": "ANUP",
       "yf_symbol": "ANUP.NS",
       "indices": [],
-      "ltp": 1725.0
+      "ltp": NaN
     },
     "ANURAS": {
       "symbol": "ANURAS",
       "yf_symbol": "ANURAS.NS",
       "indices": [],
-      "ltp": 1300.6
+      "ltp": NaN
     },
     "AONESTEELS": {
       "symbol": "AONESTEELS",
       "yf_symbol": "AONESTEELS.NS",
       "indices": [],
-      "ltp": 450.95
+      "ltp": NaN
     },
     "APARINDS": {
       "symbol": "APARINDS",
       "yf_symbol": "APARINDS.NS",
       "indices": [],
-      "ltp": 14667.0
+      "ltp": NaN
     },
     "APCL": {
       "symbol": "APCL",
       "yf_symbol": "APCL.NS",
       "indices": [],
-      "ltp": 89.96
+      "ltp": NaN
     },
     "APCOTEXIND": {
       "symbol": "APCOTEXIND",
       "yf_symbol": "APCOTEXIND.NS",
       "indices": [],
-      "ltp": 493.45
+      "ltp": NaN
     },
     "APEX": {
       "symbol": "APEX",
       "yf_symbol": "APEX.NS",
       "indices": [],
-      "ltp": 326.25
+      "ltp": NaN
     },
     "APLAPOLLO": {
       "symbol": "APLAPOLLO",
       "yf_symbol": "APLAPOLLO.NS",
       "indices": [],
-      "ltp": 2251.6
+      "ltp": NaN
     },
     "APLLTD": {
       "symbol": "APLLTD",
       "yf_symbol": "APLLTD.NS",
       "indices": [],
-      "ltp": 1030.15
+      "ltp": NaN
     },
     "APOLLO": {
       "symbol": "APOLLO",
       "yf_symbol": "APOLLO.NS",
       "indices": [],
-      "ltp": 475.6
+      "ltp": NaN
     },
     "APOLLOHOSP": {
       "symbol": "APOLLOHOSP",
       "yf_symbol": "APOLLOHOSP.NS",
       "indices": [],
-      "ltp": 8526.0
+      "ltp": NaN
     },
     "APOLLOPIPE": {
       "symbol": "APOLLOPIPE",
       "yf_symbol": "APOLLOPIPE.NS",
       "indices": [],
-      "ltp": 499.8
+      "ltp": NaN
     },
     "APOLLOTYRE": {
       "symbol": "APOLLOTYRE",
       "yf_symbol": "APOLLOTYRE.NS",
       "indices": [],
-      "ltp": 420.8
+      "ltp": NaN
     },
     "APOLSINHOT": {
       "symbol": "APOLSINHOT",
       "yf_symbol": "APOLSINHOT.NS",
       "indices": [],
-      "ltp": 1090.9
+      "ltp": NaN
     },
     "APOORVA": {
       "symbol": "APOORVA",
       "yf_symbol": "APOORVA.NS",
       "indices": [],
-      "ltp": 27.25
+      "ltp": NaN
     },
     "APTECHT": {
       "symbol": "APTECHT",
       "yf_symbol": "APTECHT.NS",
       "indices": [],
-      "ltp": 86.02
+      "ltp": NaN
     },
     "APTUS": {
       "symbol": "APTUS",
       "yf_symbol": "APTUS.NS",
       "indices": [],
-      "ltp": 174.98
+      "ltp": NaN
     },
     "AQYLON": {
       "symbol": "AQYLON",
       "yf_symbol": "AQYLON.NS",
       "indices": [],
-      "ltp": 10.78
+      "ltp": NaN
     },
     "ARCHIDPLY": {
       "symbol": "ARCHIDPLY",
       "yf_symbol": "ARCHIDPLY.NS",
       "indices": [],
-      "ltp": 87.18
+      "ltp": NaN
     },
     "ARCHIES": {
       "symbol": "ARCHIES",
       "yf_symbol": "ARCHIES.NS",
       "indices": [],
-      "ltp": 10.98
+      "ltp": NaN
     },
     "ARCIL": {
       "symbol": "ARCIL",
       "yf_symbol": "ARCIL.NS",
       "indices": [],
-      "ltp": 129.28
+      "ltp": NaN
     },
     "ARCL": {
       "symbol": "ARCL",
       "yf_symbol": "ARCL.NS",
       "indices": [],
-      "ltp": 232.9
+      "ltp": NaN
     },
     "ARDEE": {
       "symbol": "ARDEE",
       "yf_symbol": "ARDEE.NS",
       "indices": [],
-      "ltp": 42.89
+      "ltp": NaN
     },
     "ARE&M": {
       "symbol": "ARE&M",
       "yf_symbol": "ARE&M.NS",
       "indices": [],
-      "ltp": 751.8
+      "ltp": NaN
     },
     "ARENTERP": {
       "symbol": "ARENTERP",
       "yf_symbol": "ARENTERP.NS",
       "indices": [],
-      "ltp": 33.99
+      "ltp": NaN
     },
     "ARFIN": {
       "symbol": "ARFIN",
       "yf_symbol": "ARFIN.NS",
       "indices": [],
-      "ltp": 95.67
+      "ltp": NaN
     },
     "ARHAM": {
       "symbol": "ARHAM",
       "yf_symbol": "ARHAM.NS",
       "indices": [],
-      "ltp": 221.98
+      "ltp": NaN
     },
     "ARIES": {
       "symbol": "ARIES",
       "yf_symbol": "ARIES.NS",
       "indices": [],
-      "ltp": 501.7
+      "ltp": NaN
     },
     "ARIHANT": {
       "symbol": "ARIHANT",
       "yf_symbol": "ARIHANT.NS",
       "indices": [],
-      "ltp": 900.0
+      "ltp": NaN
     },
     "ARIHANTCAP": {
       "symbol": "ARIHANTCAP",
       "yf_symbol": "ARIHANTCAP.NS",
       "indices": [],
-      "ltp": 93.15
+      "ltp": NaN
     },
     "ARIHANTSUP": {
       "symbol": "ARIHANTSUP",
       "yf_symbol": "ARIHANTSUP.NS",
       "indices": [],
-      "ltp": 212.91
+      "ltp": NaN
     },
     "ARIS": {
       "symbol": "ARIS",
       "yf_symbol": "ARIS.NS",
       "indices": [],
-      "ltp": 146.86
+      "ltp": NaN
     },
     "ARKADE": {
       "symbol": "ARKADE",
       "yf_symbol": "ARKADE.NS",
       "indices": [],
-      "ltp": 111.47
+      "ltp": NaN
     },
     "ARMANFIN": {
       "symbol": "ARMANFIN",
       "yf_symbol": "ARMANFIN.NS",
       "indices": [],
-      "ltp": 1562.8
+      "ltp": NaN
     },
     "ARMEE": {
       "symbol": "ARMEE",
       "yf_symbol": "ARMEE.NS",
       "indices": [],
-      "ltp": 313.45
+      "ltp": NaN
     },
     "AROGRANITE": {
       "symbol": "AROGRANITE",
       "yf_symbol": "AROGRANITE.NS",
       "indices": [],
-      "ltp": 22.79
+      "ltp": NaN
     },
     "ARROWGREEN": {
       "symbol": "ARROWGREEN",
       "yf_symbol": "ARROWGREEN.NS",
       "indices": [],
-      "ltp": 720.85
+      "ltp": NaN
     },
     "ARSHIYA": {
       "symbol": "ARSHIYA",
       "yf_symbol": "ARSHIYA.NS",
       "indices": [],
-      "ltp": 1.07
+      "ltp": NaN
     },
     "ARSSBL": {
       "symbol": "ARSSBL",
       "yf_symbol": "ARSSBL.NS",
       "indices": [],
-      "ltp": 507.95
+      "ltp": NaN
     },
     "ARTEMISMED": {
       "symbol": "ARTEMISMED",
       "yf_symbol": "ARTEMISMED.NS",
       "indices": [],
-      "ltp": 321.8
+      "ltp": 327.7
     },
     "ARTNIRMAN": {
       "symbol": "ARTNIRMAN",
       "yf_symbol": "ARTNIRMAN.NS",
       "indices": [],
-      "ltp": 36.81
+      "ltp": NaN
     },
     "ARVEE": {
       "symbol": "ARVEE",
       "yf_symbol": "ARVEE.NS",
       "indices": [],
-      "ltp": 222.0
+      "ltp": NaN
     },
     "ARVIND": {
       "symbol": "ARVIND",
       "yf_symbol": "ARVIND.NS",
       "indices": [],
-      "ltp": 507.9
+      "ltp": NaN
     },
     "ARVINDFASN": {
       "symbol": "ARVINDFASN",
       "yf_symbol": "ARVINDFASN.NS",
       "indices": [],
-      "ltp": 342.5
+      "ltp": NaN
     },
     "ARVSMART": {
       "symbol": "ARVSMART",
       "yf_symbol": "ARVSMART.NS",
       "indices": [],
-      "ltp": 620.5
+      "ltp": NaN
     },
     "ARYAMAN": {
       "symbol": "ARYAMAN",
       "yf_symbol": "ARYAMAN.NS",
       "indices": [],
-      "ltp": 768.25
+      "ltp": NaN
     },
     "ASAHIINDIA": {
       "symbol": "ASAHIINDIA",
       "yf_symbol": "ASAHIINDIA.NS",
       "indices": [],
-      "ltp": 1110.25
+      "ltp": NaN
     },
     "ASAHISONG": {
       "symbol": "ASAHISONG",
       "yf_symbol": "ASAHISONG.NS",
       "indices": [],
-      "ltp": 363.6
+      "ltp": NaN
     },
     "ASAL": {
       "symbol": "ASAL",
       "yf_symbol": "ASAL.NS",
       "indices": [],
-      "ltp": 455.5
+      "ltp": NaN
     },
     "ASALCBR": {
       "symbol": "ASALCBR",
       "yf_symbol": "ASALCBR.NS",
       "indices": [],
-      "ltp": 566.5
+      "ltp": NaN
     },
     "ASHAPURMIN": {
       "symbol": "ASHAPURMIN",
       "yf_symbol": "ASHAPURMIN.NS",
       "indices": [],
-      "ltp": 415.3
+      "ltp": NaN
     },
     "ASHIANA": {
       "symbol": "ASHIANA",
       "yf_symbol": "ASHIANA.NS",
       "indices": [],
-      "ltp": 354.9
+      "ltp": NaN
     },
     "ASHIKAG": {
       "symbol": "ASHIKAG",
       "yf_symbol": "ASHIKAG.NS",
       "indices": [],
-      "ltp": 365.4
+      "ltp": NaN
     },
     "ASHIMASYN": {
       "symbol": "ASHIMASYN",
       "yf_symbol": "ASHIMASYN.NS",
       "indices": [],
-      "ltp": 14.24
+      "ltp": NaN
     },
     "ASHOKA": {
       "symbol": "ASHOKA",
       "yf_symbol": "ASHOKA.NS",
       "indices": [],
-      "ltp": 111.82
+      "ltp": NaN
     },
     "ASHOKAMET": {
       "symbol": "ASHOKAMET",
       "yf_symbol": "ASHOKAMET.NS",
       "indices": [],
-      "ltp": 14.03
+      "ltp": NaN
     },
     "ASHOKLEY": {
       "symbol": "ASHOKLEY",
       "yf_symbol": "ASHOKLEY.NS",
       "indices": [],
-      "ltp": 169.2
+      "ltp": NaN
     },
     "ASIANENE": {
       "symbol": "ASIANENE",
       "yf_symbol": "ASIANENE.NS",
       "indices": [],
-      "ltp": 396.35
+      "ltp": NaN
     },
     "ASIANHOTNR": {
       "symbol": "ASIANHOTNR",
       "yf_symbol": "ASIANHOTNR.NS",
       "indices": [],
-      "ltp": 316.4
+      "ltp": NaN
     },
     "ASIANPAINT": {
       "symbol": "ASIANPAINT",
       "yf_symbol": "ASIANPAINT.NS",
       "indices": [],
-      "ltp": 2550.0
+      "ltp": NaN
     },
     "ASIANTILES": {
       "symbol": "ASIANTILES",
       "yf_symbol": "ASIANTILES.NS",
       "indices": [],
-      "ltp": 44.47
+      "ltp": NaN
     },
     "ASIANTNE": {
       "symbol": "ASIANTNE",
       "yf_symbol": "ASIANTNE.NS",
       "indices": [],
-      "ltp": 9.03
+      "ltp": NaN
     },
     "ASKAUTOLTD": {
       "symbol": "ASKAUTOLTD",
       "yf_symbol": "ASKAUTOLTD.NS",
       "indices": [],
-      "ltp": 642.7
+      "ltp": NaN
     },
     "ASMS": {
       "symbol": "ASMS",
       "yf_symbol": "ASMS.NS",
       "indices": [],
-      "ltp": 5.64
+      "ltp": NaN
     },
     "ASPINWALL": {
       "symbol": "ASPINWALL",
       "yf_symbol": "ASPINWALL.NS",
       "indices": [],
-      "ltp": 243.78
+      "ltp": NaN
     },
     "ASSAMENT": {
       "symbol": "ASSAMENT",
       "yf_symbol": "ASSAMENT.NS",
       "indices": [],
-      "ltp": 845.05
+      "ltp": NaN
     },
     "ASTAR": {
       "symbol": "ASTAR",
       "yf_symbol": "ASTAR.NS",
       "indices": [],
-      "ltp": 660.1
+      "ltp": NaN
     },
     "ASTEC": {
       "symbol": "ASTEC",
       "yf_symbol": "ASTEC.NS",
       "indices": [],
-      "ltp": 551.85
+      "ltp": NaN
     },
     "ASTERDM": {
       "symbol": "ASTERDM",
       "yf_symbol": "ASTERDM.NS",
       "indices": [],
-      "ltp": 722.5
+      "ltp": NaN
     },
     "ASTRAL": {
       "symbol": "ASTRAL",
       "yf_symbol": "ASTRAL.NS",
       "indices": [],
-      "ltp": 1254.0
+      "ltp": NaN
     },
     "ASTRAMICRO": {
       "symbol": "ASTRAMICRO",
       "yf_symbol": "ASTRAMICRO.NS",
       "indices": [],
-      "ltp": 1703.5
+      "ltp": NaN
     },
     "ASTRAZEN": {
       "symbol": "ASTRAZEN",
       "yf_symbol": "ASTRAZEN.NS",
       "indices": [],
-      "ltp": 6031.5
+      "ltp": NaN
     },
     "ASTRON": {
       "symbol": "ASTRON",
       "yf_symbol": "ASTRON.NS",
       "indices": [],
-      "ltp": 2.71
+      "ltp": NaN
     },
     "ATALREAL": {
       "symbol": "ATALREAL",
       "yf_symbol": "ATALREAL.NS",
       "indices": [],
-      "ltp": 14.39
+      "ltp": NaN
     },
     "ATAM": {
       "symbol": "ATAM",
       "yf_symbol": "ATAM.NS",
       "indices": [],
-      "ltp": 54.57
+      "ltp": NaN
     },
     "ATGL": {
       "symbol": "ATGL",
       "yf_symbol": "ATGL.NS",
       "indices": [],
-      "ltp": 575.4
+      "ltp": NaN
     },
     "ATHERENERG": {
       "symbol": "ATHERENERG",
       "yf_symbol": "ATHERENERG.NS",
       "indices": [],
-      "ltp": 1945.0
+      "ltp": NaN
     },
     "ATL": {
       "symbol": "ATL",
       "yf_symbol": "ATL.NS",
       "indices": [],
-      "ltp": 28.03
+      "ltp": NaN
     },
     "ATLANTAA": {
       "symbol": "ATLANTAA",
       "yf_symbol": "ATLANTAA.NS",
       "indices": [],
-      "ltp": 35.59
+      "ltp": NaN
     },
     "ATLANTAELE": {
       "symbol": "ATLANTAELE",
       "yf_symbol": "ATLANTAELE.NS",
       "indices": [],
-      "ltp": 1521.6
+      "ltp": NaN
     },
     "ATLASCYCLE": {
       "symbol": "ATLASCYCLE",
       "yf_symbol": "ATLASCYCLE.NS",
       "indices": [],
-      "ltp": 89.89
+      "ltp": NaN
     },
     "ATUL": {
       "symbol": "ATUL",
       "yf_symbol": "ATUL.NS",
       "indices": [],
-      "ltp": 5166.0
+      "ltp": NaN
     },
     "ATULAUTO": {
       "symbol": "ATULAUTO",
       "yf_symbol": "ATULAUTO.NS",
       "indices": [],
-      "ltp": 398.7
+      "ltp": NaN
     },
     "AUBANK": {
       "symbol": "AUBANK",
       "yf_symbol": "AUBANK.NS",
       "indices": [],
-      "ltp": 967.0
+      "ltp": NaN
     },
     "AUGMONT": {
       "symbol": "AUGMONT",
       "yf_symbol": "AUGMONT.NS",
       "indices": [],
-      "ltp": 956.2
+      "ltp": NaN
     },
     "AURIONPRO": {
       "symbol": "AURIONPRO",
       "yf_symbol": "AURIONPRO.NS",
       "indices": [],
-      "ltp": 586.85
+      "ltp": NaN
     },
     "AUROPHARMA": {
       "symbol": "AUROPHARMA",
       "yf_symbol": "AUROPHARMA.NS",
       "indices": [],
-      "ltp": 1823.2
+      "ltp": NaN
     },
     "AURUM": {
       "symbol": "AURUM",
       "yf_symbol": "AURUM.NS",
       "indices": [],
-      "ltp": 217.83
+      "ltp": NaN
     },
     "AURUS": {
       "symbol": "AURUS",
       "yf_symbol": "AURUS.NS",
       "indices": [],
-      "ltp": 4.33
+      "ltp": NaN
     },
     "AUSOMENT": {
       "symbol": "AUSOMENT",
       "yf_symbol": "AUSOMENT.NS",
       "indices": [],
-      "ltp": 131.82
+      "ltp": NaN
     },
     "AUSTENG": {
       "symbol": "AUSTENG",
       "yf_symbol": "AUSTENG.NS",
       "indices": [],
-      "ltp": 141.51
+      "ltp": NaN
     },
     "AUTOAXLES": {
       "symbol": "AUTOAXLES",
       "yf_symbol": "AUTOAXLES.NS",
       "indices": [],
-      "ltp": 1815.3
+      "ltp": NaN
     },
     "AUTOIND": {
       "symbol": "AUTOIND",
       "yf_symbol": "AUTOIND.NS",
       "indices": [],
-      "ltp": 77.2
+      "ltp": NaN
     },
     "AVADHSUGAR": {
       "symbol": "AVADHSUGAR",
       "yf_symbol": "AVADHSUGAR.NS",
       "indices": [],
-      "ltp": 866.2
+      "ltp": NaN
     },
     "AVALON": {
       "symbol": "AVALON",
       "yf_symbol": "AVALON.NS",
       "indices": [],
-      "ltp": 2038.3
+      "ltp": NaN
     },
     "AVANCE": {
       "symbol": "AVANCE",
       "yf_symbol": "AVANCE.NS",
       "indices": [],
-      "ltp": 0.71
+      "ltp": NaN
     },
     "AVANTEL": {
       "symbol": "AVANTEL",
       "yf_symbol": "AVANTEL.NS",
       "indices": [],
-      "ltp": 164.76
+      "ltp": NaN
     },
     "AVANTIFEED": {
       "symbol": "AVANTIFEED",
       "yf_symbol": "AVANTIFEED.NS",
       "indices": [],
-      "ltp": 746.6
+      "ltp": NaN
     },
     "AVG": {
       "symbol": "AVG",
       "yf_symbol": "AVG.NS",
       "indices": [],
-      "ltp": 168.99
+      "ltp": NaN
     },
     "AVL": {
       "symbol": "AVL",
       "yf_symbol": "AVL.NS",
       "indices": [],
-      "ltp": 567.15
+      "ltp": NaN
     },
     "AVONMORE": {
       "symbol": "AVONMORE",
       "yf_symbol": "AVONMORE.NS",
       "indices": [],
-      "ltp": 11.87
+      "ltp": NaN
     },
     "AVROIND": {
       "symbol": "AVROIND",
       "yf_symbol": "AVROIND.NS",
       "indices": [],
-      "ltp": 5.3
+      "ltp": NaN
     },
     "AVTNPL": {
       "symbol": "AVTNPL",
       "yf_symbol": "AVTNPL.NS",
       "indices": [],
-      "ltp": 96.62
+      "ltp": NaN
     },
     "AWFIS": {
       "symbol": "AWFIS",
       "yf_symbol": "AWFIS.NS",
       "indices": [],
-      "ltp": 291.58
+      "ltp": NaN
     },
     "AWHCL": {
       "symbol": "AWHCL",
       "yf_symbol": "AWHCL.NS",
       "indices": [],
-      "ltp": 311.55
+      "ltp": NaN
     },
     "AWL": {
       "symbol": "AWL",
       "yf_symbol": "AWL.NS",
       "indices": [],
-      "ltp": 163.99
+      "ltp": NaN
     },
     "AXISBANK": {
       "symbol": "AXISBANK",
       "yf_symbol": "AXISBANK.NS",
       "indices": [],
-      "ltp": 1331.0
+      "ltp": NaN
     },
     "AXISCADES": {
       "symbol": "AXISCADES",
       "yf_symbol": "AXISCADES.NS",
       "indices": [],
-      "ltp": 1914.4
+      "ltp": NaN
     },
     "AXITA": {
       "symbol": "AXITA",
       "yf_symbol": "AXITA.NS",
       "indices": [],
-      "ltp": 7.18
+      "ltp": NaN
     },
     "AXTEL": {
       "symbol": "AXTEL",
       "yf_symbol": "AXTEL.NS",
       "indices": [],
-      "ltp": 367.25
+      "ltp": NaN
     },
     "AYE": {
       "symbol": "AYE",
       "yf_symbol": "AYE.NS",
       "indices": [],
-      "ltp": 158.98
+      "ltp": NaN
     },
     "AYMSYNTEX": {
       "symbol": "AYMSYNTEX",
       "yf_symbol": "AYMSYNTEX.NS",
       "indices": [],
-      "ltp": 262.53
+      "ltp": NaN
     },
     "AZAD": {
       "symbol": "AZAD",
       "yf_symbol": "AZAD.NS",
       "indices": [],
-      "ltp": 2455.9
+      "ltp": NaN
     },
     "AZADIND": {
       "symbol": "AZADIND",
       "yf_symbol": "AZADIND.NS",
       "indices": [],
-      "ltp": 15.36
+      "ltp": NaN
     },
     "BAFNAPH": {
       "symbol": "BAFNAPH",
       "yf_symbol": "BAFNAPH.NS",
       "indices": [],
-      "ltp": 482.05
+      "ltp": NaN
     },
     "BAGFILMS": {
       "symbol": "BAGFILMS",
       "yf_symbol": "BAGFILMS.NS",
       "indices": [],
-      "ltp": 4.08
+      "ltp": NaN
     },
     "BAHETI": {
       "symbol": "BAHETI",
       "yf_symbol": "BAHETI.NS",
       "indices": [],
-      "ltp": 792.75
+      "ltp": NaN
     },
     "BAIDFIN": {
       "symbol": "BAIDFIN",
       "yf_symbol": "BAIDFIN.NS",
       "indices": [],
-      "ltp": 10.05
+      "ltp": NaN
     },
     "BAJAJ-AUTO": {
       "symbol": "BAJAJ-AUTO",
       "yf_symbol": "BAJAJ-AUTO.NS",
       "indices": [],
-      "ltp": 10850.0
+      "ltp": NaN
     },
     "BAJAJCON": {
       "symbol": "BAJAJCON",
       "yf_symbol": "BAJAJCON.NS",
       "indices": [],
-      "ltp": 431.8
+      "ltp": NaN
     },
     "BAJAJELEC": {
       "symbol": "BAJAJELEC",
       "yf_symbol": "BAJAJELEC.NS",
       "indices": [],
-      "ltp": 281.65
+      "ltp": NaN
     },
     "BAJAJFINSV": {
       "symbol": "BAJAJFINSV",
       "yf_symbol": "BAJAJFINSV.NS",
       "indices": [],
-      "ltp": 1865.0
+      "ltp": NaN
     },
     "BAJAJHCARE": {
       "symbol": "BAJAJHCARE",
       "yf_symbol": "BAJAJHCARE.NS",
       "indices": [],
-      "ltp": 323.45
+      "ltp": NaN
     },
     "BAJAJHFL": {
       "symbol": "BAJAJHFL",
       "yf_symbol": "BAJAJHFL.NS",
       "indices": [],
-      "ltp": 81.46
+      "ltp": NaN
     },
     "BAJAJHIND": {
       "symbol": "BAJAJHIND",
       "yf_symbol": "BAJAJHIND.NS",
       "indices": [],
-      "ltp": 18.35
+      "ltp": NaN
     },
     "BAJAJHLDNG": {
       "symbol": "BAJAJHLDNG",
       "yf_symbol": "BAJAJHLDNG.NS",
       "indices": [],
-      "ltp": 11096.0
+      "ltp": NaN
     },
     "BAJAJINDEF": {
       "symbol": "BAJAJINDEF",
       "yf_symbol": "BAJAJINDEF.NS",
       "indices": [],
-      "ltp": 200.37
+      "ltp": NaN
     },
     "BAJAJST": {
       "symbol": "BAJAJST",
       "yf_symbol": "BAJAJST.NS",
       "indices": [],
-      "ltp": 318.75
+      "ltp": NaN
     },
     "BAJEL": {
       "symbol": "BAJEL",
       "yf_symbol": "BAJEL.NS",
       "indices": [],
-      "ltp": 160.74
+      "ltp": NaN
     },
     "BAJFINANCE": {
       "symbol": "BAJFINANCE",
       "yf_symbol": "BAJFINANCE.NS",
       "indices": [],
-      "ltp": 1117.0
+      "ltp": NaN
     },
     "BALAJEE": {
       "symbol": "BALAJEE",
       "yf_symbol": "BALAJEE.NS",
       "indices": [],
-      "ltp": 23.15
+      "ltp": NaN
     },
     "BALAJITELE": {
       "symbol": "BALAJITELE",
       "yf_symbol": "BALAJITELE.NS",
       "indices": [],
-      "ltp": 102.79
+      "ltp": NaN
     },
     "BALAMINES": {
       "symbol": "BALAMINES",
       "yf_symbol": "BALAMINES.NS",
       "indices": [],
-      "ltp": 1915.0
+      "ltp": NaN
     },
     "BALAXI": {
       "symbol": "BALAXI",
       "yf_symbol": "BALAXI.NS",
       "indices": [],
-      "ltp": 23.44
+      "ltp": NaN
     },
     "BALKRISHNA": {
       "symbol": "BALKRISHNA",
       "yf_symbol": "BALKRISHNA.NS",
       "indices": [],
-      "ltp": 15.21
+      "ltp": NaN
     },
     "BALKRISIND": {
       "symbol": "BALKRISIND",
       "yf_symbol": "BALKRISIND.NS",
       "indices": [],
-      "ltp": 2271.4
+      "ltp": NaN
     },
     "BALMLAWRIE": {
       "symbol": "BALMLAWRIE",
       "yf_symbol": "BALMLAWRIE.NS",
       "indices": [],
-      "ltp": 172.44
+      "ltp": NaN
     },
     "BALPHARMA": {
       "symbol": "BALPHARMA",
       "yf_symbol": "BALPHARMA.NS",
       "indices": [],
-      "ltp": 90.94
+      "ltp": NaN
     },
     "BALRAMCHIN": {
       "symbol": "BALRAMCHIN",
       "yf_symbol": "BALRAMCHIN.NS",
       "indices": [],
-      "ltp": 654.8
+      "ltp": NaN
     },
     "BALUFORGE": {
       "symbol": "BALUFORGE",
       "yf_symbol": "BALUFORGE.NS",
       "indices": [],
-      "ltp": 550.3
+      "ltp": NaN
     },
     "BANARBEADS": {
       "symbol": "BANARBEADS",
       "yf_symbol": "BANARBEADS.NS",
       "indices": [],
-      "ltp": 107.16
+      "ltp": NaN
     },
     "BANARISUG": {
       "symbol": "BANARISUG",
       "yf_symbol": "BANARISUG.NS",
       "indices": [],
-      "ltp": 3125.3
+      "ltp": NaN
     },
     "BANCOINDIA": {
       "symbol": "BANCOINDIA",
       "yf_symbol": "BANCOINDIA.NS",
       "indices": [],
-      "ltp": 680.55
+      "ltp": NaN
     },
     "BANDHANBNK": {
       "symbol": "BANDHANBNK",
       "yf_symbol": "BANDHANBNK.NS",
       "indices": [],
-      "ltp": 172.88
+      "ltp": NaN
     },
     "BANG": {
       "symbol": "BANG",
       "yf_symbol": "BANG.NS",
       "indices": [],
-      "ltp": 29.67
+      "ltp": NaN
     },
     "BANKA": {
       "symbol": "BANKA",
       "yf_symbol": "BANKA.NS",
       "indices": [],
-      "ltp": 78.0
+      "ltp": NaN
     },
     "BANKBARODA": {
       "symbol": "BANKBARODA",
       "yf_symbol": "BANKBARODA.NS",
       "indices": [],
-      "ltp": 273.84
+      "ltp": NaN
     },
     "BANKINDIA": {
       "symbol": "BANKINDIA",
       "yf_symbol": "BANKINDIA.NS",
       "indices": [],
-      "ltp": 154.1
+      "ltp": NaN
     },
     "BANSALWIRE": {
       "symbol": "BANSALWIRE",
       "yf_symbol": "BANSALWIRE.NS",
       "indices": [],
-      "ltp": 58.96
+      "ltp": NaN
     },
     "BANSWRAS": {
       "symbol": "BANSWRAS",
       "yf_symbol": "BANSWRAS.NS",
       "indices": [],
-      "ltp": 101.88
+      "ltp": NaN
     },
     "BASF": {
       "symbol": "BASF",
       "yf_symbol": "BASF.NS",
       "indices": [],
-      "ltp": 2934.7
+      "ltp": NaN
     },
     "BASML": {
       "symbol": "BASML",
       "yf_symbol": "BASML.NS",
       "indices": [],
-      "ltp": 22.93
+      "ltp": NaN
     },
     "BATAINDIA": {
       "symbol": "BATAINDIA",
       "yf_symbol": "BATAINDIA.NS",
       "indices": [],
-      "ltp": 642.15
+      "ltp": NaN
     },
     "BATLIBOI": {
       "symbol": "BATLIBOI",
       "yf_symbol": "BATLIBOI.NS",
       "indices": [],
-      "ltp": 91.63
+      "ltp": NaN
     },
     "BAYERCROP": {
       "symbol": "BAYERCROP",
       "yf_symbol": "BAYERCROP.NS",
       "indices": [],
-      "ltp": 3447.0
+      "ltp": NaN
     },
     "BBL": {
       "symbol": "BBL",
       "yf_symbol": "BBL.NS",
       "indices": [],
-      "ltp": 2722.9
+      "ltp": NaN
     },
     "BBOX": {
       "symbol": "BBOX",
       "yf_symbol": "BBOX.NS",
       "indices": [],
-      "ltp": 900.7
+      "ltp": NaN
     },
     "BBTC": {
       "symbol": "BBTC",
       "yf_symbol": "BBTC.NS",
       "indices": [],
-      "ltp": 1292.5
+      "ltp": NaN
     },
     "BBTCL": {
       "symbol": "BBTCL",
       "yf_symbol": "BBTCL.NS",
       "indices": [],
-      "ltp": 225.89
+      "ltp": NaN
     },
     "BCG": {
       "symbol": "BCG",
       "yf_symbol": "BCG.NS",
       "indices": [],
-      "ltp": 9.25
+      "ltp": NaN
     },
     "BCLIND": {
       "symbol": "BCLIND",
       "yf_symbol": "BCLIND.NS",
       "indices": [],
-      "ltp": 29.51
+      "ltp": NaN
     },
     "BCONCEPTS": {
       "symbol": "BCONCEPTS",
       "yf_symbol": "BCONCEPTS.NS",
       "indices": [],
-      "ltp": 131.55
+      "ltp": NaN
     },
     "BCPL": {
       "symbol": "BCPL",
       "yf_symbol": "BCPL.NS",
       "indices": [],
-      "ltp": 66.18
+      "ltp": NaN
     },
     "BCSSL": {
       "symbol": "BCSSL",
       "yf_symbol": "BCSSL.NS",
       "indices": [],
-      "ltp": 81.08
+      "ltp": NaN
     },
     "BDL": {
       "symbol": "BDL",
       "yf_symbol": "BDL.NS",
       "indices": [],
-      "ltp": 1030.0
+      "ltp": NaN
     },
     "BEARDSELL": {
       "symbol": "BEARDSELL",
       "yf_symbol": "BEARDSELL.NS",
       "indices": [],
-      "ltp": 25.92
+      "ltp": NaN
     },
     "BECTORFOOD": {
       "symbol": "BECTORFOOD",
       "yf_symbol": "BECTORFOOD.NS",
       "indices": [],
-      "ltp": 211.69
+      "ltp": NaN
     },
     "BEDMUTHA": {
       "symbol": "BEDMUTHA",
       "yf_symbol": "BEDMUTHA.NS",
       "indices": [],
-      "ltp": 107.6
+      "ltp": NaN
     },
     "BEEKAY": {
       "symbol": "BEEKAY",
       "yf_symbol": "BEEKAY.NS",
       "indices": [],
-      "ltp": 403.0
+      "ltp": NaN
     },
     "BEL": {
       "symbol": "BEL",
       "yf_symbol": "BEL.NS",
       "indices": [],
-      "ltp": 400.85
+      "ltp": NaN
     },
     "BELDING": {
       "symbol": "BELDING",
       "yf_symbol": "BELDING.NS",
       "indices": [],
-      "ltp": 796.5
+      "ltp": NaN
     },
     "BELLACASA": {
       "symbol": "BELLACASA",
       "yf_symbol": "BELLACASA.NS",
       "indices": [],
-      "ltp": 214.02
+      "ltp": NaN
     },
     "BELRISE": {
       "symbol": "BELRISE",
       "yf_symbol": "BELRISE.NS",
       "indices": [],
-      "ltp": 215.2
+      "ltp": NaN
     },
     "BEML": {
       "symbol": "BEML",
       "yf_symbol": "BEML.NS",
       "indices": [],
-      "ltp": 2098.2
+      "ltp": NaN
     },
     "BENARAS": {
       "symbol": "BENARAS",
       "yf_symbol": "BENARAS.NS",
       "indices": [],
-      "ltp": 10235.0
+      "ltp": NaN
     },
     "BENGALASM": {
       "symbol": "BENGALASM",
       "yf_symbol": "BENGALASM.NS",
       "indices": [],
-      "ltp": 5659.0
+      "ltp": NaN
     },
     "BEPL": {
       "symbol": "BEPL",
       "yf_symbol": "BEPL.NS",
       "indices": [],
-      "ltp": 112.7
+      "ltp": NaN
     },
     "BERGEPAINT": {
       "symbol": "BERGEPAINT",
       "yf_symbol": "BERGEPAINT.NS",
       "indices": [],
-      "ltp": 475.5
+      "ltp": NaN
     },
     "BESTAGRO": {
       "symbol": "BESTAGRO",
       "yf_symbol": "BESTAGRO.NS",
       "indices": [],
-      "ltp": 15.17
+      "ltp": NaN
     },
     "BETA": {
       "symbol": "BETA",
       "yf_symbol": "BETA.NS",
       "indices": [],
-      "ltp": 1817.4
+      "ltp": NaN
     },
     "BFINVEST": {
       "symbol": "BFINVEST",
       "yf_symbol": "BFINVEST.NS",
       "indices": [],
-      "ltp": 446.15
+      "ltp": NaN
     },
     "BFUTILITIE": {
       "symbol": "BFUTILITIE",
       "yf_symbol": "BFUTILITIE.NS",
       "indices": [],
-      "ltp": 498.55
+      "ltp": NaN
+    },
+    "BGLOBAL": {
+      "symbol": "BGLOBAL",
+      "yf_symbol": "BGLOBAL.NS",
+      "indices": [],
+      "ltp": NaN
     },
     "BGRENERGY": {
       "symbol": "BGRENERGY",
       "yf_symbol": "BGRENERGY.NS",
       "indices": [],
-      "ltp": 310.7
+      "ltp": NaN
     },
     "BHAGCHEM": {
       "symbol": "BHAGCHEM",
       "yf_symbol": "BHAGCHEM.NS",
       "indices": [],
-      "ltp": 187.98
+      "ltp": NaN
     },
     "BHAGERIA": {
       "symbol": "BHAGERIA",
       "yf_symbol": "BHAGERIA.NS",
       "indices": [],
-      "ltp": 380.3
+      "ltp": NaN
     },
     "BHAGYANGR": {
       "symbol": "BHAGYANGR",
       "yf_symbol": "BHAGYANGR.NS",
       "indices": [],
-      "ltp": 81.66
+      "ltp": NaN
     },
     "BHANDARI": {
       "symbol": "BHANDARI",
       "yf_symbol": "BHANDARI.NS",
       "indices": [],
-      "ltp": 2.86
+      "ltp": NaN
     },
     "BHARATCOAL": {
       "symbol": "BHARATCOAL",
       "yf_symbol": "BHARATCOAL.NS",
       "indices": [],
-      "ltp": 31.54
+      "ltp": NaN
     },
     "BHARATFORG": {
       "symbol": "BHARATFORG",
       "yf_symbol": "BHARATFORG.NS",
       "indices": [],
-      "ltp": 1750.5
+      "ltp": NaN
     },
     "BHARATGEAR": {
       "symbol": "BHARATGEAR",
       "yf_symbol": "BHARATGEAR.NS",
       "indices": [],
-      "ltp": 100.71
+      "ltp": NaN
     },
     "BHARATRAS": {
       "symbol": "BHARATRAS",
       "yf_symbol": "BHARATRAS.NS",
       "indices": [],
-      "ltp": 1052.9
+      "ltp": NaN
     },
     "BHARATSE": {
       "symbol": "BHARATSE",
       "yf_symbol": "BHARATSE.NS",
       "indices": [],
-      "ltp": 210.58
+      "ltp": NaN
     },
     "BHARATWIRE": {
       "symbol": "BHARATWIRE",
       "yf_symbol": "BHARATWIRE.NS",
       "indices": [],
-      "ltp": 150.55
+      "ltp": NaN
     },
     "BHARTIARTL": {
       "symbol": "BHARTIARTL",
       "yf_symbol": "BHARTIARTL.NS",
       "indices": [],
-      "ltp": 2106.0
+      "ltp": NaN
     },
     "BHARTIHEXA": {
       "symbol": "BHARTIHEXA",
       "yf_symbol": "BHARTIHEXA.NS",
       "indices": [],
-      "ltp": 1665.5
+      "ltp": NaN
     },
     "BHEL": {
       "symbol": "BHEL",
       "yf_symbol": "BHEL.NS",
       "indices": [],
-      "ltp": 436.3
+      "ltp": NaN
     },
     "BI": {
       "symbol": "BI",
       "yf_symbol": "BI.NS",
       "indices": [],
-      "ltp": 84.43
+      "ltp": NaN
     },
     "BIGBLOC": {
       "symbol": "BIGBLOC",
       "yf_symbol": "BIGBLOC.NS",
       "indices": [],
-      "ltp": 34.94
+      "ltp": NaN
     },
     "BIKAJI": {
       "symbol": "BIKAJI",
       "yf_symbol": "BIKAJI.NS",
       "indices": [],
-      "ltp": 484.15
+      "ltp": NaN
     },
     "BIL": {
       "symbol": "BIL",
       "yf_symbol": "BIL.NS",
       "indices": [],
-      "ltp": 1124.6
+      "ltp": NaN
     },
     "BILVYAPAR": {
       "symbol": "BILVYAPAR",
       "yf_symbol": "BILVYAPAR.NS",
       "indices": [],
-      "ltp": 4.4
+      "ltp": NaN
     },
     "BIMETAL": {
       "symbol": "BIMETAL",
       "yf_symbol": "BIMETAL.NS",
       "indices": [],
-      "ltp": 631.15
+      "ltp": NaN
     },
     "BIOCON": {
       "symbol": "BIOCON",
       "yf_symbol": "BIOCON.NS",
       "indices": [],
-      "ltp": 364.05
+      "ltp": NaN
     },
     "BIOFILCHEM": {
       "symbol": "BIOFILCHEM",
       "yf_symbol": "BIOFILCHEM.NS",
       "indices": [],
-      "ltp": 31.39
+      "ltp": NaN
     },
     "BIRLACABLE": {
       "symbol": "BIRLACABLE",
       "yf_symbol": "BIRLACABLE.NS",
       "indices": [],
-      "ltp": 325.25
+      "ltp": NaN
     },
     "BIRLACORPN": {
       "symbol": "BIRLACORPN",
       "yf_symbol": "BIRLACORPN.NS",
       "indices": [],
-      "ltp": 832.95
+      "ltp": NaN
     },
     "BIRLAMONEY": {
       "symbol": "BIRLAMONEY",
       "yf_symbol": "BIRLAMONEY.NS",
       "indices": [],
-      "ltp": 118.85
+      "ltp": NaN
     },
     "BIRLANU": {
       "symbol": "BIRLANU",
       "yf_symbol": "BIRLANU.NS",
       "indices": [],
-      "ltp": 1238.4
+      "ltp": NaN
     },
     "BIRLAPREC": {
       "symbol": "BIRLAPREC",
       "yf_symbol": "BIRLAPREC.NS",
       "indices": [],
-      "ltp": 48.9
+      "ltp": NaN
     },
     "BLACKBUCK": {
       "symbol": "BLACKBUCK",
       "yf_symbol": "BLACKBUCK.NS",
       "indices": [],
-      "ltp": 560.85
+      "ltp": NaN
     },
     "BLACKROSE": {
       "symbol": "BLACKROSE",
       "yf_symbol": "BLACKROSE.NS",
       "indices": [],
-      "ltp": 100.42
+      "ltp": NaN
     },
     "BLAL": {
       "symbol": "BLAL",
       "yf_symbol": "BLAL.NS",
       "indices": [],
-      "ltp": 164.48
+      "ltp": NaN
     },
     "BLBLIMITED": {
       "symbol": "BLBLIMITED",
       "yf_symbol": "BLBLIMITED.NS",
       "indices": [],
-      "ltp": 14.73
+      "ltp": NaN
     },
     "BLEL": {
       "symbol": "BLEL",
       "yf_symbol": "BLEL.NS",
       "indices": [],
-      "ltp": 453.15
+      "ltp": NaN
     },
     "BLIL": {
       "symbol": "BLIL",
       "yf_symbol": "BLIL.NS",
       "indices": [],
-      "ltp": 66.44
+      "ltp": NaN
     },
     "BLISSGVS": {
       "symbol": "BLISSGVS",
       "yf_symbol": "BLISSGVS.NS",
       "indices": [],
-      "ltp": 673.1
+      "ltp": NaN
     },
     "BLKASHYAP": {
       "symbol": "BLKASHYAP",
       "yf_symbol": "BLKASHYAP.NS",
       "indices": [],
-      "ltp": 52.91
+      "ltp": NaN
     },
     "BLS": {
       "symbol": "BLS",
       "yf_symbol": "BLS.NS",
       "indices": [],
-      "ltp": 229.49
+      "ltp": NaN
     },
     "BLSE": {
       "symbol": "BLSE",
       "yf_symbol": "BLSE.NS",
       "indices": [],
-      "ltp": 143.32
+      "ltp": NaN
     },
     "BLSPOLY": {
       "symbol": "BLSPOLY",
       "yf_symbol": "BLSPOLY.NS",
       "indices": [],
-      "ltp": 271.23
+      "ltp": NaN
     },
     "BLUECHIP": {
       "symbol": "BLUECHIP",
       "yf_symbol": "BLUECHIP.NS",
       "indices": [],
-      "ltp": 1.59
+      "ltp": NaN
     },
     "BLUECLOUDS": {
       "symbol": "BLUECLOUDS",
       "yf_symbol": "BLUECLOUDS.NS",
       "indices": [],
-      "ltp": 17.59
+      "ltp": NaN
     },
     "BLUECOAST": {
       "symbol": "BLUECOAST",
       "yf_symbol": "BLUECOAST.NS",
       "indices": [],
-      "ltp": 22.33
+      "ltp": NaN
     },
     "BLUEDART": {
       "symbol": "BLUEDART",
       "yf_symbol": "BLUEDART.NS",
       "indices": [],
-      "ltp": 4468.1
+      "ltp": NaN
     },
     "BLUEJET": {
       "symbol": "BLUEJET",
       "yf_symbol": "BLUEJET.NS",
       "indices": [],
-      "ltp": 539.35
+      "ltp": NaN
     },
     "BLUESTARCO": {
       "symbol": "BLUESTARCO",
       "yf_symbol": "BLUESTARCO.NS",
       "indices": [],
-      "ltp": 1587.2
+      "ltp": NaN
     },
     "BLUESTONE": {
       "symbol": "BLUESTONE",
       "yf_symbol": "BLUESTONE.NS",
       "indices": [],
-      "ltp": 734.65
+      "ltp": NaN
     },
     "BLUSPRING": {
       "symbol": "BLUSPRING",
       "yf_symbol": "BLUSPRING.NS",
       "indices": [],
-      "ltp": 162.73
+      "ltp": NaN
     },
     "BMWVENTLTD": {
       "symbol": "BMWVENTLTD",
       "yf_symbol": "BMWVENTLTD.NS",
       "indices": [],
-      "ltp": 64.74
+      "ltp": NaN
     },
     "BNAGROCHEM": {
       "symbol": "BNAGROCHEM",
       "yf_symbol": "BNAGROCHEM.NS",
       "indices": [],
-      "ltp": 162.66
+      "ltp": NaN
     },
     "BNALTD": {
       "symbol": "BNALTD",
       "yf_symbol": "BNALTD.NS",
       "indices": [],
-      "ltp": 415.0
+      "ltp": NaN
     },
     "BODALCHEM": {
       "symbol": "BODALCHEM",
       "yf_symbol": "BODALCHEM.NS",
       "indices": [],
-      "ltp": 158.59
+      "ltp": NaN
     },
     "BOHRAIND": {
       "symbol": "BOHRAIND",
       "yf_symbol": "BOHRAIND.NS",
       "indices": [],
-      "ltp": 12.65
+      "ltp": NaN
     },
     "BOMDYEING": {
       "symbol": "BOMDYEING",
       "yf_symbol": "BOMDYEING.NS",
       "indices": [],
-      "ltp": 106.67
+      "ltp": NaN
     },
     "BONDADA": {
       "symbol": "BONDADA",
       "yf_symbol": "BONDADA.NS",
       "indices": [],
-      "ltp": 272.15
+      "ltp": NaN
     },
     "BONFIG": {
       "symbol": "BONFIG",
       "yf_symbol": "BONFIG.NS",
       "indices": [],
-      "ltp": 794.5
+      "ltp": NaN
     },
     "BONLON": {
       "symbol": "BONLON",
       "yf_symbol": "BONLON.NS",
       "indices": [],
-      "ltp": 39.56
+      "ltp": NaN
     },
     "BORANA": {
       "symbol": "BORANA",
       "yf_symbol": "BORANA.NS",
       "indices": [],
-      "ltp": 237.27
+      "ltp": NaN
     },
     "BOROLTD": {
       "symbol": "BOROLTD",
       "yf_symbol": "BOROLTD.NS",
       "indices": [],
-      "ltp": 311.5
+      "ltp": NaN
     },
     "BORORENEW": {
       "symbol": "BORORENEW",
       "yf_symbol": "BORORENEW.NS",
       "indices": [],
-      "ltp": 416.2
+      "ltp": NaN
     },
     "BOROSCI": {
       "symbol": "BOROSCI",
       "yf_symbol": "BOROSCI.NS",
       "indices": [],
-      "ltp": 116.45
+      "ltp": NaN
     },
     "BOSCH-HCIL": {
       "symbol": "BOSCH-HCIL",
       "yf_symbol": "BOSCH-HCIL.NS",
       "indices": [],
-      "ltp": 1773.2
+      "ltp": NaN
     },
     "BOSCHLTD": {
       "symbol": "BOSCHLTD",
       "yf_symbol": "BOSCHLTD.NS",
       "indices": [],
-      "ltp": 49390.0
+      "ltp": NaN
     },
     "BPCL": {
       "symbol": "BPCL",
       "yf_symbol": "BPCL.NS",
       "indices": [],
-      "ltp": 302.0
+      "ltp": NaN
     },
     "BPL": {
       "symbol": "BPL",
       "yf_symbol": "BPL.NS",
       "indices": [],
-      "ltp": 44.51
+      "ltp": NaN
     },
     "BPLPHARMA": {
       "symbol": "BPLPHARMA",
       "yf_symbol": "BPLPHARMA.NS",
       "indices": [],
-      "ltp": 2120.7
+      "ltp": NaN
     },
     "BRAHMINFRA": {
       "symbol": "BRAHMINFRA",
       "yf_symbol": "BRAHMINFRA.NS",
       "indices": [],
-      "ltp": 172.23
+      "ltp": NaN
     },
     "BRIGADE": {
       "symbol": "BRIGADE",
       "yf_symbol": "BRIGADE.NS",
       "indices": [],
-      "ltp": 549.15
+      "ltp": NaN
     },
     "BRIGHOTEL": {
       "symbol": "BRIGHOTEL",
       "yf_symbol": "BRIGHOTEL.NS",
       "indices": [],
-      "ltp": 54.71
+      "ltp": NaN
     },
     "BRIGHTBR": {
       "symbol": "BRIGHTBR",
       "yf_symbol": "BRIGHTBR.NS",
       "indices": [],
-      "ltp": 225.53
+      "ltp": NaN
     },
     "BRIGHTOUTD": {
       "symbol": "BRIGHTOUTD",
       "yf_symbol": "BRIGHTOUTD.NS",
       "indices": [],
-      "ltp": 371.4
+      "ltp": NaN
     },
     "BRITANNIA": {
       "symbol": "BRITANNIA",
       "yf_symbol": "BRITANNIA.NS",
       "indices": [],
-      "ltp": 4750.5
+      "ltp": NaN
     },
     "BRNL": {
       "symbol": "BRNL",
       "yf_symbol": "BRNL.NS",
       "indices": [],
-      "ltp": 14.88
+      "ltp": NaN
     },
     "BROOKS": {
       "symbol": "BROOKS",
       "yf_symbol": "BROOKS.NS",
       "indices": [],
-      "ltp": 64.02
+      "ltp": NaN
     },
     "BSHSL": {
       "symbol": "BSHSL",
       "yf_symbol": "BSHSL.NS",
       "indices": [],
-      "ltp": 88.73
+      "ltp": NaN
     },
     "BSL": {
       "symbol": "BSL",
       "yf_symbol": "BSL.NS",
       "indices": [],
-      "ltp": 129.57
+      "ltp": NaN
     },
     "BSOFT": {
       "symbol": "BSOFT",
       "yf_symbol": "BSOFT.NS",
       "indices": [],
-      "ltp": 324.65
+      "ltp": NaN
     },
     "BTML": {
       "symbol": "BTML",
       "yf_symbol": "BTML.NS",
       "indices": [],
-      "ltp": 6.87
+      "ltp": NaN
     },
     "BTTL": {
       "symbol": "BTTL",
       "yf_symbol": "BTTL.NS",
       "indices": [],
-      "ltp": 36.68
+      "ltp": NaN
     },
     "BUILDPRO": {
       "symbol": "BUILDPRO",
       "yf_symbol": "BUILDPRO.NS",
       "indices": [],
-      "ltp": 187.07
+      "ltp": NaN
     },
     "BURNPUR": {
       "symbol": "BURNPUR",
       "yf_symbol": "BURNPUR.NS",
       "indices": [],
-      "ltp": 11.66
+      "ltp": NaN
     },
     "BUTTERFLY": {
       "symbol": "BUTTERFLY",
       "yf_symbol": "BUTTERFLY.NS",
       "indices": [],
-      "ltp": 581.15
+      "ltp": NaN
     },
     "BVCL": {
       "symbol": "BVCL",
       "yf_symbol": "BVCL.NS",
       "indices": [],
-      "ltp": 37.14
+      "ltp": NaN
     },
     "BYKE": {
       "symbol": "BYKE",
       "yf_symbol": "BYKE.NS",
       "indices": [],
-      "ltp": 29.36
+      "ltp": NaN
     },
     "CALSOFT": {
       "symbol": "CALSOFT",
       "yf_symbol": "CALSOFT.NS",
       "indices": [],
-      "ltp": 29.72
+      "ltp": NaN
     },
     "CAMLINFINE": {
       "symbol": "CAMLINFINE",
       "yf_symbol": "CAMLINFINE.NS",
       "indices": [],
-      "ltp": 76.87
+      "ltp": NaN
     },
     "CAMPUS": {
       "symbol": "CAMPUS",
       "yf_symbol": "CAMPUS.NS",
       "indices": [],
-      "ltp": 195.69
+      "ltp": NaN
     },
     "CAMS": {
       "symbol": "CAMS",
       "yf_symbol": "CAMS.NS",
       "indices": [],
-      "ltp": 726.05
+      "ltp": NaN
     },
     "CANBK": {
       "symbol": "CANBK",
       "yf_symbol": "CANBK.NS",
       "indices": [],
-      "ltp": 130.91
+      "ltp": NaN
     },
     "CANFINHOME": {
       "symbol": "CANFINHOME",
       "yf_symbol": "CANFINHOME.NS",
       "indices": [],
-      "ltp": 781.45
+      "ltp": NaN
     },
     "CANHLIFE": {
       "symbol": "CANHLIFE",
       "yf_symbol": "CANHLIFE.NS",
       "indices": [],
-      "ltp": 134.8
+      "ltp": NaN
     },
     "CANTABIL": {
       "symbol": "CANTABIL",
       "yf_symbol": "CANTABIL.NS",
       "indices": [],
-      "ltp": 260.55
+      "ltp": NaN
     },
     "CAPACITE": {
       "symbol": "CAPACITE",
       "yf_symbol": "CAPACITE.NS",
       "indices": [],
-      "ltp": 175.49
+      "ltp": NaN
     },
     "CAPILLARY": {
       "symbol": "CAPILLARY",
       "yf_symbol": "CAPILLARY.NS",
       "indices": [],
-      "ltp": 515.4
+      "ltp": NaN
     },
     "CAPITALSFB": {
       "symbol": "CAPITALSFB",
       "yf_symbol": "CAPITALSFB.NS",
       "indices": [],
-      "ltp": 280.75
+      "ltp": NaN
     },
     "CAPLIPOINT": {
       "symbol": "CAPLIPOINT",
       "yf_symbol": "CAPLIPOINT.NS",
       "indices": [],
-      "ltp": 2388.7
+      "ltp": NaN
     },
     "CAPTRUST": {
       "symbol": "CAPTRUST",
       "yf_symbol": "CAPTRUST.NS",
       "indices": [],
-      "ltp": 22.22
+      "ltp": NaN
     },
     "CARBORUNIV": {
       "symbol": "CARBORUNIV",
       "yf_symbol": "CARBORUNIV.NS",
       "indices": [],
-      "ltp": 1062.3
+      "ltp": NaN
     },
     "CARERATING": {
       "symbol": "CARERATING",
       "yf_symbol": "CARERATING.NS",
       "indices": [],
-      "ltp": 1596.1
+      "ltp": NaN
     },
     "CARRARO": {
       "symbol": "CARRARO",
       "yf_symbol": "CARRARO.NS",
       "indices": [],
-      "ltp": 483.75
+      "ltp": NaN
     },
     "CARTRADE": {
       "symbol": "CARTRADE",
       "yf_symbol": "CARTRADE.NS",
       "indices": [],
-      "ltp": 2696.1
+      "ltp": NaN
     },
     "CARYSIL": {
       "symbol": "CARYSIL",
       "yf_symbol": "CARYSIL.NS",
       "indices": [],
-      "ltp": 963.8
+      "ltp": NaN
     },
     "CASTROLIND": {
       "symbol": "CASTROLIND",
       "yf_symbol": "CASTROLIND.NS",
       "indices": [],
-      "ltp": 190.13
+      "ltp": NaN
     },
     "CCAVENUE": {
       "symbol": "CCAVENUE",
       "yf_symbol": "CCAVENUE.NS",
       "indices": [],
-      "ltp": 125.33
+      "ltp": NaN
     },
     "CCCL": {
       "symbol": "CCCL",
       "yf_symbol": "CCCL.NS",
       "indices": [],
-      "ltp": 11.08
+      "ltp": NaN
     },
     "CCHHL": {
       "symbol": "CCHHL",
       "yf_symbol": "CCHHL.NS",
       "indices": [],
-      "ltp": 12.81
+      "ltp": NaN
     },
     "CCL": {
       "symbol": "CCL",
       "yf_symbol": "CCL.NS",
       "indices": [],
-      "ltp": 978.15
+      "ltp": NaN
     },
     "CEATLTD": {
       "symbol": "CEATLTD",
       "yf_symbol": "CEATLTD.NS",
       "indices": [],
-      "ltp": 3540.3
+      "ltp": NaN
     },
     "CEIGALL": {
       "symbol": "CEIGALL",
       "yf_symbol": "CEIGALL.NS",
       "indices": [],
-      "ltp": 396.7
+      "ltp": NaN
     },
     "CEINSYS": {
       "symbol": "CEINSYS",
       "yf_symbol": "CEINSYS.NS",
       "indices": [],
-      "ltp": 664.25
+      "ltp": NaN
     },
     "CELEBRITY": {
       "symbol": "CELEBRITY",
       "yf_symbol": "CELEBRITY.NS",
       "indices": [],
-      "ltp": 6.17
+      "ltp": NaN
     },
     "CELLO": {
       "symbol": "CELLO",
       "yf_symbol": "CELLO.NS",
       "indices": [],
-      "ltp": 364.85
+      "ltp": NaN
     },
     "CEMPRO": {
       "symbol": "CEMPRO",
       "yf_symbol": "CEMPRO.NS",
       "indices": [],
-      "ltp": 1314.8
+      "ltp": NaN
     },
     "CENTENKA": {
       "symbol": "CENTENKA",
       "yf_symbol": "CENTENKA.NS",
       "indices": [],
-      "ltp": 466.75
+      "ltp": NaN
     },
     "CENTEXT": {
       "symbol": "CENTEXT",
       "yf_symbol": "CENTEXT.NS",
       "indices": [],
-      "ltp": 17.34
+      "ltp": NaN
     },
     "CENTRALBK": {
       "symbol": "CENTRALBK",
       "yf_symbol": "CENTRALBK.NS",
       "indices": [],
-      "ltp": 32.22
+      "ltp": NaN
     },
     "CENTRUM": {
       "symbol": "CENTRUM",
       "yf_symbol": "CENTRUM.NS",
       "indices": [],
-      "ltp": 19.71
+      "ltp": NaN
     },
     "CENTUM": {
       "symbol": "CENTUM",
       "yf_symbol": "CENTUM.NS",
       "indices": [],
-      "ltp": 4481.1
+      "ltp": NaN
     },
     "CENTURYPLY": {
       "symbol": "CENTURYPLY",
       "yf_symbol": "CENTURYPLY.NS",
       "indices": [],
-      "ltp": 686.45
+      "ltp": NaN
     },
     "CERA": {
       "symbol": "CERA",
       "yf_symbol": "CERA.NS",
       "indices": [],
-      "ltp": 5001.6
+      "ltp": NaN
+    },
+    "CEREBRAINT": {
+      "symbol": "CEREBRAINT",
+      "yf_symbol": "CEREBRAINT.NS",
+      "indices": [],
+      "ltp": NaN
     },
     "CESC": {
       "symbol": "CESC",
       "yf_symbol": "CESC.NS",
       "indices": [],
-      "ltp": 128.48
+      "ltp": NaN
     },
     "CEWATER": {
       "symbol": "CEWATER",
       "yf_symbol": "CEWATER.NS",
       "indices": [],
-      "ltp": 224.05
+      "ltp": NaN
     },
     "CFEL": {
       "symbol": "CFEL",
       "yf_symbol": "CFEL.NS",
       "indices": [],
-      "ltp": 35.97
+      "ltp": NaN
     },
     "CGCL": {
       "symbol": "CGCL",
       "yf_symbol": "CGCL.NS",
       "indices": [],
-      "ltp": 246.27
+      "ltp": NaN
     },
     "CGPOWER": {
       "symbol": "CGPOWER",
       "yf_symbol": "CGPOWER.NS",
       "indices": [],
-      "ltp": 828.0
+      "ltp": NaN
     },
     "CGVAK": {
       "symbol": "CGVAK",
       "yf_symbol": "CGVAK.NS",
       "indices": [],
-      "ltp": 146.57
+      "ltp": NaN
     },
     "CHALET": {
       "symbol": "CHALET",
       "yf_symbol": "CHALET.NS",
       "indices": [],
-      "ltp": 824.65
+      "ltp": NaN
     },
     "CHAMBLFERT": {
       "symbol": "CHAMBLFERT",
       "yf_symbol": "CHAMBLFERT.NS",
       "indices": [],
-      "ltp": 384.25
+      "ltp": NaN
     },
     "CHEMBOND": {
       "symbol": "CHEMBOND",
       "yf_symbol": "CHEMBOND.NS",
       "indices": [],
-      "ltp": 197.35
+      "ltp": NaN
     },
     "CHEMBONDCH": {
       "symbol": "CHEMBONDCH",
       "yf_symbol": "CHEMBONDCH.NS",
       "indices": [],
-      "ltp": 222.67
+      "ltp": NaN
     },
     "CHEMCON": {
       "symbol": "CHEMCON",
       "yf_symbol": "CHEMCON.NS",
       "indices": [],
-      "ltp": 202.58
+      "ltp": NaN
     },
     "CHEMCRUX": {
       "symbol": "CHEMCRUX",
       "yf_symbol": "CHEMCRUX.NS",
       "indices": [],
-      "ltp": 82.72
+      "ltp": NaN
     },
     "CHEMFAB": {
       "symbol": "CHEMFAB",
       "yf_symbol": "CHEMFAB.NS",
       "indices": [],
-      "ltp": 315.6
+      "ltp": NaN
     },
     "CHEMPLASTS": {
       "symbol": "CHEMPLASTS",
       "yf_symbol": "CHEMPLASTS.NS",
       "indices": [],
-      "ltp": 236.87
+      "ltp": NaN
     },
     "CHENNPETRO": {
       "symbol": "CHENNPETRO",
       "yf_symbol": "CHENNPETRO.NS",
       "indices": [],
-      "ltp": 1428.2
+      "ltp": NaN
     },
     "CHEVIOT": {
       "symbol": "CHEVIOT",
       "yf_symbol": "CHEVIOT.NS",
       "indices": [],
-      "ltp": 1182.2
+      "ltp": NaN
     },
     "CHOICEIN": {
       "symbol": "CHOICEIN",
       "yf_symbol": "CHOICEIN.NS",
       "indices": [],
-      "ltp": 727.35
+      "ltp": NaN
     },
     "CHOLAFIN": {
       "symbol": "CHOLAFIN",
       "yf_symbol": "CHOLAFIN.NS",
       "indices": [],
-      "ltp": 1850.0
+      "ltp": NaN
     },
     "CHOLAHLDNG": {
       "symbol": "CHOLAHLDNG",
       "yf_symbol": "CHOLAHLDNG.NS",
       "indices": [],
-      "ltp": 1460.0
+      "ltp": NaN
     },
     "CIEINDIA": {
       "symbol": "CIEINDIA",
       "yf_symbol": "CIEINDIA.NS",
       "indices": [],
-      "ltp": 368.4
+      "ltp": NaN
     },
     "CIFL": {
       "symbol": "CIFL",
       "yf_symbol": "CIFL.NS",
       "indices": [],
-      "ltp": 18.6
+      "ltp": NaN
     },
     "CINELINE": {
       "symbol": "CINELINE",
@@ -2963,6 +2975,12 @@
     "CIPLA": {
       "symbol": "CIPLA",
       "yf_symbol": "CIPLA.NS",
+      "indices": [],
+      "ltp": NaN
+    },
+    "CLCIND": {
+      "symbol": "CLCIND",
+      "yf_symbol": "CLCIND.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -2987,6 +3005,12 @@
     "CLSEL": {
       "symbol": "CLSEL",
       "yf_symbol": "CLSEL.NS",
+      "indices": [],
+      "ltp": NaN
+    },
+    "CMICABLES": {
+      "symbol": "CMICABLES",
+      "yf_symbol": "CMICABLES.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -3078,7 +3102,7 @@
       "symbol": "COMPEAU",
       "yf_symbol": "COMPEAU.NS",
       "indices": [],
-      "ltp": 385.6
+      "ltp": NaN
     },
     "COMPINFO": {
       "symbol": "COMPINFO",
@@ -3738,7 +3762,7 @@
       "symbol": "DISAQ",
       "yf_symbol": "DISAQ.NS",
       "indices": [],
-      "ltp": 12271.0
+      "ltp": 11116.0
     },
     "DISHTV": {
       "symbol": "DISHTV",
@@ -4013,6 +4037,12 @@
     "EDELWEISS": {
       "symbol": "EDELWEISS",
       "yf_symbol": "EDELWEISS.NS",
+      "indices": [],
+      "ltp": NaN
+    },
+    "EDUCOMP": {
+      "symbol": "EDUCOMP",
+      "yf_symbol": "EDUCOMP.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -5478,7 +5508,7 @@
       "symbol": "GUJRAFFIA",
       "yf_symbol": "GUJRAFFIA.NS",
       "indices": [],
-      "ltp": 40.71
+      "ltp": 41.0
     },
     "GUJTHEM": {
       "symbol": "GUJTHEM",
@@ -6096,7 +6126,7 @@
       "symbol": "ICDSLTD",
       "yf_symbol": "ICDSLTD.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 45.04
     },
     "ICEMAKE": {
       "symbol": "ICEMAKE",
@@ -6296,6 +6326,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "IMPEXFERRO": {
+      "symbol": "IMPEXFERRO",
+      "yf_symbol": "IMPEXFERRO.NS",
+      "indices": [],
+      "ltp": NaN
+    },
     "INA": {
       "symbol": "INA",
       "yf_symbol": "INA.NS",
@@ -6468,7 +6504,7 @@
       "symbol": "INDPRUD",
       "yf_symbol": "INDPRUD.NS",
       "indices": [],
-      "ltp": 6110.0
+      "ltp": NaN
     },
     "INDRAMEDCO": {
       "symbol": "INDRAMEDCO",
@@ -7964,6 +8000,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "LASA": {
+      "symbol": "LASA",
+      "yf_symbol": "LASA.NS",
+      "indices": [],
+      "ltp": NaN
+    },
     "LASERPOWER": {
       "symbol": "LASERPOWER",
       "yf_symbol": "LASERPOWER.NS",
@@ -8316,7 +8358,7 @@
       "symbol": "MADHAV",
       "yf_symbol": "MADHAV.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 33.0
     },
     "MADHAVIPL": {
       "symbol": "MADHAVIPL",
@@ -9162,7 +9204,7 @@
       "symbol": "MPDL",
       "yf_symbol": "MPDL.NS",
       "indices": [],
-      "ltp": 23.94
+      "ltp": NaN
     },
     "MPHASIS": {
       "symbol": "MPHASIS",
@@ -9338,6 +9380,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "NAGAFERT": {
+      "symbol": "NAGAFERT",
+      "yf_symbol": "NAGAFERT.NS",
+      "indices": [],
+      "ltp": NaN
+    },
     "NAGREEKCAP": {
       "symbol": "NAGREEKCAP",
       "yf_symbol": "NAGREEKCAP.NS",
@@ -9468,7 +9516,7 @@
       "symbol": "NBIFIN",
       "yf_symbol": "NBIFIN.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 1811.0
     },
     "NCC": {
       "symbol": "NCC",
@@ -11222,6 +11270,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "RAJVIR": {
+      "symbol": "RAJVIR",
+      "yf_symbol": "RAJVIR.NS",
+      "indices": [],
+      "ltp": 4.94
+    },
     "RALLIS": {
       "symbol": "RALLIS",
       "yf_symbol": "RALLIS.NS",
@@ -12302,6 +12356,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "SELMC": {
+      "symbol": "SELMC",
+      "yf_symbol": "SELMC.NS",
+      "indices": [],
+      "ltp": NaN
+    },
     "SEMAC": {
       "symbol": "SEMAC",
       "yf_symbol": "SEMAC.NS",
@@ -12534,7 +12594,7 @@
       "symbol": "SHERVANI",
       "yf_symbol": "SHERVANI.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 318.0
     },
     "SHILCTECH": {
       "symbol": "SHILCTECH",
@@ -12583,12 +12643,6 @@
       "yf_symbol": "SHIVALIK.NS",
       "indices": [],
       "ltp": NaN
-    },
-    "SHIVAM-RE1": {
-      "symbol": "SHIVAM-RE1",
-      "yf_symbol": "SHIVAM-RE1.NS",
-      "indices": [],
-      "ltp": 0.6
     },
     "SHIVAMAUTO": {
       "symbol": "SHIVAMAUTO",
@@ -12870,7 +12924,7 @@
       "symbol": "SINGERIND",
       "yf_symbol": "SINGERIND.NS",
       "indices": [],
-      "ltp": 92.63
+      "ltp": 89.53
     },
     "SINTERCOM": {
       "symbol": "SINTERCOM",
@@ -12923,6 +12977,12 @@
     "SKFINDUS": {
       "symbol": "SKFINDUS",
       "yf_symbol": "SKFINDUS.NS",
+      "indices": [],
+      "ltp": NaN
+    },
+    "SKIL": {
+      "symbol": "SKIL",
+      "yf_symbol": "SKIL.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -13674,7 +13734,7 @@
       "symbol": "SUVID-RE",
       "yf_symbol": "SUVID-RE.NS",
       "indices": [],
-      "ltp": 0.33
+      "ltp": 0.2
     },
     "SUVIDHAA": {
       "symbol": "SUVIDHAA",
@@ -13974,7 +14034,7 @@
       "symbol": "TCC",
       "yf_symbol": "TCC.NS",
       "indices": [],
-      "ltp": 41.28
+      "ltp": 41.59
     },
     "TCI": {
       "symbol": "TCI",
@@ -14088,7 +14148,7 @@
       "symbol": "TERAI",
       "yf_symbol": "TERAI.NS",
       "indices": [],
-      "ltp": 117.94
+      "ltp": NaN
     },
     "TERASOFT": {
       "symbol": "TERASOFT",
@@ -14780,6 +14840,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "UNIVAFOODS": {
+      "symbol": "UNIVAFOODS",
+      "yf_symbol": "UNIVAFOODS.NS",
+      "indices": [],
+      "ltp": NaN
+    },
     "UNIVASTU": {
       "symbol": "UNIVASTU",
       "yf_symbol": "UNIVASTU.NS",
@@ -14964,7 +15030,7 @@
       "symbol": "VASUPRADA",
       "yf_symbol": "VASUPRADA.NS",
       "indices": [],
-      "ltp": 97.64
+      "ltp": NaN
     },
     "VASWANI": {
       "symbol": "VASWANI",
@@ -15792,7 +15858,7 @@
       "symbol": "ZODIAC",
       "yf_symbol": "ZODIAC.NS",
       "indices": [],
-      "ltp": 214.91
+      "ltp": 205.23
     },
     "ZODIACLOTH": {
       "symbol": "ZODIACLOTH",
