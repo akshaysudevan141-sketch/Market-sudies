@@ -1,6 +1,6 @@
 {
-  "_updated_at": "2026-11-17T02:35:05.310607+05:30",
-  "_total_valid": 2642,
+  "_updated_at": "2026-11-18T01:23:19.740624+05:30",
+  "_total_valid": 2629,
   "_total_invalid": 1,
   "_invalid_list": [
     "ELCIDIN"
@@ -138,7 +138,7 @@
       "symbol": "AARNAV",
       "yf_symbol": "AARNAV.NS",
       "indices": [],
-      "ltp": 36.0
+      "ltp": 36.5
     },
     "AARON": {
       "symbol": "AARON",
@@ -1260,7 +1260,7 @@
       "symbol": "ARTEMISMED",
       "yf_symbol": "ARTEMISMED.NS",
       "indices": [],
-      "ltp": 327.7
+      "ltp": 348.75
     },
     "ARTNIRMAN": {
       "symbol": "ARTNIRMAN",
@@ -2114,12 +2114,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "BGLOBAL": {
-      "symbol": "BGLOBAL",
-      "yf_symbol": "BGLOBAL.NS",
-      "indices": [],
-      "ltp": NaN
-    },
     "BGRENERGY": {
       "symbol": "BGRENERGY",
       "yf_symbol": "BGRENERGY.NS",
@@ -2828,12 +2822,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "CEREBRAINT": {
-      "symbol": "CEREBRAINT",
-      "yf_symbol": "CEREBRAINT.NS",
-      "indices": [],
-      "ltp": NaN
-    },
     "CESC": {
       "symbol": "CESC",
       "yf_symbol": "CESC.NS",
@@ -2978,12 +2966,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "CLCIND": {
-      "symbol": "CLCIND",
-      "yf_symbol": "CLCIND.NS",
-      "indices": [],
-      "ltp": NaN
-    },
     "CLEAN": {
       "symbol": "CLEAN",
       "yf_symbol": "CLEAN.NS",
@@ -3005,12 +2987,6 @@
     "CLSEL": {
       "symbol": "CLSEL",
       "yf_symbol": "CLSEL.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "CMICABLES": {
-      "symbol": "CMICABLES",
-      "yf_symbol": "CMICABLES.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -3762,7 +3738,7 @@
       "symbol": "DISAQ",
       "yf_symbol": "DISAQ.NS",
       "indices": [],
-      "ltp": 11116.0
+      "ltp": 10950.0
     },
     "DISHTV": {
       "symbol": "DISHTV",
@@ -4037,12 +4013,6 @@
     "EDELWEISS": {
       "symbol": "EDELWEISS",
       "yf_symbol": "EDELWEISS.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "EDUCOMP": {
-      "symbol": "EDUCOMP",
-      "yf_symbol": "EDUCOMP.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -5508,7 +5478,7 @@
       "symbol": "GUJRAFFIA",
       "yf_symbol": "GUJRAFFIA.NS",
       "indices": [],
-      "ltp": 41.0
+      "ltp": 40.43
     },
     "GUJTHEM": {
       "symbol": "GUJTHEM",
@@ -6126,7 +6096,7 @@
       "symbol": "ICDSLTD",
       "yf_symbol": "ICDSLTD.NS",
       "indices": [],
-      "ltp": 45.04
+      "ltp": NaN
     },
     "ICEMAKE": {
       "symbol": "ICEMAKE",
@@ -6323,12 +6293,6 @@
     "IMPAL": {
       "symbol": "IMPAL",
       "yf_symbol": "IMPAL.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "IMPEXFERRO": {
-      "symbol": "IMPEXFERRO",
-      "yf_symbol": "IMPEXFERRO.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -8000,12 +7964,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "LASA": {
-      "symbol": "LASA",
-      "yf_symbol": "LASA.NS",
-      "indices": [],
-      "ltp": NaN
-    },
     "LASERPOWER": {
       "symbol": "LASERPOWER",
       "yf_symbol": "LASERPOWER.NS",
@@ -9204,7 +9162,7 @@
       "symbol": "MPDL",
       "yf_symbol": "MPDL.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 25.12
     },
     "MPHASIS": {
       "symbol": "MPHASIS",
@@ -9380,12 +9338,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "NAGAFERT": {
-      "symbol": "NAGAFERT",
-      "yf_symbol": "NAGAFERT.NS",
-      "indices": [],
-      "ltp": NaN
-    },
     "NAGREEKCAP": {
       "symbol": "NAGREEKCAP",
       "yf_symbol": "NAGREEKCAP.NS",
@@ -9516,7 +9468,7 @@
       "symbol": "NBIFIN",
       "yf_symbol": "NBIFIN.NS",
       "indices": [],
-      "ltp": 1811.0
+      "ltp": NaN
     },
     "NCC": {
       "symbol": "NCC",
@@ -11270,12 +11222,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "RAJVIR": {
-      "symbol": "RAJVIR",
-      "yf_symbol": "RAJVIR.NS",
-      "indices": [],
-      "ltp": 4.94
-    },
     "RALLIS": {
       "symbol": "RALLIS",
       "yf_symbol": "RALLIS.NS",
@@ -12204,7 +12150,7 @@
       "symbol": "SAYAJIHOTL",
       "yf_symbol": "SAYAJIHOTL.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 302.0
     },
     "SAYAJIIND": {
       "symbol": "SAYAJIIND",
@@ -12353,12 +12299,6 @@
     "SEKURITIND": {
       "symbol": "SEKURITIND",
       "yf_symbol": "SEKURITIND.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "SELMC": {
-      "symbol": "SELMC",
-      "yf_symbol": "SELMC.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -12594,7 +12534,7 @@
       "symbol": "SHERVANI",
       "yf_symbol": "SHERVANI.NS",
       "indices": [],
-      "ltp": 318.0
+      "ltp": NaN
     },
     "SHILCTECH": {
       "symbol": "SHILCTECH",
@@ -12924,7 +12864,7 @@
       "symbol": "SINGERIND",
       "yf_symbol": "SINGERIND.NS",
       "indices": [],
-      "ltp": 89.53
+      "ltp": 87.59
     },
     "SINTERCOM": {
       "symbol": "SINTERCOM",
@@ -12977,12 +12917,6 @@
     "SKFINDUS": {
       "symbol": "SKFINDUS",
       "yf_symbol": "SKFINDUS.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "SKIL": {
-      "symbol": "SKIL",
-      "yf_symbol": "SKIL.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -13730,12 +13664,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "SUVID-RE": {
-      "symbol": "SUVID-RE",
-      "yf_symbol": "SUVID-RE.NS",
-      "indices": [],
-      "ltp": 0.2
-    },
     "SUVIDHAA": {
       "symbol": "SUVIDHAA",
       "yf_symbol": "SUVIDHAA.NS",
@@ -14034,7 +13962,7 @@
       "symbol": "TCC",
       "yf_symbol": "TCC.NS",
       "indices": [],
-      "ltp": 41.59
+      "ltp": 40.36
     },
     "TCI": {
       "symbol": "TCI",
@@ -14840,12 +14768,6 @@
       "indices": [],
       "ltp": NaN
     },
-    "UNIVAFOODS": {
-      "symbol": "UNIVAFOODS",
-      "yf_symbol": "UNIVAFOODS.NS",
-      "indices": [],
-      "ltp": NaN
-    },
     "UNIVASTU": {
       "symbol": "UNIVASTU",
       "yf_symbol": "UNIVASTU.NS",
@@ -15030,7 +14952,7 @@
       "symbol": "VASUPRADA",
       "yf_symbol": "VASUPRADA.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 93.08
     },
     "VASWANI": {
       "symbol": "VASWANI",
@@ -15858,7 +15780,7 @@
       "symbol": "ZODIAC",
       "yf_symbol": "ZODIAC.NS",
       "indices": [],
-      "ltp": 205.23
+      "ltp": 206.96
     },
     "ZODIACLOTH": {
       "symbol": "ZODIACLOTH",
