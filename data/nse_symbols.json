@@ -1,6 +1,6 @@
 {
-  "_updated_at": "2026-11-18T01:23:19.740624+05:30",
-  "_total_valid": 2629,
+  "_updated_at": "2026-11-19T00:58:23.138041+05:30",
+  "_total_valid": 2628,
   "_total_invalid": 1,
   "_invalid_list": [
     "ELCIDIN"
@@ -138,7 +138,7 @@
       "symbol": "AARNAV",
       "yf_symbol": "AARNAV.NS",
       "indices": [],
-      "ltp": 36.5
+      "ltp": 35.66
     },
     "AARON": {
       "symbol": "AARON",
@@ -1260,7 +1260,7 @@
       "symbol": "ARTEMISMED",
       "yf_symbol": "ARTEMISMED.NS",
       "indices": [],
-      "ltp": 348.75
+      "ltp": 343.4
     },
     "ARTNIRMAN": {
       "symbol": "ARTNIRMAN",
@@ -3738,7 +3738,7 @@
       "symbol": "DISAQ",
       "yf_symbol": "DISAQ.NS",
       "indices": [],
-      "ltp": 10950.0
+      "ltp": 10897.0
     },
     "DISHTV": {
       "symbol": "DISHTV",
@@ -3857,12 +3857,6 @@
     "DPWIRES": {
       "symbol": "DPWIRES",
       "yf_symbol": "DPWIRES.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "DRAGARWQ": {
-      "symbol": "DRAGARWQ",
-      "yf_symbol": "DRAGARWQ.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -4139,12 +4133,6 @@
     "ELLEN": {
       "symbol": "ELLEN",
       "yf_symbol": "ELLEN.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "ELPROINTL": {
-      "symbol": "ELPROINTL",
-      "yf_symbol": "ELPROINTL.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -5478,7 +5466,7 @@
       "symbol": "GUJRAFFIA",
       "yf_symbol": "GUJRAFFIA.NS",
       "indices": [],
-      "ltp": 40.43
+      "ltp": 39.56
     },
     "GUJTHEM": {
       "symbol": "GUJTHEM",
@@ -7004,6 +6992,12 @@
       "indices": [],
       "ltp": NaN
     },
+    "JKSHAH": {
+      "symbol": "JKSHAH",
+      "yf_symbol": "JKSHAH.NS",
+      "indices": [],
+      "ltp": 207.99
+    },
     "JKTYRE": {
       "symbol": "JKTYRE",
       "yf_symbol": "JKTYRE.NS",
@@ -8208,7 +8202,7 @@
       "symbol": "LOYALTEX",
       "yf_symbol": "LOYALTEX.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 232.06
     },
     "LPDC": {
       "symbol": "LPDC",
@@ -8316,7 +8310,7 @@
       "symbol": "MADHAV",
       "yf_symbol": "MADHAV.NS",
       "indices": [],
-      "ltp": 33.0
+      "ltp": NaN
     },
     "MADHAVIPL": {
       "symbol": "MADHAVIPL",
@@ -9162,7 +9156,7 @@
       "symbol": "MPDL",
       "yf_symbol": "MPDL.NS",
       "indices": [],
-      "ltp": 25.12
+      "ltp": NaN
     },
     "MPHASIS": {
       "symbol": "MPHASIS",
@@ -9516,7 +9510,7 @@
       "symbol": "NEAGI",
       "yf_symbol": "NEAGI.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 3375.0
     },
     "NECCLTD": {
       "symbol": "NECCLTD",
@@ -11988,7 +11982,7 @@
       "symbol": "SAMBANDAM",
       "yf_symbol": "SAMBANDAM.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 102.78
     },
     "SAMBHAAV": {
       "symbol": "SAMBHAAV",
@@ -12150,7 +12144,7 @@
       "symbol": "SAYAJIHOTL",
       "yf_symbol": "SAYAJIHOTL.NS",
       "indices": [],
-      "ltp": 302.0
+      "ltp": NaN
     },
     "SAYAJIIND": {
       "symbol": "SAYAJIIND",
@@ -12864,7 +12858,7 @@
       "symbol": "SINGERIND",
       "yf_symbol": "SINGERIND.NS",
       "indices": [],
-      "ltp": 87.59
+      "ltp": 86.55
     },
     "SINTERCOM": {
       "symbol": "SINTERCOM",
@@ -13962,7 +13956,7 @@
       "symbol": "TCC",
       "yf_symbol": "TCC.NS",
       "indices": [],
-      "ltp": 40.36
+      "ltp": 42.0
     },
     "TCI": {
       "symbol": "TCI",
@@ -14796,7 +14790,7 @@
       "symbol": "UPHOT",
       "yf_symbol": "UPHOT.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 1485.0
     },
     "UPL": {
       "symbol": "UPL",
@@ -15558,7 +15552,7 @@
       "symbol": "WHBRADY",
       "yf_symbol": "WHBRADY.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 468.15
     },
     "WHEELS": {
       "symbol": "WHEELS",
@@ -15732,7 +15726,7 @@
       "symbol": "ZENITHEXPO",
       "yf_symbol": "ZENITHEXPO.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 176.12
     },
     "ZENITHSTL": {
       "symbol": "ZENITHSTL",
@@ -15780,7 +15774,7 @@
       "symbol": "ZODIAC",
       "yf_symbol": "ZODIAC.NS",
       "indices": [],
-      "ltp": 206.96
+      "ltp": 207.05
     },
     "ZODIACLOTH": {
       "symbol": "ZODIACLOTH",
