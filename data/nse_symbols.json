@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-11-19T00:58:23.138041+05:30",
+  "_updated_at": "2026-11-20T01:07:28.996970+05:30",
   "_total_valid": 2628,
   "_total_invalid": 1,
   "_invalid_list": [
@@ -138,7 +138,7 @@
       "symbol": "AARNAV",
       "yf_symbol": "AARNAV.NS",
       "indices": [],
-      "ltp": 35.66
+      "ltp": 35.15
     },
     "AARON": {
       "symbol": "AARON",
@@ -1260,7 +1260,7 @@
       "symbol": "ARTEMISMED",
       "yf_symbol": "ARTEMISMED.NS",
       "indices": [],
-      "ltp": 343.4
+      "ltp": 339.2
     },
     "ARTNIRMAN": {
       "symbol": "ARTNIRMAN",
@@ -1416,7 +1416,7 @@
       "symbol": "ASSAMENT",
       "yf_symbol": "ASSAMENT.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 816.75
     },
     "ASTAR": {
       "symbol": "ASTAR",
@@ -2503,6 +2503,12 @@
       "yf_symbol": "BRAHMINFRA.NS",
       "indices": [],
       "ltp": NaN
+    },
+    "BRAHMVIRAT": {
+      "symbol": "BRAHMVIRAT",
+      "yf_symbol": "BRAHMVIRAT.NS",
+      "indices": [],
+      "ltp": 419.9
     },
     "BRIGADE": {
       "symbol": "BRIGADE",
@@ -3738,7 +3744,7 @@
       "symbol": "DISAQ",
       "yf_symbol": "DISAQ.NS",
       "indices": [],
-      "ltp": 10897.0
+      "ltp": 10814.0
     },
     "DISHTV": {
       "symbol": "DISHTV",
@@ -5466,7 +5472,7 @@
       "symbol": "GUJRAFFIA",
       "yf_symbol": "GUJRAFFIA.NS",
       "indices": [],
-      "ltp": 39.56
+      "ltp": 41.07
     },
     "GUJTHEM": {
       "symbol": "GUJTHEM",
@@ -6996,7 +7002,7 @@
       "symbol": "JKSHAH",
       "yf_symbol": "JKSHAH.NS",
       "indices": [],
-      "ltp": 207.99
+      "ltp": NaN
     },
     "JKTYRE": {
       "symbol": "JKTYRE",
@@ -7878,7 +7884,7 @@
       "symbol": "LADDERUP",
       "yf_symbol": "LADDERUP.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 47.85
     },
     "LAGNAM": {
       "symbol": "LAGNAM",
@@ -8202,7 +8208,7 @@
       "symbol": "LOYALTEX",
       "yf_symbol": "LOYALTEX.NS",
       "indices": [],
-      "ltp": 232.06
+      "ltp": NaN
     },
     "LPDC": {
       "symbol": "LPDC",
@@ -9156,7 +9162,7 @@
       "symbol": "MPDL",
       "yf_symbol": "MPDL.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 23.9
     },
     "MPHASIS": {
       "symbol": "MPHASIS",
@@ -9510,7 +9516,7 @@
       "symbol": "NEAGI",
       "yf_symbol": "NEAGI.NS",
       "indices": [],
-      "ltp": 3375.0
+      "ltp": NaN
     },
     "NECCLTD": {
       "symbol": "NECCLTD",
@@ -11478,7 +11484,7 @@
       "symbol": "RETAIL",
       "yf_symbol": "RETAIL.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 26.5
     },
     "RGL": {
       "symbol": "RGL",
@@ -11982,7 +11988,7 @@
       "symbol": "SAMBANDAM",
       "yf_symbol": "SAMBANDAM.NS",
       "indices": [],
-      "ltp": 102.78
+      "ltp": NaN
     },
     "SAMBHAAV": {
       "symbol": "SAMBHAAV",
@@ -12840,7 +12846,7 @@
       "symbol": "SIMPLXREA",
       "yf_symbol": "SIMPLXREA.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 137.99
     },
     "SINCLAIR": {
       "symbol": "SINCLAIR",
@@ -12858,7 +12864,7 @@
       "symbol": "SINGERIND",
       "yf_symbol": "SINGERIND.NS",
       "indices": [],
-      "ltp": 86.55
+      "ltp": 86.83
     },
     "SINTERCOM": {
       "symbol": "SINTERCOM",
@@ -13956,7 +13962,7 @@
       "symbol": "TCC",
       "yf_symbol": "TCC.NS",
       "indices": [],
-      "ltp": 42.0
+      "ltp": 40.28
     },
     "TCI": {
       "symbol": "TCI",
@@ -14790,7 +14796,7 @@
       "symbol": "UPHOT",
       "yf_symbol": "UPHOT.NS",
       "indices": [],
-      "ltp": 1485.0
+      "ltp": NaN
     },
     "UPL": {
       "symbol": "UPL",
@@ -15197,12 +15203,6 @@
     "VIPULLTD": {
       "symbol": "VIPULLTD",
       "yf_symbol": "VIPULLTD.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "VIRAT": {
-      "symbol": "VIRAT",
-      "yf_symbol": "VIRAT.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -15726,7 +15726,7 @@
       "symbol": "ZENITHEXPO",
       "yf_symbol": "ZENITHEXPO.NS",
       "indices": [],
-      "ltp": 176.12
+      "ltp": NaN
     },
     "ZENITHSTL": {
       "symbol": "ZENITHSTL",
@@ -15774,7 +15774,7 @@
       "symbol": "ZODIAC",
       "yf_symbol": "ZODIAC.NS",
       "indices": [],
-      "ltp": 207.05
+      "ltp": 208.66
     },
     "ZODIACLOTH": {
       "symbol": "ZODIACLOTH",
