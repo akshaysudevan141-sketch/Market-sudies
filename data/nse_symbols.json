@@ -1,6 +1,6 @@
 {
-  "_updated_at": "2026-11-20T01:07:28.996970+05:30",
-  "_total_valid": 2628,
+  "_updated_at": "2026-11-21T00:42:59.067168+05:30",
+  "_total_valid": 2627,
   "_total_invalid": 1,
   "_invalid_list": [
     "ELCIDIN"
@@ -138,7 +138,7 @@
       "symbol": "AARNAV",
       "yf_symbol": "AARNAV.NS",
       "indices": [],
-      "ltp": 35.15
+      "ltp": 34.12
     },
     "AARON": {
       "symbol": "AARON",
@@ -396,7 +396,7 @@
       "symbol": "ADL",
       "yf_symbol": "ADL.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 69.0
     },
     "ADOR": {
       "symbol": "ADOR",
@@ -1110,7 +1110,7 @@
       "symbol": "APOORVA",
       "yf_symbol": "APOORVA.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 24.73
     },
     "APTECHT": {
       "symbol": "APTECHT",
@@ -1260,7 +1260,7 @@
       "symbol": "ARTEMISMED",
       "yf_symbol": "ARTEMISMED.NS",
       "indices": [],
-      "ltp": 339.2
+      "ltp": 340.8
     },
     "ARTNIRMAN": {
       "symbol": "ARTNIRMAN",
@@ -1416,7 +1416,7 @@
       "symbol": "ASSAMENT",
       "yf_symbol": "ASSAMENT.NS",
       "indices": [],
-      "ltp": 816.75
+      "ltp": NaN
     },
     "ASTAR": {
       "symbol": "ASTAR",
@@ -2508,7 +2508,7 @@
       "symbol": "BRAHMVIRAT",
       "yf_symbol": "BRAHMVIRAT.NS",
       "indices": [],
-      "ltp": 419.9
+      "ltp": 433.45
     },
     "BRIGADE": {
       "symbol": "BRIGADE",
@@ -3083,12 +3083,6 @@
     "COMPEAU": {
       "symbol": "COMPEAU",
       "yf_symbol": "COMPEAU.NS",
-      "indices": [],
-      "ltp": NaN
-    },
-    "COMPINFO": {
-      "symbol": "COMPINFO",
-      "yf_symbol": "COMPINFO.NS",
       "indices": [],
       "ltp": NaN
     },
@@ -3744,7 +3738,7 @@
       "symbol": "DISAQ",
       "yf_symbol": "DISAQ.NS",
       "indices": [],
-      "ltp": 10814.0
+      "ltp": 10848.0
     },
     "DISHTV": {
       "symbol": "DISHTV",
@@ -5472,7 +5466,7 @@
       "symbol": "GUJRAFFIA",
       "yf_symbol": "GUJRAFFIA.NS",
       "indices": [],
-      "ltp": 41.07
+      "ltp": 40.62
     },
     "GUJTHEM": {
       "symbol": "GUJTHEM",
@@ -7884,7 +7878,7 @@
       "symbol": "LADDERUP",
       "yf_symbol": "LADDERUP.NS",
       "indices": [],
-      "ltp": 47.85
+      "ltp": NaN
     },
     "LAGNAM": {
       "symbol": "LAGNAM",
@@ -11484,7 +11478,7 @@
       "symbol": "RETAIL",
       "yf_symbol": "RETAIL.NS",
       "indices": [],
-      "ltp": 26.5
+      "ltp": NaN
     },
     "RGL": {
       "symbol": "RGL",
@@ -12710,11 +12704,11 @@
       "indices": [],
       "ltp": NaN
     },
-    "SHUKRAPHAR": {
-      "symbol": "SHUKRAPHAR",
-      "yf_symbol": "SHUKRAPHAR.NS",
+    "SHUKRAMED": {
+      "symbol": "SHUKRAMED",
+      "yf_symbol": "SHUKRAMED.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 84.16
     },
     "SHYAMCENT": {
       "symbol": "SHYAMCENT",
@@ -12846,7 +12840,7 @@
       "symbol": "SIMPLXREA",
       "yf_symbol": "SIMPLXREA.NS",
       "indices": [],
-      "ltp": 137.99
+      "ltp": NaN
     },
     "SINCLAIR": {
       "symbol": "SINCLAIR",
@@ -12864,7 +12858,7 @@
       "symbol": "SINGERIND",
       "yf_symbol": "SINGERIND.NS",
       "indices": [],
-      "ltp": 86.83
+      "ltp": 84.78
     },
     "SINTERCOM": {
       "symbol": "SINTERCOM",
@@ -13506,7 +13500,7 @@
       "symbol": "SUNLOC",
       "yf_symbol": "SUNLOC.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 70.04
     },
     "SUNPHARMA": {
       "symbol": "SUNPHARMA",
@@ -13962,7 +13956,7 @@
       "symbol": "TCC",
       "yf_symbol": "TCC.NS",
       "indices": [],
-      "ltp": 40.28
+      "ltp": 40.96
     },
     "TCI": {
       "symbol": "TCI",
@@ -14136,7 +14130,7 @@
       "symbol": "THAKDEV",
       "yf_symbol": "THAKDEV.NS",
       "indices": [],
-      "ltp": NaN
+      "ltp": 132.0
     },
     "THANGAMAYL": {
       "symbol": "THANGAMAYL",
@@ -15774,7 +15768,7 @@
       "symbol": "ZODIAC",
       "yf_symbol": "ZODIAC.NS",
       "indices": [],
-      "ltp": 208.66
+      "ltp": 203.88
     },
     "ZODIACLOTH": {
       "symbol": "ZODIACLOTH",
