@@ -1,5 +1,10 @@
 [
   {
+    "ts": "2026-11-23T22:05:54.421Z",
+    "success": false,
+    "error": "Request failed with status code 522"
+  },
+  {
     "ts": "2026-11-23T12:07:29.924Z",
     "success": false,
     "error": "Request failed with status code 500"
@@ -569,11 +574,5 @@
     "success": true,
     "date": "21-Oct-2026",
     "action": "skipped"
-  },
-  {
-    "ts": "2026-10-21T14:04:06.140Z",
-    "success": true,
-    "date": "21-Oct-2026",
-    "action": "updated"
   }
 ]
