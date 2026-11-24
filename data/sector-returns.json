@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-11-24T00:32:37.769933+00:00",
+  "_updated_at": "2026-11-24T13:31:23.859069+00:00",
   "_source": "NSE allIndices (1D/1M/1Y) + niftyindices (1W=7d calendar, 3M=3mo calendar)",
   "_note": "Calendar lookbacks match NSE index tracker exactly",
   "sectors": [
@@ -12,7 +12,7 @@
       "r1w": null,
       "r1m": 14.59,
       "r3m": null,
-      "r1y": 3.46,
+      "r1y": 3.82,
       "rsRank": 6,
       "rrg": "Neutral",
       "signal": "HOLD"
@@ -26,7 +26,7 @@
       "r1w": null,
       "r1m": 15.29,
       "r3m": null,
-      "r1y": 6.32,
+      "r1y": 6.37,
       "rsRank": 4,
       "rrg": "Leading",
       "signal": "OVERWEIGHT"
@@ -40,7 +40,7 @@
       "r1w": null,
       "r1m": 6.82,
       "r3m": null,
-      "r1y": 2.4,
+      "r1y": 3.58,
       "rsRank": 17,
       "rrg": "Weakening",
       "signal": "REDUCE"
@@ -54,7 +54,7 @@
       "r1w": null,
       "r1m": 14.13,
       "r3m": null,
-      "r1y": 1.63,
+      "r1y": 2.81,
       "rsRank": 8,
       "rrg": "Neutral",
       "signal": "HOLD"
@@ -68,7 +68,7 @@
       "r1w": null,
       "r1m": 14.31,
       "r3m": null,
-      "r1y": -1.9,
+      "r1y": -1.29,
       "rsRank": 7,
       "rrg": "Neutral",
       "signal": "HOLD"
@@ -82,7 +82,7 @@
       "r1w": null,
       "r1m": 3.26,
       "r3m": null,
-      "r1y": 8.91,
+      "r1y": 11.72,
       "rsRank": 20,
       "rrg": "Lagging",
       "signal": "EXIT"
@@ -96,7 +96,7 @@
       "r1w": null,
       "r1m": 6.18,
       "r3m": null,
-      "r1y": 2.24,
+      "r1y": 3.46,
       "rsRank": 18,
       "rrg": "Lagging",
       "signal": "EXIT"
@@ -110,7 +110,7 @@
       "r1w": null,
       "r1m": 15.37,
       "r3m": null,
-      "r1y": 2.13,
+      "r1y": 2.38,
       "rsRank": 3,
       "rrg": "Leading",
       "signal": "OVERWEIGHT"
@@ -124,7 +124,7 @@
       "r1w": null,
       "r1m": 13.2,
       "r3m": null,
-      "r1y": -12.96,
+      "r1y": -12.38,
       "rsRank": 10,
       "rrg": "Neutral",
       "signal": "HOLD"
@@ -138,7 +138,7 @@
       "r1w": null,
       "r1m": 13.29,
       "r3m": null,
-      "r1y": 17.59,
+      "r1y": 18.22,
       "rsRank": 9,
       "rrg": "Neutral",
       "signal": "HOLD"
@@ -152,7 +152,7 @@
       "r1w": null,
       "r1m": 11.41,
       "r3m": null,
-      "r1y": -1.36,
+      "r1y": -0.61,
       "rsRank": 13,
       "rrg": "Weakening",
       "signal": "REDUCE"
@@ -166,7 +166,7 @@
       "r1w": null,
       "r1m": -0.45,
       "r3m": null,
-      "r1y": -13.65,
+      "r1y": -14.0,
       "rsRank": 22,
       "rrg": "Lagging",
       "signal": "EXIT"
@@ -180,7 +180,7 @@
       "r1w": null,
       "r1m": 11.88,
       "r3m": null,
-      "r1y": 21.12,
+      "r1y": 21.77,
       "rsRank": 11,
       "rrg": "Neutral",
       "signal": "HOLD"
@@ -194,7 +194,7 @@
       "r1w": null,
       "r1m": 2.97,
       "r3m": null,
-      "r1y": 16.53,
+      "r1y": 17.98,
       "rsRank": 21,
       "rrg": "Lagging",
       "signal": "EXIT"
@@ -208,7 +208,7 @@
       "r1w": null,
       "r1m": 8.92,
       "r3m": null,
-      "r1y": -6.89,
+      "r1y": -6.1,
       "rsRank": 15,
       "rrg": "Weakening",
       "signal": "REDUCE"
@@ -222,7 +222,7 @@
       "r1w": null,
       "r1m": 11.68,
       "r3m": null,
-      "r1y": 25.28,
+      "r1y": 25.77,
       "rsRank": 12,
       "rrg": "Neutral",
       "signal": "HOLD"
@@ -236,7 +236,7 @@
       "r1w": null,
       "r1m": 5.11,
       "r3m": null,
-      "r1y": -5.34,
+      "r1y": -3.97,
       "rsRank": 19,
       "rrg": "Lagging",
       "signal": "EXIT"
@@ -250,7 +250,7 @@
       "r1w": null,
       "r1m": 18.45,
       "r3m": null,
-      "r1y": 14.09,
+      "r1y": 14.27,
       "rsRank": 2,
       "rrg": "Leading",
       "signal": "OVERWEIGHT"
@@ -264,7 +264,7 @@
       "r1w": null,
       "r1m": 15.02,
       "r3m": null,
-      "r1y": 7.97,
+      "r1y": 8.15,
       "rsRank": 5,
       "rrg": "Leading",
       "signal": "OVERWEIGHT"
@@ -278,7 +278,7 @@
       "r1w": null,
       "r1m": 20.08,
       "r3m": null,
-      "r1y": 4.0,
+      "r1y": 6.18,
       "rsRank": 1,
       "rrg": "Leading",
       "signal": "OVERWEIGHT"
@@ -292,7 +292,7 @@
       "r1w": null,
       "r1m": 9.26,
       "r3m": null,
-      "r1y": -3.26,
+      "r1y": -3.04,
       "rsRank": 14,
       "rrg": "Weakening",
       "signal": "REDUCE"
@@ -306,7 +306,7 @@
       "r1w": null,
       "r1m": 8.88,
       "r3m": null,
-      "r1y": 8.22,
+      "r1y": 9.14,
       "rsRank": 16,
       "rrg": "Weakening",
       "signal": "REDUCE"
