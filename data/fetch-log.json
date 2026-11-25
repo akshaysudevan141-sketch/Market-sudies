@@ -1,5 +1,10 @@
 [
   {
+    "ts": "2026-11-25T19:59:16.750Z",
+    "success": false,
+    "error": "Unexpected token '<', \"<HTML><HEA\"... is not valid JSON"
+  },
+  {
     "ts": "2026-11-25T12:29:49.999Z",
     "success": false,
     "error": "Request failed with status code 522"
@@ -558,12 +563,6 @@
   },
   {
     "ts": "2026-10-23T08:24:33.992Z",
-    "success": true,
-    "date": "22-Oct-2026",
-    "action": "skipped"
-  },
-  {
-    "ts": "2026-10-22T17:46:13.040Z",
     "success": true,
     "date": "22-Oct-2026",
     "action": "skipped"
